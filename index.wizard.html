@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+	<head>
+		<title>Studiegids</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open Sans:300" rel="stylesheet">
+		<script src="https://use.fontawesome.com/6d6b522626.js"></script>
+		<style type="text/css">
+            ::selection {
+                background: #ffb7b7; /* WebKit/Blink Browsers */
+            }
+            h1 {
+                border-left: 4px solid #4d7fd1;
+                padding-left: 10px;
+            }
+            h1,h2 {
+                font-family: 'Open Sans';
+            }
+			html, body {
+				margin: 0;
+				font-family: 'Roboto';
+                background-color: #fcfcfc;
+                position: relative;
+			}
+            /*p {
+                line-height: 25px;
+            }*/
+			.navbar,.menu {
+				width: 100%;
+                color: white;
+				background-color: #4d7fd1;
+                font-size: 22px;
+			}
+			.navbar-inner,.menu-inner {
+				height: 50px; 	
+				max-width: 1000px;
+				margin: 0 auto;
+				position: relative;
+			}
+            .menu {
+                background-color: white;
+                height: 30px;
+                color: black;
+                border-bottom: 1px solid lightgray;
+                position: relative;
+                box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);    
+                z-index: 1;
+            }
+			.left {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				left: 20px;
+			}
+			.center {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+			}
+			.right {
+				position: absolute;
+		      	top: 50%;
+				transform: translateY(-50%);
+				right: 20px;
+			}
+            i {
+                padding: 0 10px;
+            }
+            .bread {
+                font-size: 11px;
+                margin-left: 20px;
+                line-height: 30px; 
+            }
+            .header {
+                position: relative;
+                max-width: 1000px;
+                margin: 20px auto;
+                height: 400px;
+                /*padding: 20px;*/
+                box-sizing: border-box;
+                border: 1px solid lightgray;
+                box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);
+            }
+            .header-image {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+            .header-image img {
+                width: 100%;
+                height: auto;
+                margin-top: -300px;
+            }
+            .brand {
+                padding: 10px 20px;
+                background-color: rgba(0,0,0,0.7    );
+                position: absolute;
+                bottom: 20px;
+                left: 20px;
+                font-size: 40px;
+                color: white;
+            }
+            .page {
+                background-color: white;
+                max-width: 1000px;
+                margin: 20px auto;
+                padding: 20px;
+                box-sizing: border-box;
+                border: 1px solid lightgray;
+                box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);
+            }
+            .study-menu {
+                width: 100%;
+                overflow: hidden;
+                border: 1px solid lightgray;
+                box-sizing: border-box;
+            }
+            .study-menu-selectors {
+                float: left;
+                width: 33.3%;
+            }
+            .study {
+                padding: 20px;
+                background-color: #fcfcfc;
+                border-right: 1px solid lightgray;
+            }
+            .study:not(:last-child) {
+                border-bottom: 1px solid lightgray;
+            }
+            .bachelor {
+               /* background-color: lightblue;*/
+                background-color: white;
+                border-right: none;
+            }
+            .study-info {
+                width: 66.6%;
+                float: right;
+                box-sizing: border-box;
+                padding: 20px 20px 20px 40px;
+            }
+            a {
+                padding: 5px 0;
+                display: block;
+            }
+            p {
+                line-height: 24px;
+            }
+            .footer a {
+                color: white;
+            }
+            .info-field {
+                padding: 20px;
+                box-sizing: border-box;
+                width: calc(100%*(1/3));
+                float: left;
+            }
+            .info-field a {
+                color: white;
+            }
+            .info-field i {
+                padding-left: 0px;
+            }
+            .info-field p {
+                padding: 20px 0;
+            }
+            .studyguide {
+                padding: 20px; 
+                box-sizing: border-box;
+                width: calc(100%*(2/3) - 10px);
+                float: left;
+                border: 1px solid lightgray;
+                box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);
+            }
+            .tue {
+                padding: 20px;
+                box-sizing: border-box;
+                border: 1px solid lightgray;
+                margin-top: 20px;
+                box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);
+                width: calc(100%*(2/3) - 10px);
+                float: left;
+            }
+            .cards {
+                float: right;
+                width: calc(100%*(1/3) - 10px);
+            }
+            .card:not(:first-child) {
+                margin-top: 20px;
+            } 
+            .card {
+                padding: 20px;
+                box-sizing: border-box;
+                background-color: #fcfcfc;
+                border: 1px solid lightgray;
+                box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);
+            }
+            .footer {
+                max-width: 1000px;
+                margin: 0 auto;
+                background-color: #4d7fd1;
+                border: 1px solid lightgray;
+                box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);
+            }
+            .small {
+                width: 100%;
+                font-size: 16px;
+                color: gray;
+            }
+            .small i {
+                padding: 3px;
+                width: 20px;
+                text-align: center;
+                border: 1px solid lightgray;
+                border-radius: 5px;
+                box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);    
+            }
+            .footer {
+                color: white;
+                box-sizing: border-box;
+                padding: 40px;
+            }
+            .footer a {
+                text-decoration: none;
+            }
+            .footer-section {
+                padding-right: 50px;
+                float: left;
+            }
+
+            /* Wizard styling */
+            .darken-background {
+                z-index: 5;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(50, 50, 50, 0.6);
+            }
+            .wizard {
+                z-index: 10;
+                position: absolute; 
+                left: 0; 
+                right: 0;
+                top: 50px;
+                margin-left: auto; 
+                margin-right: auto;
+                width: 1000px;
+                height: 500px;
+                border: 3px solid #4d7fd1;
+                background-color: white;
+            }
+            .wizard-inner {
+                width: 960px; # 1000 - 2 * 20
+                height: calc(100% - 40px); 
+                padding: 20px;
+                position: relative;
+                text-align: center;
+            }
+            .wizard-inner > h2 {
+                font-size: 2em;
+            }
+            .wizard-inner > .wizard-list {
+                width: 666px;
+                margin: 0px auto;
+            }
+            .wizard-inner > .wizard-list > .selection-card {
+                position: relative;
+                float: left;
+                width: 200px;
+                height: 250px;
+                margin-right: 20px;
+                border: 1px solid lightgray;
+                box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+            }
+            .wizard-inner > .wizard-list > .selection-card > .title {
+                position: absolute;
+                bottom: 5px;
+                left: 0px;
+                right: 0px;
+                font-size: 1.5em;
+            }
+            .skip {
+                position: absolute;
+                right: 20px;
+                bottom: 20px;
+            }
+            .btn {
+                padding: 12px 25px;
+                background-color: #4d7fd1;
+                box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+                color: white;
+            }
+
+		</style>
+	</head>
+	<body>
+
+        <div class="darken-background"></div>
+
+        <div>
+            <div class="wizard">
+            <div class="skip">
+                <div class="btn">Skip</div>
+            </div>
+                <div class="wizard-inner">
+                    <h2>Wizard</h2>
+                    <p>Here you can select which type of user you are</p>
+                    <div class="wizard-list">
+                        <div class="selection-card">
+                            <div class="title">Pre-student</div>
+                        </div>
+                        <div class="selection-card">
+                            <div class="title">Bachelor student</div>
+                        </div>
+                        <div class="selection-card">
+                            <div class="title">Master student</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+		<div class="navbar">
+			<div class="navbar-inner">
+				<div class="left">Studiegids</div>
+				<div class="center">TU<span style="color: #ff329f;">/</span>e</div>
+				<div class="right">
+                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                    <i class="fa fa-flag-o" aria-hidden="true"></i>
+                    <i class="fa fa-user-o" aria-hidden="true"></i>
+                </div>
+			</div>
+		</div>
+        <div class="menu">
+            <div class="menu-inner">
+                <div class="bread">test > hoi</div>
+            </div>
+        </div>
+
+        <div class="header">
+            <div class="brand">Studiegids</div>
+            <div class="header-image">
+                <img src="https://virtualvisit.tue.nl/media/hotspot-data/science-park-1.jpg">
+            </div>
+        </div>
+
+        <div class="page">
+            <div class="study-menu">
+                <div class="study-menu-selectors">
+                    <div class="study bachelor">
+                        <h1>Bachelors</h1>
+                        <p>Lorem ipsum</p>
+                    </div>
+                    <div class="study pre-master">
+                        <h1>Pre-masters</h1>
+                        <p>Lorem ipsum</p>
+                    </div>
+                    <div class="study master">
+                        <h1>Masters</h1>
+                        <p>Lorem ipsum</p>
+                    </div>
+                </div>
+                <div class="study-info">
+                    <h2>Bachelor studies</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam auctor, magna id pharetra porta, metus nibh commodo sapien, ac tincidunt libero lectus vel eros. In porta ultricies porttitor. Mauris et tempor risus.</p>
+                    <a href="#">een studie</a>
+                    <a href="#">een studie</a>
+                    <a href="#">een studie</a>
+                    <a href="#">een studie</a>
+                    <a href="#">een studie</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="page" style="background-color: #4d7fd1; color: white;"> 
+            <div class="info-field">
+                <h1><i class="fa fa-book" aria-hidden="true"></i>De studyguide</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam auctor, magna id pharetra porta, metus nibh commodo sapien, ac tincidunt libero lectus vel eros. In porta ultricies porttitor. Mauris et tempor risus.</p>
+                <a href="#">lees meer</a>
+            </div>
+            <div class="info-field">
+                <h1><i class="fa fa-user" aria-hidden="true"></i>Profielen</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam auctor, magna id pharetra porta, metus nibh commodo sapien, ac tincidunt libero lectus vel eros. In porta ultricies porttitor. Mauris et tempor risus.</p>
+                <a href="#">verander profiel</a>
+            </div>
+            <div class="info-field">
+                <h1><i class="fa fa-graduation-cap" aria-hidden="true"></i>TU/e</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam auctor, magna id pharetra porta, metus nibh commodo sapien, ac tincidunt libero lectus vel eros. In porta ultricies porttitor. Mauris et tempor risus.</p>
+                <a href="#">lees meer</a>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+
+        <div class="page">
+            <div class="studyguide">
+                <h1>Studyguide</h1>
+                <div class="small">
+                    <div style="float: left;">21-2-2017 | 18:00</div>
+                    <div style="float: right;">
+                        <i class="fa fa-share" aria-hidden="true"></i>
+                        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div style="clear: both;"></div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur cursus sem sed faucibus malesuada. Nullam gravida interdum aliquet. Nam dignissim gravida leo, vitae bibendum erat bibendum in. Pellentesque eget mauris urna. Proin dictum tortor ut ex posuere, et laoreet urna eleifend. Vivamus aliquam tempus turpis sit amet lobortis. Quisque bibendum velit id dui scelerisque, quis lobortis mi sollicitudin.
+                </p>
+                <p>
+                    Integer id hendrerit ligula. Pellentesque non turpis tempus tortor interdum cursus id non turpis. Morbi ultrices nunc risus, eget hendrerit erat aliquet ac. Donec interdum enim ut nibh imperdiet tristique. Donec sit amet posuere neque, vel sagittis purus. Curabitur sodales magna dolor, ac maximus lectus lobortis ac. Vivamus vitae diam eget lorem fringilla tincidunt in a velit. Fusce maximus dui fermentum ex fermentum, sed venenatis ipsum malesuada.
+                </p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <h2>Contact</h2>
+                    <p>Neem contact op via onderstaande media</p>
+                    <p><i class="fa fa-phone" aria-hidden="true"></i>0612789361</p>
+                    <p><i class="fa fa-envelope-o" aria-hidden="true"></i>mail@mail.mail</p>
+                </div>
+                <div class="card">
+                    <h2>Zie ook</h2>
+                    <a href="#">website</a>
+                    <a href="#">website</a> 
+                </div>  
+                <div class="card">
+                    <h2>Gerelateerd</h2>
+                    <a href="#">TU/e</a>
+                    <a href="#">Social</a>
+                </div>
+                <div class="card">
+                    <h2>Overig</h2>
+                    <a href="#">een link</a>
+                    <a href="#">een link</a>
+                </div>  
+            </div>
+            <div class="tue">
+                <h1>TU/e news</h1>
+                <div class="small">
+                    <div style="float: left;">21-2-2017 | 18:00</div>
+                    <div style="float: right;">
+                        <i class="fa fa-share" aria-hidden="true"></i>
+                        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div style="clear: both;"></div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur cursus sem sed faucibus malesuada. Nullam gravida interdum aliquet. Nam dignissim gravida leo, vitae bibendum erat bibendum in. Pellentesque eget mauris urna. Proin dictum tortor ut ex posuere, et laoreet urna eleifend. Vivamus aliquam tempus turpis sit amet lobortis. Quisque bibendum velit id dui scelerisque, quis lobortis mi sollicitudin.
+                </p>
+                <p>
+                    Integer id hendrerit ligula. Pellentesque non turpis tempus tortor interdum cursus id non turpis. Morbi ultrices nunc risus, eget hendrerit erat aliquet ac. Donec interdum enim ut nibh imperdiet tristique. Donec sit amet posuere neque, vel sagittis purus. Curabitur sodales magna dolor, ac maximus lectus lobortis ac. Vivamus vitae diam eget lorem fringilla tincidunt in a velit. Fusce maximus dui fermentum ex fermentum, sed venenatis ipsum malesuada.
+                </p>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="footer">
+            <div class="footer-section">
+                <div style="font-weight: bold;">Social media</div>
+                <a href="#">facebook</a>
+                <a href="#">youtube</a>
+            </div>
+            <div class="footer-section">
+                <div style="font-weight: bold;">Social media</div>
+                <a href="#">facebook</a>
+                <a href="#">youtube</a>
+            </div>
+            <div class="footer-section">
+                <div style="font-weight: bold;">Social media</div>
+                <a href="#">facebook</a>
+                <a href="#">youtube</a>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+	</body>
+</html>
+<!--JQUERY CDN-->
+
+<script type="text/javascript">
+    
+</script>

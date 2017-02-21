@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ontwerp Casper</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,200" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,200" rel="stylesheet">
+		<style type="text/css">
+
+		body {
+			font-family: 'Roboto';
+		}
+			
+		.container {
+			width: 1000px;
+			margin: 0px auto;
+		}
+		.inner-container {
+			width: 400px;
+		}
+		.page {
+                background-color: white;
+                max-width: 1000px;
+                margin: 20px auto;
+                padding: 20px;
+                box-sizing: border-box;
+                border: 1px solid lightgray;
+                box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);
+            }
+            .study-menu {
+                width: 100%;
+                overflow: hidden;
+                border: 1px solid lightgray;
+                box-sizing: border-box;
+            }
+            .study-menu-selectors {
+                float: left;
+                width: 33.3%;
+            }
+            .study {
+                padding: 20px;
+                background-color: #fcfcfc;
+                border-right: 1px solid lightgray;
+            }
+            .study:not(:last-child) {
+                border-bottom: 1px solid lightgray;
+            }
+            .bachelor {
+               /* background-color: lightblue;*/
+                background-color: white;
+                border-right: none;
+            }
+            .study-info {
+                width: 66.6%;
+                float: right;
+                box-sizing: border-box;
+                padding: 20px 20px 20px 40px;
+            }
+            a {
+                display: block;
+                padding: 5px 0;
+            }
+
+            table {
+            	width: 100%;
+            }
+            tr {
+            	padding: 0px 20px;
+            	margin: 0px;
+            	width: 100%;
+            }
+            tr:nth-child(even) {
+            	background-color: #FAFAFA;
+            }
+
+		</style>
+	</head>
+	<body>
+
+		<div class="page">
+            <div class="study-menu">
+                <div class="study-menu-selectors">
+                    <div class="study bachelor">
+                        <h1>Bachelors</h1>
+                        <p>Lorem ipsum</p>
+                    </div>
+                    <div class="study pre-master">
+                        <h1>Pre-masters</h1>
+                        <p>Lorem ipsum</p>
+                    </div>
+                    <div class="study master">
+                        <h1>Masters</h1>
+                        <p>Lorem ipsum</p>
+                    </div>
+                </div>
+                <div class="study-info">
+                    <h2>Bachelor studies</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam auctor, magna id pharetra porta, metus nibh commodo sapien, ac tincidunt libero lectus vel eros. In porta ultricies porttitor. Mauris et tempor risus.</p>
+                    <table>
+                    	<tbody>
+                    		<tr>
+                    			<td><a href="#">Een studie</a></td>
+                    		</tr>
+                    		<tr>
+                    			<td><a href="#">Een studie</a></td>
+                    		</tr>
+                    		<tr>
+                    			<td><a href="#">Een studie</a></td>
+                    		</tr>
+                    		<tr>
+                    			<td><a href="#">Een studie</a></td>
+                    		</tr>
+                    		<tr>
+                    			<td><a href="#">Een studie</a></td>
+                    		</tr>
+                    	</tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+	</body>
+</html>
