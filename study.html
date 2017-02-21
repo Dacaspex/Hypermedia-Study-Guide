@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Studiegids</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open Sans:300" rel="stylesheet">
+		<script src="https://use.fontawesome.com/6d6b522626.js"></script>
+		<style type="text/css">
+			h1 {
+                border-left: 4px solid #4d7fd1;
+                padding-left: 10px;
+            }
+            h1,h2,h3,h4,h5,h6 {
+                font-family: 'Open Sans';
+            }
+			html, body {
+				margin: 0;
+				font-family: 'Roboto';
+                background-color: #fcfcfc;
+                position: relative;
+			}
+			.page a {
+                padding: 5px 0;
+                display: block;
+            }
+            p {
+                line-height: 24px;
+            }
+			.navbar,.menu {
+				width: 100%;
+                color: white;
+				background-color: #4d7fd1;
+                font-size: 22px;
+			}
+			.navbar-inner,.menu-inner {
+				height: 50px; 	
+				max-width: 1000px;
+				margin: 0 auto;
+				position: relative;
+			}
+            .menu {
+                background-color: white;
+                height: 35px;
+                color: black;
+                border-bottom: 1px solid lightgray;
+                position: relative;
+                box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);    
+                z-index: 1;
+            }
+			.left {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				left: 20px;
+			}
+			.center {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+			}
+			.right {
+				position: absolute;
+		      	top: 50%;
+				transform: translateY(-50%);
+				right: 20px;
+			}
+            i {
+                padding: 0 10px;
+            }
+            .footer a {
+                padding: 5px 0;
+                display: block;
+            }
+            .menu a {
+            	height: 35px;
+            	line-height: 35px;
+            	text-align: center;
+            	color: black;
+            	text-decoration: none;
+            	border-left: 1px solid lightgray;
+            	padding: 0 20px;
+            	font-size: 16px;
+            }
+            .menu a:last-child {
+            	border-right: 1px solid lightgray;
+            }
+            .page {
+                background-color: white;
+                max-width: 1000px;
+                margin: 20px auto;
+                padding: 20px;
+                box-sizing: border-box;
+                border: 1px solid lightgray;
+                box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);
+                float: l
+            }
+            .bread-crumb {
+            	position: relative;
+            	background-color: #fcfcfc;
+            	box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);
+            	float: left;
+            	border: 1px solid lightgray;
+            	padding: 10px;
+            	margin-bottom: 20px;
+            	margin-left: -58px;
+            	font-size: 14px;
+            }
+            .bread-crumb:before {
+            	content: '';
+            	position: absolute;
+            	width: 4px;
+            	height: 20px;
+            	background: linear-gradient(to left, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 100%);
+            	top: 100%;
+            	left: 32px;
+            	z-index: 1;
+            }
+            .bread-crumb:after {
+            	content: '';
+            	position: absolute;
+            	left: 8px;
+            	transform: rotate(-90deg) scale(-1,1);
+            	top: calc(100% - 8px);
+            	border-bottom: 37px solid #eaeaea;
+				border-right: 20px solid transparent;
+				width: 0;
+				height: 0;
+            }
+            .bread-crumb a {
+            	color: gray;
+            	padding: 0 5px;
+            	text-decoration: none;
+            	display: inline;
+            }
+            .bread-crumb a:last-child {
+            	color: black;
+            }
+            .study-menu {
+            	width: calc(100%*(1/5) - 20px);
+            	float: left;
+            	border: 1px solid lightgray;
+            	box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);
+            	margin-right: 20px;
+            }
+            .study-menu a {
+            	border-top: 1px solid lightgray;
+            	text-decoration: none;
+            	color: black;
+            	padding: 10px 20px;
+            }
+            .study-menu-text {
+            	padding: 0 20px;
+            }
+            .footer {
+            	max-width: 1000px;
+                margin: 0 auto;
+                background-color: #4d7fd1;
+                border: 1px solid lightgray;
+                box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);
+                color: white;
+                box-sizing: border-box;
+                padding: 40px;
+            }
+            .footer a {
+                text-decoration: none;
+                color: white;
+            }
+            .footer-section {
+                padding-right: 50px;
+                float: left;
+            }
+            .card {
+            	position: relative;
+            	width: calc(100% + 60px);
+                padding: 20px;
+                box-sizing: border-box;
+                background-color: #fcfcfc;
+                border: 1px solid lightgray;
+                box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);
+            }
+            .card:before {
+            	content: '';
+            	position: absolute;
+            	width: 5px;
+            	height: 19px;
+            	background: linear-gradient(to right, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 100%);
+            	top: 100%;
+            	right: 32px;
+            	z-index: 1;
+            }
+            .card:after {
+            	content: '';
+            	position: absolute;
+            	right: 8px;
+            	transform: rotate(90deg);
+            	top: calc(100% - 8px);
+            	border-bottom: 37px solid #eaeaea;
+				border-right: 20px solid transparent;
+				width: 0;
+				height: 0;
+            }
+            .card:not(:first-child) {
+                margin-top: 20px;
+            }
+            .card i {
+            	padding: 0 10px 0 0;
+            }
+            table {
+            	width: 100%;
+            }
+            table tr td:nth-child(2) {
+            	float: right;
+            }
+		</style>
+	</head>
+	<body>
+		<div class="navbar">
+			<div class="navbar-inner">
+				<div class="left">Studiegids</div>
+				<div class="center" style="height: 35px">TU<span style="color: #ff329f;">/</span>e</div>
+				<div class="right">
+                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                    <i class="fa fa-flag-o" aria-hidden="true"></i>
+                    <i class="fa fa-user-o" aria-hidden="true"></i>
+                </div>
+			</div>
+		</div>
+		<div class="menu">
+			<div class="center">
+				<a href="#">Pre-university</a>
+				<a href="#">Bachelors</a>
+				<a href="#">Pre-masters</a>
+				<a href="#">Masters</a>
+			</div>
+		</div>
+		<div class="page">
+			<div class="bread-crumb">
+				<a href="#">home</a> / <a href="#">Majors</a> / <a href="#">Psychology and Technology</a>
+			</div>
+			<div style="clear: both;"></div>
+			<div id="hax" class="study-menu">
+				<div class="study-menu-text">
+					<h2>Menu</h2>
+				</div>
+					<a href="#" style="background-color: #4d7fd1; color: white;">Home</a>
+					<a href="#">Curriculum</a>
+					<a href="#"><span style="padding-left: 20px">Basic Courses</span></a>
+					<a href="#"><span style="padding-left: 20px; display: inline-block;">Elective Courses and Packages</span></a>
+					<a href="#">Program Learning Objectives</a>
+					<a href="#" style="background-color: #dddddd;color: gray;">Professional skills</a>
+					<a href="#">Etc...</a>
+			</div>
+			<div style="float: left; width: calc(100%*(2.9/5) - 4px);">
+				<h1>Psychology & Technology <span style="color: gray; font-size: 0.8em; display: inline-block;">/ major</span></h1>
+				<h2>The result</h2>
+				<p>
+					The Major Psychology and Technology is formally embedded in the Bachelor program Technical Innovation Sciences (in Dutch: Technische Innovatiewetenschappen). Consequently, after completing this Majors, you will receive the Bachelor's degree certificate in Technical Innovation Sciences.
+				</p>
+				<h2>Program Objectives</h2>
+				<p>
+					The overall objective of the Bachelor program is to train and educate young professionals who are able to progress into an appropriate Master's program and/or are prepared to embark upon a professional career in the field of Psychological Technologies.	
+				</p>
+				<p style="font-weight: bold;">Students are therefore expected to:</p>
+				<ul>
+					<li>acquire cognitive skills relating to (social) psychology and technology</li>
+					<li>acquire practical capabilities and skills relating to psychological research and development</li>
+					<li>acquire professional and generic academic skills</li>
+				</ul>
+			</div>
+			<div style="float: left; width: calc(100%*(1.1/5) - 20px); margin-left: 20px">
+				<div class="card">
+					<img style="width: calc(100% + 40px); margin: -20px 0 0 -20px; border-bottom: 1px solid lightgray" src="https://virtualvisit.tue.nl/media/hotspot-data/science-park-1.jpg">
+                    <h2 style="border-left: 3px solid #4d7fd1; padding-left: 10px;">Pyschology & technology <span style="color: gray; font-size: 0.8em">info</span></h2>
+                    <table>
+                    	<tr>
+                    		<td>Aantal studenten</td><td>500</td>
+                    	</tr>
+                    	<tr>
+                    		<td>Aantal vakken</td><td>12</td>
+                    	</tr>
+                    	<tr>
+                    		<td>Geslaagden jaarlijks</td><td>120</td>
+                    	</tr>
+                    </table>
+                </div>
+                <div class="card">
+                    <h2 style="border-left: 3px solid #4d7fd1; padding-left: 10px;">Neem contact op <span style="color: gray; font-size: 0.8em">just do it</span></h2>
+                    <p>
+                    	<i class="fa fa-phone" aria-hidden="true"></i>0612789361<br>
+                    	<i class="fa fa-envelope-o" aria-hidden="true"></i>mail@mail.mail
+                    </p> 
+                </div>  
+                <div class="card">
+                    <h2>Gerelateerd</h2>
+                    <a href="#">TU/e</a>
+                    <a href="#">Social</a>
+                </div>
+                <div class="card">
+                    <h2>Overig</h2>
+                    <a href="#">een link</a>
+                    <a href="#">een link</a>
+                </div>  
+			</div>
+			<div style="clear: both;"></div>
+		</div>
+		<div class="footer">
+            <div class="footer-section">
+                <div style="font-weight: bold;">Social media</div>
+                <a href="#">facebook</a>
+                <a href="#">youtube</a>
+            </div>
+            <div class="footer-section">
+                <div style="font-weight: bold;">Social media</div>
+                <a href="#">facebook</a>
+                <a href="#">youtube</a>
+            </div>
+            <div class="footer-section">
+                <div style="font-weight: bold;">Social media</div>
+                <a href="#">facebook</a>
+                <a href="#">youtube</a>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+	</body>
+</html>
+<script type="text/javascript">
+	window.onscroll = function() {
+	    if (document.body.scrollTop > 165 && document.body.scrollTop < 1000 || document.documentElement.scrollTop > 165 && document.documentElement.scrollTop < 1000) {
+	        document.getElementById("hax").style.marginTop = document.body.scrollTop - 165 + "px";
+	    }
+	}
+</script>
