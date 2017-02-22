@@ -1,238 +1,321 @@
 <!DOCTYPE html>
-	<head>
-		<title></title>
-		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <style type="text/css">
-			html, body {
-				margin: 0;
-        font-family: 'Roboto', sans-serif;
-				background-color:#fcfcfc;
-				overflow-x:hidden;
-			}
-			.navbar {
-				width: 100%;
-				height: 125px;
-        top: 0px;
-				background-color: #4d7fd1;
-				color:white;
-        position:fixed;
-        z-index:2;
-        box-shadow: 0px 4px 10px 5px rgba(0,0,0,0.2);
-			}
-			.navbar-inner {
-        width: 100%;
-				max-width: 1500px;
-				margin: 0 auto;
-			}
-      .left {
-				top: 50%;
-				left: 20px;
-        float:left;
-        display:inline;
-        font-size:50px;
-        height:50px;
-        line-height:125px;
-        text-align:center;
-        margin-left:25px;
-			}
-			.center {
-				left: 50%;
-        display:inline;
-        position:absolute;
-        font-size:50px;
-        height:50px;
-        width:150px;
-        margin-left:-75px;
-        line-height:125px;
-        text-align:center;
-			}
-			.tue-slash {
-				color:#ff329f;
-			}
-			.right {
-		    top: 50%;
-				right: 20px;
-        float:right;
-        display:inline;
-        font-size:70px;
-        height:70px;
-        line-height:125px;
-        text-align:center;
-        margin-right:30px;
-			}
-      .right i {
-        margin-left:30px;
-      }
-      .container {
 
-      }
-      .header {
-          position: relative;
-          margin: 20px auto;
-          margin-top:125px;
-          box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);
-      }
-      .header-image {
-          width: 100%;
-          height: 100%;
-          overflow: hidden;
-      }
-      .header-image img {
-          width: 100%;
-          height: auto;
-          margin-top: -300px;
-      }
-      .brand {
-          padding: 10px 20px;
-          background-color: rgba(0,0,0,0.7    );
-          position: absolute;
-          bottom: 20px;
-          left: 20px;
-          font-size: 40px;
-          color: white;
-      }
-      .types {
-        height:125px;
-      }
-      .types-list {
-        list-style-type: none;
-        padding-left:0px;
-        margin:0px;
-      }
-      .types-list li:not(:last-child) {
-        border-right: 1px solid lightgray;
-      }
-      .types-list li {
-        display: inline;
-        width: calc(100%*(1/3));
-        line-height:125px;
-        float: left;
-        text-align:center;
-        font-size:50px;
-        box-sizing:border-box;
+<head>
+	<title></title>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<meta name="HandheldFriendly" content="true"/>
+	<meta name="MobileOptimized" content="width" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="js/carousel.js"></script>
+	<style type="text/css">
+		html,
+		body {
+			margin: 0;
+			font-family: 'Roboto', sans-serif;
+			background-color: #fcfcfc;
+			overflow-x: hidden;
+		}
 
-      }
-      .types-list .active {
-        background-color:white;
-        border-left:5px solid #4d7fd1;
-      }
-      .types-list .inactive {
-        border-bottom: 1px solid lightgray;
-        background-color:#F5F5F5;
-      }
-      .studies {
-        clear:both;
-        margin-top:5px;
-      }
-      .studies-list {
+		.navbar {
+			width: 100%;
+			height: 65px;
+			top: 0px;
+			background-color: #4d7fd1;
+			color: white;
+			position: fixed;
+			z-index: 2;
+			box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2);
+		}
 
-        list-style-type: none;
-      }
-      .studies-list li {
-        width:100%;
-        margin-top:5px;
-        margin-bottom:5px;
+		.navbar-inner {
+			width: 100%;
+			margin: 0 auto;
+		}
 
-      }
-      .card {
-        border: 1px solid lightgray;
-        box-sizing: border-box;
-        font-size:24px;
-				background-color:white;
-        box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.2);
-				margin-bottom: 50px;
-      }
-			.blue {
-				background-color:#4d7fd1;
-				color:white;
-				width:calc(100%*(1/3));
-				float:left;
-				border:none;
-			}
-			.blue a {
-				color:white;
-				margin-top:20px;
-				margin-bottom:20px;
-			}
-			.blue h1 > i {
-				margin-right:40px;
-			}
-      .card > header {
-        border-left:5px solid #4d7fd1;
-				margin:20px;
-      }
-      .card > header > h1 {
-        margin:0px;
-				margin-left:20px;
-        font-size:42px;
-      }
-      .card > section {
-        padding:20px;
-      }
-      .card > section > p {
-        margin:0px;
-      }
-			.carousel {
-				position:relative;
-				overflow:hidden;
-				overflow-x:scroll;
-			}
-			.carousel-inner {
-				width:300%;
-			}
-		</style>
-	</head>
-	<body>
-    <div class="navbar">
-			<div class="navbar-inner">
-				<div class="left">Studyguide</div>
-				<div class="center">TU<span class="tue-slash">/</span>e</div>
-				<div class="right">
-          <i class="fa fa-chevron-down" aria-hidden="true"></i>
-          <i class="fa fa-flag-o" aria-hidden="true"></i>
-          <i class="fa fa-user-o" aria-hidden="true"></i>
-        </div>
+		.left {
+			left: 10px;
+			float: left;
+			display: inline;
+			font-size: 25px;
+			height: 25px;
+			line-height: 65px;
+			text-align: center;
+			margin-left: 12px;
+		}
+
+		.center {
+			left: calc(50% - 50px);
+			position: absolute;
+			font-size: 25px;
+			height: 25px;
+			width: 100px;
+			line-height: 65px;
+			text-align: center;
+		}
+
+		.tue-slash {
+			color: #ff329f;
+		}
+
+		.right {
+			right: 10px;
+			float: right;
+			display: inline;
+			font-size: 30px;
+			height: 30px;
+			line-height: 65px;
+			text-align: center;
+			margin-right: 15px;
+		}
+
+		.right i {
+			margin-left: 15px;
+		}
+
+		.container {}
+
+		.header {
+			position: relative;
+			margin: 10px auto;
+			margin-top: 65px;
+			box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+		}
+
+		.header-image {
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+
+		.header-image img {
+			width: 100%;
+			height: auto;
+			margin-top: -150px;
+		}
+
+		.brand {
+			padding: 5px 10px;
+			background-color: rgba(0, 0, 0, 0.7);
+			position: absolute;
+			bottom: 10px;
+			left: 10px;
+			font-size: 20px;
+			color: white;
+		}
+
+		.types {
+			height: 65px;
+		}
+
+		.types-list {
+			list-style-type: none;
+			padding-left: 0px;
+			margin: 0px;
+		}
+
+		.types-list li:not(:last-child) {
+			border-right: 1px solid lightgray;
+		}
+
+		.types-list li {
+			display: inline;
+			width: calc(100%*(1/3));
+			line-height: 65px;
+			float: left;
+			text-align: center;
+			font-size: 25px;
+			box-sizing: border-box;
+		}
+
+		.types-list .active {
+			background-color: white;
+			border-left: 2px solid #4d7fd1;
+		}
+
+		.types-list .inactive {
+			border-bottom: 1px solid lightgray;
+			background-color: #F5F5F5;
+		}
+
+		.studies {
+			clear: both;
+			margin-top: 2px;
+		}
+
+		.studies-list {
+			list-style-type: none;
+		}
+
+		.studies-list li {
+			width: 100%;
+			margin-top: 2px;
+			margin-bottom: 2px;
+		}
+
+		.card {
+			border: 1px solid lightgray;
+			box-sizing: border-box;
+			font-size: 16px;
+			background-color: white;
+			box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+			margin-bottom: 25px;
+		}
+
+		.card>header {
+			border-left: 2px solid #4d7fd1;
+			margin: 10px;
+		}
+
+		.card>header>h1 {
+			margin: 0px;
+			margin-left: 10px;
+			font-size: 20px;
+		}
+
+		.card>time {
+			margin-left:10px;
+			font-size:14px;
+			color:grey;
+		}
+
+		.card>section {
+			padding: 10px;
+		}
+
+		.card>section>p {
+			margin: 0px;
+		}
+
+		.card a {
+			color:blue;
+			display:block;
+		}
+
+		.blue {
+			background-color: #4d7fd1;
+			color: white;
+			width: calc(100%*(1/3));
+			float: left;
+			border: none;
+			margin-bottom:0px;
+		}
+
+		.blue a {
+			color: white;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+		.blue h1>i {
+			margin-right: 20px;
+		}
+
+		.carousel {
+
+		}
+
+		.carousel-slide {
+			position: relative;
+			overflow: hidden;
+			overflow-x: scroll;
+		}
+
+		.carousel-slide::-webkit-scrollbar {
+			display:none;
+		}
+
+		.carousel-inner {
+			width: 300%;
+		}
+
+		.carousel-menu {
+			height:30px;
+			text-align:center;
+			clear:both;
+			background-color: #4d7fd1;
+			color:white;
+		}
+
+		footer {
+			background-color: #4d7fd1;
+			color:white;
+			box-sizing: border-box;
+			padding: 20px;
+			padding-top:30px;
+			padding-bottom:30px;
+			column-count:2;
+		}
+		footer a {
+			color:white;
+			text-decoration: none;
+			display:block;
+		}
+		.footer-section {
+			padding-top:10px;
+			padding-bottom:10px;
+			-webkit-column-break-inside:avoid;
+			-moz-column-break-inside:avoid;
+			-o-column-break-inside:avoid;
+			-ms-column-break-inside:avoid;
+			column-break-inside:avoid;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="left">Studyguide</div>
+			<div class="center">TU<span class="tue-slash">/</span>e</div>
+			<div class="right">
+				<i class="fa fa-chevron-down" aria-hidden="true"></i>
+				<i class="fa fa-flag-o" aria-hidden="true"></i>
+				<i class="fa fa-user-o" aria-hidden="true"></i>
+			</div>
+		</div>
+	</div>
+
+	<div class="header">
+		<div class="brand">Studyguide</div>
+		<div class="header-image">
+			<img src="https://virtualvisit.tue.nl/media/hotspot-data/science-park-1.jpg">
+		</div>
+	</div>
+
+	<div class="container">
+
+		<div class="card">
+			<div class="types">
+				<ul class="types-list">
+					<li class="active">Bachelor</li>
+					<li class="inactive">Pre-Master</li>
+					<li class="inactive">Master</li>
+				</ul>
+			</div>
+			<div class="studies">
+				<ul class="studies-list">
+					<li>Software Science</li>
+					<li>Psychology and Technology</li>
+					<li>...</li>
+					<li>...</li>
+					<li>...</li>
+					<li>...</li>
+				</ul>
 			</div>
 		</div>
 
-    <div class="header">
-        <div class="brand">Studyguide</div>
-        <div class="header-image">
-          <img src="https://virtualvisit.tue.nl/media/hotspot-data/science-park-1.jpg">
-        </div>
-    </div>
-
-    <div class="container">
-
-      <div class="card">
-        <div class="types">
-          <ul class="types-list">
-            <li class="active">Bachelor</li>
-            <li class="inactive">Pre-Master</li>
-            <li class="inactive">Master</li>
-          </ul>
-        </div>
-        <div class="studies">
-          <ul class="studies-list">
-            <li>Software Science</li>
-            <li>Psychology and Technology</li>
-            <li>...</li>
-            <li>...</li>
-            <li>...</li>
-            <li>...</li>
-          </ul>
-        </div>
-      </div>
-
-			<div class="carousel">
+		<div class="carousel card">
+			<div class="carousel-slide">
 				<div class="carousel-inner">
 					<div class="card blue">
 						<header>
 							<h1><i class="fa fa-book" aria-hidden="true"></i>De studyguide</h1>
 						</header>
 						<section>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur cursus sem sed faucibus malesuada. Nullam gravida interdum aliquet. Nam dignissim gravida leo, vitae bibendum erat bibendum in. Pellentesque eget mauris urna. Proin dictum tortor ut ex posuere, et laoreet urna eleifend. Vivamus aliquam tempus turpis sit amet lobortis. Quisque bibendum velit id dui scelerisque, quis lobortis mi sollicitudin.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur cursus sem sed faucibus malesuada. Nullam gravida interdum aliquet. Nam dignissim gravida leo, vitae bibendum erat bibendum in. Pellentesque eget mauris urna. Proin dictum tortor
+								ut ex posuere, et laoreet urna eleifend. Vivamus aliquam tempus turpis sit amet lobortis. Quisque bibendum velit id dui scelerisque, quis lobortis mi sollicitudin.</p>
 							<a href="#">Lees meer</a>
 						</section>
 					</div>
@@ -242,7 +325,8 @@
 							<h1><i class="fa fa-user" aria-hidden="true"></i>Profielen</h1>
 						</header>
 						<section>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur cursus sem sed faucibus malesuada. Nullam gravida interdum aliquet. Nam dignissim gravida leo, vitae bibendum erat bibendum in. Pellentesque eget mauris urna. Proin dictum tortor ut ex posuere, et laoreet urna eleifend. Vivamus aliquam tempus turpis sit amet lobortis. Quisque bibendum velit id dui scelerisque, quis lobortis mi sollicitudin.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur cursus sem sed faucibus malesuada. Nullam gravida interdum aliquet. Nam dignissim gravida leo, vitae bibendum erat bibendum in. Pellentesque eget mauris urna. Proin dictum tortor
+								ut ex posuere, et laoreet urna eleifend. Vivamus aliquam tempus turpis sit amet lobortis. Quisque bibendum velit id dui scelerisque, quis lobortis mi sollicitudin.</p>
 							<a href="#">Lees meer</a>
 						</section>
 					</div>
@@ -252,35 +336,102 @@
 							<h1><i class="fa fa-graduation-cap" aria-hidden="true"></i>TU/e</h1>
 						</header>
 						<section>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur cursus sem sed faucibus malesuada. Nullam gravida interdum aliquet. Nam dignissim gravida leo, vitae bibendum erat bibendum in. Pellentesque eget mauris urna. Proin dictum tortor ut ex posuere, et laoreet urna eleifend. Vivamus aliquam tempus turpis sit amet lobortis. Quisque bibendum velit id dui scelerisque, quis lobortis mi sollicitudin.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur cursus sem sed faucibus malesuada. Nullam gravida interdum aliquet. Nam dignissim gravida leo, vitae bibendum erat bibendum in. Pellentesque eget mauris urna. Proin dictum tortor
+								ut ex posuere, et laoreet urna eleifend. Vivamus aliquam tempus turpis sit amet lobortis. Quisque bibendum velit id dui scelerisque, quis lobortis mi sollicitudin.</p>
 							<a href="#">Lees meer</a>
 						</section>
 					</div>
 				</div>
 			</div>
+			<div class="carousel-menu">
+				<i class="fa fa-circle" aria-hidden="true"></i>
+				<i class="fa fa-circle-thin" aria-hidden="true"></i>
+				<i class="fa fa-circle-thin" aria-hidden="true"></i>
+			</div>
+		</div>
 
-      <div class="card">
-        <header>
-          <h1>Study Guide</h1>
-        </header>
-        <section>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur cursus sem sed faucibus malesuada. Nullam gravida interdum aliquet. Nam dignissim gravida leo, vitae bibendum erat bibendum in. Pellentesque eget mauris urna. Proin dictum tortor ut ex posuere, et laoreet urna eleifend. Vivamus aliquam tempus turpis sit amet lobortis. Quisque bibendum velit id dui scelerisque, quis lobortis mi sollicitudin.</p>
-				</section>
-      </div>
 
-      <div class="card">
-        <header>
-          <h1>Contact</h1>
-        </header>
-        <section>
-          <p>contact info</p>
-        </section>
-      </div>
+		<div class="card">
+			<header>
+				<h1>Studyguide</h1>
+			</header>
+			<time>21-2-2017 | 18:00</time>
+			<section>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur cursus sem sed faucibus malesuada. Nullam gravida interdum aliquet. Nam dignissim gravida leo, vitae bibendum erat bibendum in. Pellentesque eget mauris urna. Proin dictum tortor ut
+					ex posuere, et laoreet urna eleifend. Vivamus aliquam tempus turpis sit amet lobortis. Quisque bibendum velit id dui scelerisque, quis lobortis mi sollicitudin.</p>
+			</section>
+		</div>
 
-			<footer>
+		<div class="card">
+			<header>
+				<h1>TU/e news</h1>
+			</header>
+			<time>21-2-2017 | 18:00</time>
+			<section>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur cursus sem sed faucibus malesuada. Nullam gravida interdum aliquet. Nam dignissim gravida leo, vitae bibendum erat bibendum in. Pellentesque eget mauris urna. Proin dictum tortor ut
+					ex posuere, et laoreet urna eleifend. Vivamus aliquam tempus turpis sit amet lobortis. Quisque bibendum velit id dui scelerisque, quis lobortis mi sollicitudin.</p>
+			</section>
+		</div>
 
-			</footer>
+		<div class="card">
+			<header>
+				<h1>Contact</h1>
+			</header>
+			<section>
+				<p>contact info</p>
+			</section>
+		</div>
 
-    </div>
-	</body>
+		<div class="card">
+			<header>
+				<h1>Zie ook</h1>
+			</header>
+			<section>
+				<p><a href="#">Link</a>
+				<a href="#">Link</a></p>
+			</section>
+		</div>
+
+		<div class="card">
+			<header>
+				<h1>Gerelateerd</h1>
+			</header>
+			<section>
+				<p><a href="#">Link</a>
+				<a href="#">Link</a></p>
+			</section>
+		</div>
+
+		<div class="card">
+			<header>
+				<h1>Overig</h1>
+			</header>
+			<section>
+				<p><a href="#">Link</a>
+				<a href="#">Link</a></p>
+			</section>
+		</div>
+
+		<footer>
+			<div class="footer-section">
+				<div style="font-weight: bold;">Social media</div>
+				<a href="#">facebook</a>
+				<a href="#">youtube</a>
+			</div>
+			<div class="footer-section">
+				<div style="font-weight: bold;">Social media</div>
+				<a href="#">facebook</a>
+				<a href="#">youtube</a>
+			</div>
+			<div class="footer-section">
+				<div style="font-weight: bold;">Social media</div>
+				<a href="#">facebook</a>
+				<a href="#">youtube</a>
+			</div>
+			<div style="clear: both;"></div>
+		</footer>
+
+	</div>
+</body>
+
 </html>
