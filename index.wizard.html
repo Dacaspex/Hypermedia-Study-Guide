@@ -245,8 +245,8 @@
                 margin-right: auto;
                 width: 1000px;
                 height: 500px;
-                border: 3px solid #4d7fd1;
                 background-color: white;
+                box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
             }
             .wizard-inner {
                 width: 960px; # 1000 - 2 * 20
@@ -278,6 +278,22 @@
                 right: 0px;
                 font-size: 1.5em;
             }
+            .selection-card > .selection-card-icon {
+                position: relative;
+                width: 200px;
+                height: 200px;
+            }
+            .selection-card-icon > i.fa-user {
+                font-size: 100px;
+                line-height: 220px;
+            }
+            .selection-card-icon > i.fa-graduation-cap {
+                position: absolute;
+                top: 40px;
+                left: 65px;
+                font-size: 50px;
+                transform: rotate(20deg);
+            }
             .skip {
                 position: absolute;
                 right: 20px;
@@ -306,12 +322,24 @@
                     <p>Here you can select which type of user you are</p>
                     <div class="wizard-list">
                         <div class="selection-card">
+                            <div class="selection-card-icon">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                            </div>
                             <div class="title">Pre-student</div>
                         </div>
                         <div class="selection-card">
+                            <div class="selection-card-icon">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                            </div>
                             <div class="title">Bachelor student</div>
                         </div>
                         <div class="selection-card">
+                            <div class="selection-card-icon">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                            </div>
                             <div class="title">Master student</div>
                         </div>
                     </div>
