@@ -4,264 +4,16 @@
 	<title></title>
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
 	<meta name="HandheldFriendly" content="true"/>
 	<meta name="MobileOptimized" content="width" />
 	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<script src="js/carousel.js"></script>
-	<style type="text/css">
-		html,
-		body {
-			margin: 0;
-			font-family: 'Roboto', sans-serif;
-			background-color: #fcfcfc;
-			overflow-x: hidden;
-		}
-
-		.navbar {
-			width: 100%;
-			height: 65px;
-			top: 0px;
-			background-color: #4d7fd1;
-			color: white;
-			position: fixed;
-			z-index: 2;
-			box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2);
-		}
-
-		.navbar-inner {
-			width: 100%;
-			margin: 0 auto;
-		}
-
-		.left {
-			left: 10px;
-			float: left;
-			display: inline;
-			font-size: 25px;
-			height: 25px;
-			line-height: 65px;
-			text-align: center;
-			margin-left: 12px;
-		}
-
-		.center {
-			left: calc(50% - 50px);
-			position: absolute;
-			font-size: 25px;
-			height: 25px;
-			width: 100px;
-			line-height: 65px;
-			text-align: center;
-		}
-
-		.tue-slash {
-			color: #ff329f;
-		}
-
-		.right {
-			right: 10px;
-			float: right;
-			display: inline;
-			font-size: 30px;
-			height: 30px;
-			line-height: 65px;
-			text-align: center;
-			margin-right: 15px;
-		}
-
-		.right i {
-			margin-left: 15px;
-		}
-
-		.container {}
-
-		.header {
-			position: relative;
-			margin: 10px auto;
-			margin-top: 65px;
-			box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
-		}
-
-		.header-image {
-			width: 100%;
-			height: 100%;
-			overflow: hidden;
-		}
-
-		.header-image img {
-			width: 100%;
-			height: auto;
-			margin-top: -150px;
-		}
-
-		.brand {
-			padding: 5px 10px;
-			background-color: rgba(0, 0, 0, 0.7);
-			position: absolute;
-			bottom: 10px;
-			left: 10px;
-			font-size: 20px;
-			color: white;
-		}
-
-		.types {
-			height: 65px;
-		}
-
-		.types-list {
-			list-style-type: none;
-			padding-left: 0px;
-			margin: 0px;
-		}
-
-		.types-list li:not(:last-child) {
-			border-right: 1px solid lightgray;
-		}
-
-		.types-list li {
-			display: inline;
-			width: calc(100%*(1/3));
-			line-height: 65px;
-			float: left;
-			text-align: center;
-			font-size: 25px;
-			box-sizing: border-box;
-		}
-
-		.types-list .active {
-			background-color: white;
-			border-left: 2px solid #4d7fd1;
-		}
-
-		.types-list .inactive {
-			border-bottom: 1px solid lightgray;
-			background-color: #F5F5F5;
-		}
-
-		.studies {
-			clear: both;
-			margin-top: 2px;
-		}
-
-		.studies-list {
-			list-style-type: none;
-		}
-
-		.studies-list li {
-			width: 100%;
-			margin-top: 2px;
-			margin-bottom: 2px;
-		}
-
-		.card {
-			border: 1px solid lightgray;
-			box-sizing: border-box;
-			font-size: 16px;
-			background-color: white;
-			box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
-			margin-bottom: 25px;
-		}
-
-		.card>header {
-			border-left: 2px solid #4d7fd1;
-			margin: 10px;
-		}
-
-		.card>header>h1 {
-			margin: 0px;
-			margin-left: 10px;
-			font-size: 20px;
-		}
-
-		.card>time {
-			margin-left:10px;
-			font-size:14px;
-			color:grey;
-		}
-
-		.card>section {
-			padding: 10px;
-		}
-
-		.card>section>p {
-			margin: 0px;
-		}
-
-		.card a {
-			color:blue;
-			display:block;
-		}
-
-		.blue {
-			background-color: #4d7fd1;
-			color: white;
-			width: calc(100%*(1/3));
-			float: left;
-			border: none;
-			margin-bottom:0px;
-		}
-
-		.blue a {
-			color: white;
-			margin-top: 10px;
-			margin-bottom: 10px;
-		}
-
-		.blue h1>i {
-			margin-right: 20px;
-		}
-
-		.carousel {
-
-		}
-
-		.carousel-slide {
-			position: relative;
-			overflow: hidden;
-			overflow-x: scroll;
-		}
-
-		.carousel-slide::-webkit-scrollbar {
-			display:none;
-		}
-
-		.carousel-inner {
-			width: 300%;
-		}
-
-		.carousel-menu {
-			height:30px;
-			text-align:center;
-			clear:both;
-			background-color: #4d7fd1;
-			color:white;
-		}
-
-		footer {
-			background-color: #4d7fd1;
-			color:white;
-			box-sizing: border-box;
-			padding: 20px;
-			padding-top:30px;
-			padding-bottom:30px;
-			column-count:2;
-		}
-		footer a {
-			color:white;
-			text-decoration: none;
-			display:block;
-		}
-		.footer-section {
-			padding-top:10px;
-			padding-bottom:10px;
-			-webkit-column-break-inside:avoid;
-			-moz-column-break-inside:avoid;
-			-o-column-break-inside:avoid;
-			-ms-column-break-inside:avoid;
-			column-break-inside:avoid;
-		}
-	</style>
+	<script src="js/fadeHeader.js"></script>
+	<script src="js/listHandler.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/stylesheet_mobile.css"/>
 </head>
 
 <body>
@@ -276,40 +28,65 @@
 			</div>
 		</div>
 	</div>
+	<div class="navbar-spacing"></div>
 
 	<div class="header">
-		<div class="brand">Studyguide</div>
 		<div class="header-image">
 			<img src="https://virtualvisit.tue.nl/media/hotspot-data/science-park-1.jpg">
 		</div>
+		<div class="brand"><div>Studyguide</div></div>
 	</div>
 
 	<div class="container">
-
-		<div class="card">
-			<div class="types">
-				<ul class="types-list">
-					<li class="active">Bachelor</li>
-					<li class="inactive">Pre-Master</li>
-					<li class="inactive">Master</li>
-				</ul>
+		<div class="carousel card" clickable-menu="true">
+			<div class="carousel-menu types">
+					<div class="active">Bachelor<div></div></div>
+					<div class="inactive">Pre-Master<div></div></div>
+					<div class="inactive">Master<div></div></div>
 			</div>
-			<div class="studies">
-				<ul class="studies-list">
-					<li>Software Science</li>
-					<li>Psychology and Technology</li>
-					<li>...</li>
-					<li>...</li>
-					<li>...</li>
-					<li>...</li>
-				</ul>
+			<div class="studies expandable-list-body" closed-height="200px">
+				<div class="carousel-slide">
+					<div class="carousel-inner">
+						<ul class="studies-list carousel-element">
+							<li>Computer Science and Engineering</li>
+							<li>Psychology and Technology</li>
+							<li>Data Science</li>
+							<li>Automotive</li>
+							<li>Bouwkunde</li>
+							<li>Biomedische Technologie</li>
+							<li>Electrical Engineering</li>
+							<li>Industrial Design</li>
+						</ul>
+						<ul class="studies-list carousel-element">
+							<li>Computer Science and Engineering</li>
+							<li>Human-Technology Interaction</li>
+							<li>...</li>
+							<li>...</li>
+							<li>...</li>
+							<li>...</li>
+						</ul>
+						<ul class="studies-list carousel-element">
+							<li>Computer Science and Engineering</li>
+							<li>Human-Technology Interaction</li>
+							<li>...</li>
+							<li>...</li>
+							<li>...</li>
+							<li>...</li>
+							<li>...</li>
+							<li>...</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="expandable-list-bar">
+				<div class="expandable-list-button"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
 			</div>
 		</div>
 
-		<div class="carousel card">
+		<div class="carousel card" menu-animation="true">
 			<div class="carousel-slide">
 				<div class="carousel-inner">
-					<div class="card blue">
+					<div class="card blue carousel-element">
 						<header>
 							<h1><i class="fa fa-book" aria-hidden="true"></i>De studyguide</h1>
 						</header>
@@ -320,7 +97,7 @@
 						</section>
 					</div>
 
-					<div class="card blue">
+					<div class="card blue carousel-element">
 						<header>
 							<h1><i class="fa fa-user" aria-hidden="true"></i>Profielen</h1>
 						</header>
@@ -331,7 +108,7 @@
 						</section>
 					</div>
 
-					<div class="card blue">
+					<div class="card blue carousel-element">
 						<header>
 							<h1><i class="fa fa-graduation-cap" aria-hidden="true"></i>TU/e</h1>
 						</header>
@@ -343,10 +120,10 @@
 					</div>
 				</div>
 			</div>
-			<div class="carousel-menu">
-				<i class="fa fa-circle" aria-hidden="true"></i>
-				<i class="fa fa-circle-thin" aria-hidden="true"></i>
-				<i class="fa fa-circle-thin" aria-hidden="true"></i>
+			<div class="blue carousel-menu">
+				<div class="circle active"><div></div></div>
+				<div class="circle inactive"><div></div></div>
+				<div class="circle inactive"><div></div></div>
 			</div>
 		</div>
 
