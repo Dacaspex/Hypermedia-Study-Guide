@@ -257,6 +257,7 @@
             }
             .wizard-inner > h2 {
                 font-size: 2em;
+                margin: 10px;
             }
             .wizard-inner > .wizard-list {
                 width: 666px;
@@ -305,6 +306,26 @@
                 box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
                 color: white;
             }
+            .wizard-close {
+                position: absolute;
+                left: 20px;
+                top: 20px;
+            }
+            .wizard-close > i {
+                font-size: 1.5em;
+                color: grey;
+            }
+            .wizard-progress {
+                height: 30px;
+                line-height: 30px;
+            }
+            .wizard-progress > span {
+                color: lightgrey;
+                margin: 20px;
+            }
+            .wizard-progress > span.active {
+                color: black;
+            }
 
 		</style>
 	</head>
@@ -318,8 +339,15 @@
                 <div class="btn">Skip</div>
             </div>
                 <div class="wizard-inner">
+                    <div class="wizard-close">
+                        <i class="fa fa-times"></i>
+                    </div>
+                    <div class="wizard-progress">
+                        <span>1. Language selection <i class="fa fa-check"></i></span>
+                        <span class="active">2. User selection</span>
+                    </div>
                     <h2>Wizard</h2>
-                    <p>Here you can select which type of user you are</p>
+                    <p>Hello! Please tell us which type of user you are so we can provide you with the correct information</p>
                     <div class="wizard-list">
                         <div class="selection-card">
                             <div class="selection-card-icon">
