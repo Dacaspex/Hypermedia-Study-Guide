@@ -6,6 +6,9 @@
         <link href="https://fonts.googleapis.com/css?family=Open Sans:300" rel="stylesheet">
 		<script src="https://use.fontawesome.com/6d6b522626.js"></script>
 		<style type="text/css">
+			::selection {
+                background: #ffb7b7; /* WebKit/Blink Browsers */
+            }
 			h1 {
                 border-left: 4px solid #4d7fd1;
                 padding-left: 10px;
@@ -113,7 +116,7 @@
             	height: 20px;
             	background: linear-gradient(to left, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 100%);
             	top: 100%;
-            	left: 32px;
+            	left: 33px;
             	z-index: 1;
             }
             .bread-crumb:after {
@@ -157,6 +160,7 @@
                 margin: 0 auto;
                 background-color: #4d7fd1;
                 border: 1px solid lightgray;
+                border-bottom: none;
                 box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);
                 color: white;
                 box-sizing: border-box;
@@ -212,13 +216,70 @@
             table tr td:nth-child(2) {
             	float: right;
             }
+            .accordion i {
+            	padding-left: 0;
+            	font-size: 12px;
+            }
+            .acc-header {
+            	width: 100%;
+            	height: 50px;
+            	line-height: 50px;
+            	padding: 0 20px;
+            	box-sizing: border-box;
+            	background-color: #fcfcfc;
+            	border: 1px solid lightgray;
+            }
+            .acc-header:last-child {
+            	border-top: 0;
+            }
+            .acc-content {
+            	border-left: 1px solid lightgray;
+            	border-right: 1px solid lightgray;
+            	padding: 20px;
+            }
+            .search-bar {
+            	float: right;
+            }
+            .search-bar input {
+            	padding: 10px;
+            	border: 1px solid lightgray;
+                box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);
+                width: 114px;
+            }
+            .search-bar button {
+            	padding: 10px;
+            	border: 1px solid lightgray;
+                box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);
+                background-color: #4d7fd1;
+                color: white;
+            }
+            input:focus, button:focus{
+			    outline: none;
+			}
+			.alert {
+				float: right;
+				padding: 10px;
+				border: 1px solid #ff5959;
+				background-color: #ff9696;
+				color: white;
+				font-size: 14px;
+				margin-right: 20px;
+				box-shadow: 0px 2px 3px 0px rgba(224,33,33,0.47);
+				font-weight: 100;
+			}
+			.alert a {
+				font-weight: bold;
+				color: white;
+				display: inline;
+				text-decoration: none;
+			}
 		</style>
 	</head>
 	<body>
 		<div class="navbar">
 			<div class="navbar-inner">
 				<div class="left">Studiegids</div>
-				<div class="center" style="height: 35px">TU<span style="color: #ff329f;">/</span>e</div>
+				<div class="center">TU<span style="color: #ff329f;">/</span>e</div>
 				<div class="right">
                     <i class="fa fa-chevron-down" aria-hidden="true"></i>
                     <i class="fa fa-flag-o" aria-hidden="true"></i>
@@ -237,6 +298,15 @@
 		<div class="page">
 			<div class="bread-crumb">
 				<a href="#">home</a> / <a href="#">Majors</a> / <a href="#">Psychology and Technology</a>
+			</div>
+			<div class="search-bar">
+				<form>
+					<input type="text" name="search" placeholder="search...">
+					<button><i class="fa fa-search" aria-hidden="true"></i></button>
+				</form>
+			</div>
+			<div class="alert">
+				<i class="fa fa-exclamation" aria-hidden="true"></i> You might be looking for the <a href="#">P&T Introduction website</a><i class="fa fa-times" aria-hidden="true"></i>
 			</div>
 			<div style="clear: both;"></div>
 			<div id="hax" class="study-menu">
@@ -267,6 +337,19 @@
 					<li>acquire practical capabilities and skills relating to psychological research and development</li>
 					<li>acquire professional and generic academic skills</li>
 				</ul>
+				<div class="accordion">
+						<div class="acc-header"><i class="fa fa-minus" aria-hidden="true"></i> Een item</div>
+						<div class="acc-content">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</div>
+						<div class="acc-header"><i class="fa fa-plus" aria-hidden="true"></i> Een item</div>
+						<div class="acc-header"><i class="fa fa-plus" aria-hidden="true"></i> Een item</div>
+				</div>
 			</div>
 			<div style="float: left; width: calc(100%*(1.1/5) - 20px); margin-left: 20px">
 				<div class="card">
@@ -325,9 +408,9 @@
 	</body>
 </html>
 <script type="text/javascript">
-	window.onscroll = function() {
-	    if (document.body.scrollTop > 165 && document.body.scrollTop < 1000 || document.documentElement.scrollTop > 165 && document.documentElement.scrollTop < 1000) {
+	/*window.onscroll = function() {
+	    if (document.body.scrollTop > 165 && document.body.scrollTop < 748 || document.documentElement.scrollTop > 165 && document.documentElement.scrollTop < 748) {
 	        document.getElementById("hax").style.marginTop = document.body.scrollTop - 165 + "px";
 	    }
-	}
+	}*/
 </script>
