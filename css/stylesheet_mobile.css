@@ -449,26 +449,55 @@ p {
   color:white;
 }
 
-footer {
-  background-color: #4d7fd1;
-  color:white;
+.footer {
+  color: white;
   box-sizing: border-box;
-  padding: 20px;
-  padding-top:30px;
-  padding-bottom:30px;
-  column-count:2;
+  padding: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #4d7fd1;
+  border: 1px solid lightgray;
+  border-bottom: none;
+  box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);
 }
-footer a {
-  color:white;
-  text-decoration: none;
-  display:block;
+.footer a {
+    text-decoration: none;
 }
 .footer-section {
-  padding-top:10px;
-  padding-bottom:10px;
-  -webkit-column-break-inside:avoid;
-  -moz-column-break-inside:avoid;
-  -o-column-break-inside:avoid;
-  -ms-column-break-inside:avoid;
-  column-break-inside:avoid;
+  box-sizing: border-box;
+  width: 50%;
+  float: left;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  height:200px;
+}
+.footer-section:nth-child(even) {
+  padding-right: 0;
+}
+.footer-section > div {
+  margin-bottom: 10px;
+}
+.footer-section > a {
+  display: inline-block;
+}
+.footer i {
+  color:white;
+}
+.footer-section > span {
+  padding: 5px 0;
+  display: block;
+}
+.footer-section > a > i {
+  font-size: 2em;
+}
+.footer > .footer-bottom {
+  border-top: 1px solid white;
+  padding-top: 10px;
+}
+.footer > .footer-bottom > .language {
+  display: block;
+  float: right;
+}
+.footer > .footer-bottom > .language > .language-control {
+  color: #ccc;
 }
