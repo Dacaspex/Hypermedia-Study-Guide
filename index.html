@@ -21,6 +21,11 @@
                 background-color: #fcfcfc;
                 position: relative;
 			}
+            .navbar {
+                position: fixed;
+                z-index: 100000;
+                box-shadow: 0px 2px 3px 0px rgba(43, 63, 94,0.7);
+            }
 			.navbar,.menu {
 				width: 100%;
                 color: white;
@@ -33,12 +38,13 @@
 				margin: 0 auto;
 				position: relative;
 			}
-            .menu {
+            .menu {/*DISPLAY NONE, NOT NEEDED FOR LANDING PAGE*/
                 background-color: white;
-                height: 30px;
+                height: 0px;
                 color: black;
                 border-bottom: 1px solid lightgray;
                 position: relative;
+                padding-top: 50px;
                 box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);    
                 z-index: 1;
             }
@@ -72,7 +78,7 @@
                 position: relative;
                 max-width: 1000px;
                 margin: 20px auto;
-                height: 120px;
+                height: 113px;
                 /*padding: 20px;*/
                 box-sizing: border-box;
                 border: 1px solid lightgray;
@@ -86,11 +92,12 @@
             .header-image img {
                 width: 100%;
                 height: auto;
-                margin-top: -300px;
+                margin-top: -500px;
             }
             .brand {
                 padding: 10px 20px;
-                background-color: rgba(0,0,0,0.7    );
+                background-color: rgba(0,0,0,0.5);
+                border: 1px solid lightgray;
                 position: absolute;
                 bottom: 20px;
                 left: 20px;
@@ -151,8 +158,16 @@
                 width: calc(100%*(1/3));
                 float: left;
             }
+            .info-field > div {
+                
+            }
             .info-field a {
+                text-align: center;
+                border: 2px solid white;
                 color: white;
+                padding: 5px 10px;
+                display: inline;
+                text-decoration: none;
             }
             .info-field i {
                 padding-left: 0px;
@@ -196,6 +211,7 @@
                 margin: 0 auto;
                 background-color: #4d7fd1;
                 border: 1px solid lightgray;
+                border-bottom: none;
                 box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);
             }
             .small {
@@ -220,8 +236,37 @@
                 text-decoration: none;
             }
             .footer-section {
-                padding-right: 50px;
+            	box-sizing: border-box;
+                width: 25%;
                 float: left;
+            	padding-right: 20px;
+            }
+            .footer-section:nth-child(4) {
+            	padding-right: 0;
+            }
+            .footer-section > div {
+            	margin-bottom: 10px;
+            }
+            .footer-section > a {
+            	display: inline-block;
+            }
+            .footer-section > span {
+            	padding: 5px 0;
+            	display: block;
+            }
+            .footer-section > a > i {
+            	font-size: 2em;
+            }
+            .footer > .footer-bottom {
+            	border-top: 1px solid white;
+            	padding-top: 10px;
+            }
+            .footer > .footer-bottom > .language {
+            	display: block;
+            	float: right;
+            }
+            .footer > .footer-bottom > .language > .language-control {
+            	color: #ccc;
             }
 
             .study-links {
@@ -236,8 +281,14 @@
             	color: #666;
             	text-decoration: none;
             }
+            .study-links > a:last-child {
+                border-bottom: 1px solid lightgray;
+            }
             .study-links > a:nth-child(even) {
             	background-color: #F9F9F9;
+            }
+            .study-links > a:hover i {
+                margin-left: 5px;
             }
             .menu a {
             	float: left;
@@ -336,17 +387,17 @@ Mathematics</a>
             <div class="info-field">
                 <h1><i class="fa fa-book" aria-hidden="true"></i>De studyguide</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam auctor, magna id pharetra porta, metus nibh commodo sapien, ac tincidunt libero lectus vel eros. In porta ultricies porttitor. Mauris et tempor risus.</p>
-                <a href="#">lees meer</a>
+                <div><a href="#">lees meer</a></div>
             </div>
             <div class="info-field">
                 <h1><i class="fa fa-user" aria-hidden="true"></i>Profielen</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam auctor, magna id pharetra porta, metus nibh commodo sapien, ac tincidunt libero lectus vel eros. In porta ultricies porttitor. Mauris et tempor risus.</p>
-                <a href="#">verander profiel</a>
+                <div><a href="#">verander profiel</a></div>
             </div>
             <div class="info-field">
                 <h1><i class="fa fa-graduation-cap" aria-hidden="true"></i>TU/e</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam auctor, magna id pharetra porta, metus nibh commodo sapien, ac tincidunt libero lectus vel eros. In porta ultricies porttitor. Mauris et tempor risus.</p>
-                <a href="#">lees meer</a>
+                <div><a href="#">lees meer</a></div>
             </div>
             <div style="clear: both;"></div>
         </div>
@@ -411,22 +462,34 @@ Mathematics</a>
             <div style="clear: both;"></div>
         </div>
         <div class="footer">
+        	<div class="footer-section">
+        		<div style="font-weight: bold;">About</div>
+        		<p>
+        			This website is designed by students for students in order to structure the information in a better way.
+        		</p>
+        	</div>
             <div class="footer-section">
                 <div style="font-weight: bold;">Social media</div>
-                <a href="#">facebook</a>
-                <a href="#">youtube</a>
+                <a href="#"><i class="fa fa-facebook-square"></i></a>
+                <a href="#"><i class="fa fa-twitter-square"></i></a>
+                <a href="#"><i class="fa fa-youtube-square"></i></a>
             </div>
             <div class="footer-section">
-                <div style="font-weight: bold;">Social media</div>
-                <a href="#">facebook</a>
-                <a href="#">youtube</a>
+                <div style="font-weight: bold;">Address</div>
+                <span>Straatnaam 12</span>
+                <span>1234 AB</span>
+                <span>Eindhoven</span>
             </div>
             <div class="footer-section">
-                <div style="font-weight: bold;">Social media</div>
-                <a href="#">facebook</a>
-                <a href="#">youtube</a>
+                <div style="font-weight: bold;">Contact</div>
+                <span>emailaddress@tue.nl</span>
+                <span>040 123456</span>
             </div>
             <div style="clear: both;"></div>
+            <div class="footer-bottom">
+            	<span>Copyright 2016</span>
+            	<span class="language">Language: <span class="language-control">English</span></span>
+            </div>
         </div>
 	</body>
 </html>
