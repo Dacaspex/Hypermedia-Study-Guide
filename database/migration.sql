@@ -1,6 +1,7 @@
 CREATE TABLE IF NOT EXISTS `programs` (
   id            INT PRIMARY KEY AUTO_INCREMENT,
   name          VARCHAR(255),
+  slug          VARCHAR(255),
   type          ENUM('Bachelor', 'Pre Master', 'Master')
 ) ENGINE=InnoDB;
 
@@ -8,6 +9,7 @@ CREATE TABLE IF NOT EXISTS `pages` (
   id            INT PRIMARY KEY AUTO_INCREMENT,
   parent_id     INT UNSIGNED,
   name          VARCHAR(255),
+  slug          VARCHAR(255),
   type          ENUM('Bachelor', 'Pre Master', 'Master'),
 
   FOREIGN KEY fk_page(parent_id)
