@@ -8,16 +8,19 @@
 	<link rel="stylesheet" type="text/css" href="index.css">
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open Sans:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open Sans:300" rel="stylesheet">
 	<script src="https://use.fontawesome.com/6d6b522626.js"></script>
-
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+	<script src="js/carousel.js"></script>
+	<script src="js/fadeHeader.js"></script>
+	<script src="js/listHandler.js"></script>
 </head>
 <body>
 	<div class="preferences-wizard">
-			
+
 	</div>
 	<div class="navbar">
 		<div class="navbar-inner">
@@ -25,10 +28,12 @@
 			<div class="brand">TU/e</div>
 			<div class="preferences">
 				<i class="fa fa-chevron-down" aria-hidden="true"></i>
-                <i class="fa fa-flag-o" aria-hidden="true"></i>
-                <i class="fa fa-user-o" aria-hidden="true"></i>
+        <i class="fa fa-flag-o" aria-hidden="true"></i>
+        <i class="fa fa-user-o" aria-hidden="true"></i>
 			</div>
 		</div>
+	</div>
+	<div class="navbar-spacing"></div>
 
 		<header>
 			<div class="product">Studyguide</div>
