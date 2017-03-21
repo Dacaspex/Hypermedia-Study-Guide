@@ -6,18 +6,19 @@
 */
 class ContentController
 {
+    private $templates;
 
 	private $PDO;
 	
-	function __construct($PDO)
+	function __construct(\League\Plates\Engine $templates, $PDO)
 	{
+        $this->templates = $templates;
 		$this->PDO = $PDO;
 	}
 
 	function index($programSlug, $pageSlug)
 	{
-
-		return 'hoi';
+        return $this->templates->render('program/show');
 
 		// Prepare query
 		$stmt = $this->PDO->prepare("SELECT * FROM content WHERE program_id = (SELECT id FROM programs WHERE slug = :programSlug) AND page_id = (SELECT id FROM pages WHERE slug = :pageSlug)");

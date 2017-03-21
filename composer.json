@@ -1,5 +1,6 @@
 {
     "require": {
-        "nikic/fast-route": "^1.2"
+        "nikic/fast-route": "^1.2",
+        "league/plates": "^3.3"
     }
 }
