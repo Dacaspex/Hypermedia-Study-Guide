@@ -17,6 +17,8 @@ class ContentController
 	function index($programSlug, $pageSlug)
 	{
 
+		return 'hoi';
+
 		// Prepare query
 		$stmt = $this->PDO->prepare("SELECT * FROM content WHERE program_id = (SELECT id FROM programs WHERE slug = :programSlug) AND page_id = (SELECT id FROM pages WHERE slug = :pageSlug)");
 		$stmt->bindValue(':programSlug', $programSlug);

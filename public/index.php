@@ -15,7 +15,7 @@ if (($pos = strpos($uri, '?')) !== false) {
 
 $uri = rawurldecode($uri);
 
-$routeInfo = $dispatcher->dispatch($method, $uri);
+$routeInfo = $dispatcher->dispatch($method, $uri);  
 switch ($routeInfo[0]) {
     case FastRoute\Dispatcher::NOT_FOUND:
         break;
@@ -25,6 +25,6 @@ switch ($routeInfo[0]) {
         $handler = $routeInfo[1];
         $vars = $routeInfo[2];
 
-        echo $handler(...$vars);
+        echo $handler(...array_keys($vars));
         break;
 }
