@@ -1,6 +1,7 @@
 {
     "require": {
         "nikic/fast-route": "^1.2",
-        "league/plates": "^3.3"
+        "league/plates": "^3.3",
+        "vlucas/phpdotenv": "^2.4"
     }
 }
