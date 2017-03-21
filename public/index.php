@@ -2,8 +2,13 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
+$dotenv = new Dotenv\Dotenv(__DIR__ . '/..');
+$dotenv->load();
+
 $method = $_SERVER['REQUEST_METHOD'];
 $uri = $_SERVER['REQUEST_URI'];
+
+$connection = new PDO('mysql:host=' . getenv('DB_HOST') . ';dbname=' . getenv('DB_NAME'), getenv('DB_USERNAME'), getenv('DB_PASSWORD'));
 
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $routes) {
     require __DIR__ . '/../app/routes.php';
