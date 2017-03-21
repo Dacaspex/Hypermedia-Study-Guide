@@ -1,8 +1,8 @@
 CREATE TABLE IF NOT EXISTS `programs` (
   id            INT UNSIGNED AUTO_INCREMENT,
-  name          VARCHAR(255),
-  slug          VARCHAR(255),
-  type          ENUM('Bachelor', 'Pre Master', 'Master'),
+  name          VARCHAR(255) NOT NULL,
+  slug          VARCHAR(255) UNIQUE NOT NULL,
+  type          ENUM('Bachelor', 'Pre Master', 'Master') NOT NULL,
 
   PRIMARY KEY(id)
 ) ENGINE=InnoDB;
@@ -10,9 +10,9 @@ CREATE TABLE IF NOT EXISTS `programs` (
 CREATE TABLE IF NOT EXISTS `pages` (
   id            INT UNSIGNED AUTO_INCREMENT,
   parent_id     INT UNSIGNED,
-  name          VARCHAR(255),
-  slug          VARCHAR(255),
-  type          ENUM('Bachelor', 'Pre Master', 'Master'),
+  name          VARCHAR(255) NOT NULL,
+  slug          VARCHAR(255) UNIQUE NOT NULL,
+  type          ENUM('Bachelor', 'Pre Master', 'Master') NOT NULL,
 
   PRIMARY KEY(id),
 
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `curriculi` (
   id            INT UNSIGNED AUTO_INCREMENT,
   quarter       INT UNSIGNED,
   year          INT UNSIGNED,
-  name          VARCHAR(255),
+  name          VARCHAR(255) NOT NULL,
 
   PRIMARY KEY(id)
 ) ENGINE=InnoDB;
