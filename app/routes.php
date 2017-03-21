@@ -11,7 +11,7 @@ $routes->addRoute('GET', '/', function() {
     return $ctrl->index();
 });
 
-$routes->addRoute('GET', '/{programSlug}/{pageSlug}', function($programSlug, $pageSlug) {
-    $ctrl = new ContentController($views, null);
+$routes->addRoute('GET', '/{programSlug}/{pageSlug}', function($programSlug, $pageSlug) use ($templates) {
+    $ctrl = new ContentController($templates, null);
     return $ctrl->index($programSlug, $pageSlug);
 });
