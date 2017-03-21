@@ -9,15 +9,17 @@ class Content
 	private $programName;
 	private $pageName;
 	private $body;
+	private $imageLink;
 	private $createdAt;
 	private $updatedAt;
 	
-	function __construct($id, $programName, $pageName, $body, $createdAt, $updatedAt)
+	function __construct($id, $programName, $pageName, $body, $imageLink, $createdAt, $updatedAt)
 	{
 		$this->id = $id;
 		$this->programName = $programName;
 		$this->pageName = $pageName;
 		$this->body = $body;
+		$this->imageLink = $imageLink;
 		$this->createdAt = $createdAt;
 		$this->updatedAt = $updatedAt;
 	}
@@ -41,6 +43,11 @@ class Content
 	{
 		return $this->body;
 	}
+
+	public function getImageLink()
+    {
+        return $this->imageLink;
+    }
 
 	public function getCreatedAt()
 	{

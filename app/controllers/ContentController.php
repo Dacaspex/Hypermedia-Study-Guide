@@ -22,7 +22,7 @@ class ContentController
 	{
 
 	    // Debug
-        $content = new Content(1, 'Program name', 'Page name', 'Body', 2, 3);
+        $content = new Content(1, 'Program name', 'Page name', 'Body', 'https://www.tue.nl/fileadmin/_processed_/0/6/csm__WH33865_purple_gradient_a3138296f6.png', 2, 3);
         return $this->templates->render('program', compact('content'));
 
 		// Prepare query
