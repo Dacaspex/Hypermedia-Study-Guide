@@ -13,6 +13,6 @@ $routes->addRoute('GET', '/', function() use ($templates, $connection) {
 });
 
 $routes->addRoute('GET', '/{programSlug}/{pageSlug}', function($programSlug, $pageSlug) use ($templates, $connection) {
-    $ctrl = new ContentController($templates, $connection);
+    $ctrl = new ContentController($templates, new ContentRetriever($connection));
     return $ctrl->index($programSlug, $pageSlug);
 });

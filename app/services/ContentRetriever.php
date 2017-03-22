@@ -12,12 +12,20 @@ class ContentRetriever
         $this->pdo = $pdo;
     }
 
+    /**
+     * Get the full content associated with a page.
+     *
+     * @param $programSlug
+     * @param $pageSlug
+     * @return Content
+     * @throws RuntimeException If the page was not found.
+     */
     public function getPageContent($programSlug, $pageSlug)
     {
         $program = $this->getProgram($programSlug);
         $page = $this->getPage($pageSlug);
 
-        $content = $this->getContent($page->getId(), $program->getId());
+        return $this->getContent($page->getId(), $program->getId());
     }
 
     /**
@@ -32,14 +40,18 @@ class ContentRetriever
         $statement = $this->pdo->prepare("SELECT * FROM programs WHERE slug = ?");
         $statement->bindParam(0, $slug);
 
-        $statement->execute();
+        $result = $this->getFirst($statement);
 
-        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-        if (count($results) !== 1) {
-            throw new RuntimeException("Found no results for the program '{$slug}'.");
-        }
-
-        // TODO: map results to Program Model
+        return new Program(
+            $result['id'],
+            $result['name'],
+            $result['type'],
+            $result['num_students'],
+            $result['num_courses'],
+            $result['num_graduates'],
+            $result['contact'],
+            [] // TODO: fetch the links as well
+        );
     }
 
     /**
@@ -54,6 +66,49 @@ class ContentRetriever
         $statement = $this->pdo->prepare("SELECT * FROM pages WHERE slug = ?");
         $statement->bindParam(0, $slug);
 
+        $result = $this->getFirst($statement);
+
+        return new Page(
+            $result['id'],
+            $result['parent_id'],
+            $result['name'],
+            $result['type']
+        );
+    }
+
+    /**
+     * Get the content that the specified program has for this course.
+     *
+     * @param Page $page
+     * @param Program $program
+     * @return Content
+     * @throws RuntimeException If no content was found for this page.
+     */
+    private function getContent(Page $page, Program $program)
+    {
+        $statement = $this->pdo->prepare("SELECT * FROM content WHERE program_id = ? AND page_id = ?");
+        $statement->bindParam(0, $program->getId());
+        $statement->bindParam(1, $page->getId());
+
+        $result = $this->getFirst($statement);
+
+        return new Content(
+            $result['id'],
+            $program,
+            $page,
+            $result['body']
+        );
+    }
+
+    /**
+     * Get the first result from the st
+     *
+     * @param PDOStatement $statement
+     * @return array
+     * @throws RuntimeException If no results were found.
+     */
+    private function getFirst(PDOStatement $statement)
+    {
         $statement->execute();
 
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -61,6 +116,6 @@ class ContentRetriever
             throw new RuntimeException("Found no results for the program '{$slug}'.");
         }
 
-        // TODO: map results to Page Model
+        return $results[0];
     }
 }
