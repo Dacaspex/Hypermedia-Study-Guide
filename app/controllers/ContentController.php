@@ -8,22 +8,26 @@ include_once __DIR__ . '\..\models\Content.php';
 */
 class ContentController
 {
+    /**
+     * @var \League\Plates\Engine
+     */
     private $templates;
 
-	private $PDO;
+    /**
+     * @var ContentRetriever
+     */
+	private $retriever;
 	
-	function __construct(\League\Plates\Engine $templates, $PDO)
+	function __construct(\League\Plates\Engine $templates, ContentRetriever $retriever)
 	{
         $this->templates = $templates;
-		$this->PDO = $PDO;
+		$this->retriever = $retriever;
 	}
 
 	function index($programSlug, $pageSlug)
 	{
+        $content = $this->retriever->getPageContent($programSlug, $pageSlug);
 
-	    // Debug
-        $content = new Content(1, 'Program name', 'Page name', 'Body', 'https://www.tue.nl/fileadmin/_processed_/0/6/csm__WH33865_purple_gradient_a3138296f6.png', 2, 3);
         return $this->templates->render('program', compact('content'));
-
 	}
 }
