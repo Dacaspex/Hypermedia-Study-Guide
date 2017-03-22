@@ -3,7 +3,6 @@
 class HomeController
 {
     private $templates;
-
     private $PDO;
 
     function __construct(\League\Plates\Engine $templates, $PDO)

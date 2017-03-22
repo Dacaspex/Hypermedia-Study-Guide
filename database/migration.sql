@@ -63,6 +63,11 @@ CREATE TABLE IF NOT EXISTS `curriculi` (
   quarter       INT UNSIGNED,
   year          INT UNSIGNED,
   name          VARCHAR(255) NOT NULL,
+  program_id    INT UNSIGNED,
 
-  PRIMARY KEY(id)
+  PRIMARY KEY(id),
+
+  FOREIGN KEY fk_program_curriculi(program_id)
+    REFERENCES programs(id)
+    ON DELETE CASCADE
 ) ENGINE=InnoDB;
