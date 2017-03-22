@@ -1,42 +1,73 @@
 CREATE TABLE IF NOT EXISTS `programs` (
-  id            INT PRIMARY KEY AUTO_INCREMENT,
-  name          VARCHAR(255),
-  slug          VARCHAR(255),
-  type          ENUM('Bachelor', 'Pre Master', 'Master')
+  id            INT UNSIGNED AUTO_INCREMENT,
+  name          VARCHAR(255) NOT NULL,
+  slug          VARCHAR(255) UNIQUE NOT NULL,
+  type          ENUM('bachelor', 'pre-master', 'master') NOT NULL,
+  num_students  INT UNSIGNED,
+  num_courses   INT UNSIGNED,
+  num_grads     INT UNSIGNED,
+  contact       VARCHAR(255) NOT NULL,
+
+  PRIMARY KEY(id)
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS `links` (
+  id            INT UNSIGNED AUTO_INCREMENT,
+  name          VARCHAR(255) NOT NULL,
+  destination   VARCHAR(255) NOT NULL,
+  program_id    INT UNSIGNED,
+
+  PRIMARY KEY(id),
+
+  FOREIGN KEY fk_link_program(program_id)
+    REFERENCES programs(id)
+    ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS `pages` (
-  id            INT PRIMARY KEY AUTO_INCREMENT,
+  id            INT UNSIGNED AUTO_INCREMENT,
   parent_id     INT UNSIGNED,
-  name          VARCHAR(255),
-  slug          VARCHAR(255),
-  type          ENUM('Bachelor', 'Pre Master', 'Master'),
+  name          VARCHAR(255) NOT NULL,
+  slug          VARCHAR(255) UNIQUE NOT NULL,
+  type          ENUM('bachelor', 'pre-master', 'master') NOT NULL,
 
-  FOREIGN KEY fk_page(parent_id)
+  PRIMARY KEY(id),
+
+  FOREIGN KEY fk_page_page(parent_id)
     REFERENCES pages(id)
     ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS `content` (
-  id            INT PRIMARY KEY AUTO_INCREMENT,
+  id            INT UNSIGNED AUTO_INCREMENT,
   program_id    INT UNSIGNED,
   page_id       INT UNSIGNED,
   body          TEXT DEFAULT '',
+  lang          ENUM('en', 'nl') DEFAULT 'en',
   updated_at    DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   created_at    DATETIME DEFAULT CURRENT_TIMESTAMP,
 
-  FOREIGN KEY fk_program(program_id)
+  PRIMARY KEY(id),
+
+  FOREIGN KEY fk_program_content(program_id)
     REFERENCES programs(id)
     ON DELETE CASCADE,
 
-  FOREIGN KEY fk_page(page_id)
+  FOREIGN KEY fk_page_content(page_id)
     REFERENCES pages(id)
     ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS `curriculi` (
-  id            INT PRIMARY KEY AUTO_INCREMENT,
-  quarter       ENUM(1, 2, 3, 4),
-  year          ENUM(1, 2, 3),
-  name          VARCHAR(255)
+  id            INT UNSIGNED AUTO_INCREMENT,
+  quarter       INT UNSIGNED,
+  year          INT UNSIGNED,
+  name          VARCHAR(255) NOT NULL,
+  program_id    INT UNSIGNED,
+
+  PRIMARY KEY(id),
+
+  FOREIGN KEY fk_program_curriculi(program_id)
+    REFERENCES programs(id)
+    ON DELETE CASCADE
 ) ENGINE=InnoDB;
