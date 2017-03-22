@@ -10,7 +10,7 @@ $uri = $_SERVER['REQUEST_URI'];
 
 $connection = new PDO('mysql:host=' . getenv('DB_HOST') . ';dbname=' . getenv('DB_NAME'), getenv('DB_USERNAME'), getenv('DB_PASSWORD'));
 
-$dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $routes) {
+$dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $routes) use ($connection) {
     require __DIR__ . '/../app/routes.php';
 });
 

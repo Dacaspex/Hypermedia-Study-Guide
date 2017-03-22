@@ -1,9 +1,6 @@
  
 <?php
 
-/**
-* 
-*/
 class Program
 {
 	private $id;
