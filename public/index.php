@@ -9,9 +9,8 @@ $method = $_SERVER['REQUEST_METHOD'];
 $uri = $_SERVER['REQUEST_URI'];
 
 $connection = new PDO('mysql:host=' . getenv('DB_HOST') . ';dbname=' . getenv('DB_NAME'), getenv('DB_USERNAME'), getenv('DB_PASSWORD'));
-$templates = new \League\Plates\Engine(__DIR__ . '/views');
 
-$dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $routes) use ($connection, $templates) {
+$dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $routes) use ($connection) {
     require __DIR__ . '/../app/routes.php';
 });
 
@@ -26,16 +25,11 @@ switch ($routeInfo[0]) {
     case FastRoute\Dispatcher::NOT_FOUND:
         break;
     case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
-        echo $templates->render('404');
         break;
     case FastRoute\Dispatcher::FOUND:
         $handler = $routeInfo[1];
         $vars = $routeInfo[2];
 
-        try {
-            echo $handler(...array_keys($vars));
-        } catch (RuntimeException $e) {
-            echo $templates->render('404');
-        }
+        echo $handler(...array_keys($vars));
         break;
 }

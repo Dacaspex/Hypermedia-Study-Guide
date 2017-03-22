@@ -1,15 +1,14 @@
-<?php $this->layout('base') ?>
+<?php $this->layout('base'); ?>
 
 <div class="page">
     <div class="card card-image">
-        <img src="<?= $content->getImageLink() ?>">
+        <img src="">
     </div>
 </div>
 
 <div class="page">
     <div class="card">
-        <h1> <?= $content->getProgramName(); ?> <span class="small">/ major</span></h1>
-        <?= $content->getBody(); ?>
+        <h1><span class="small"><?= $content->getProgram()->getName(); ?> / Major</span></h1>
     </div>
 </div>
 <div class="page">
