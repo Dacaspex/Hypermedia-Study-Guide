@@ -1,15 +1,15 @@
 $( document ).ready(function() {
 
-  $("div.expandable-list-body").each( function() {
+  $("div.js-expandable-list-body").each( function() {
 
     var $this = $(this);
     var expanded = false;
     var animationSpeed = 200;
     var closedHeight = $this.attr("closed-height");
-    var $bar = $this.parent().children(".expandable-list-bar");
-    var $button = $bar.children(".expandable-list-button");
+    var $bar = $this.parent().children(".js-expandable-list-bar");
+    var $button = $bar.children(".js-expandable-list-button");
     var $icon = $button.children("i");
-    var $menu = $this.parent().children(".carousel-menu");
+    var $menu = $this.parent().children(".js-carousel-menu");
 
     $this.css("height", closedHeight);
 

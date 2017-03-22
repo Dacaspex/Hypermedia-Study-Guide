@@ -1,10 +1,10 @@
 $( document ).ready(function() {
 
-  var $left = $(".navbar-inner").children(".left");
-  var $center = $(".navbar-inner").children(".center");
-  var $header = $(".header");
-  var $brand = $header.children(".brand");
-  var $headerImg = $header.children(".header-image");
+  var $left = $(".js-navbar").find(".js-product");
+  var $center = $(".js-navbar").find(".js-brand");
+  var $header = $(".js-header");
+  var $brand = $header.children(".js-product");
+  var $headerImg = $header.children(".js-header-image");
 
   if($brand.length){
     $left.css("color", "rgba(0,0,0,0)");
@@ -17,9 +17,11 @@ $( document ).ready(function() {
     if($brand.length){
       //Perform animation
       if($( document ).width() > 360){
-        $center.css("left", "calc((50% - 50px) * "+val+")");
+        $center.css("left", "calc((50% * "+val+" + "+20*(1-val)+"px)");
+        $center.css("transform", "translateX(-" + (50 * val) + "%)");
       } else{
-        $center.css("left", "calc((50% - 50px) * "+(val*-1)+")");
+        $center.css("left", "calc((50% * "+(val*-1)+" + 20px)");
+        $center.css("transform", "translateX(-" + (50 * val) + "%)");
       }
       if(val == 1){
         $brand.css("position", "fixed");

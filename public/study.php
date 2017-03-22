@@ -11,13 +11,13 @@
     <link href="https://fonts.googleapis.com/css?family=Open Sans:300" rel="stylesheet">
 	<script src="https://use.fontawesome.com/6d6b522626.js"></script>
 
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+	<!--<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>-->
 </head>
 <body><div>
 	<div class="preferences-wizard">
-			
+
 	</div>
 
 	<div class="navbar">
@@ -71,7 +71,7 @@
 			<div class="card card-gray">
 				<h1>Gerelateerd</h1>
 			</div>
-		</div>	
+		</div>
 	</div></div>
 </body>
 </html>

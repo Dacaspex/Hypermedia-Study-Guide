@@ -1,14 +1,14 @@
 $( document ).ready(function() {
 
-  $("div.carousel").each( function() {
+  $(".js-carousel").each( function() {
 
     var $this = $(this);
     var animationSpeed = 200;
     var clickableMenu = ($this.attr("clickable-menu") == 'true');
     var menuAnimation = ($this.attr("menu-animation") == 'true');
-    var $slide = $this.find(".carousel-slide");
-    var $inner = $this.find(".carousel-inner");
-    var $menu = $this.find(".carousel-menu");
+    var $slide = $this.find(".js-carousel-slide");
+    var $inner = $this.find(".js-carousel-inner");
+    var $menu = $this.find(".js-carousel-menu");
     var $curElement = $inner.children(":first-child");
     var $curMenuElement = $menu.children(":first-child");
 

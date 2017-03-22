@@ -1,0 +1,127 @@
+.study-menu {
+  height:65px;
+}
+
+.study-menu > div:not(:last-child) {
+  border-right: 1px solid lightgray;
+}
+
+.study-menu-item {
+  display:inline;
+  width: calc(100%*(1/3));
+  float:left;
+  line-height:65px;
+  text-align:center;
+  font-size:5vw;
+  box-sizing:border-box;
+  border-bottom:1px solid lightgray;
+  background-color: #F5F5F5;
+}
+
+.study-menu > .active {
+  background-color:white;
+  border-left:2px solid #4d7fd1;
+  border-bottom:none;
+}
+
+.study-list {
+  clear:both;
+  margin-top:2px;
+  overflow:hidden;
+  padding:20px 0px;
+}
+
+.study-list-item {
+  padding:20px;
+}
+
+.study-list-item > ul {
+  list-style-type:none;
+  overflow:hidden;
+  margin:0px;
+  padding:0px;
+}
+
+.study-list-item > ul > li {
+  margin:5px 20px;
+  padding:10px;
+  height:40px;
+  line-height:40px;
+  border:1px solid lightgray;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.study-list-item > ul > li > a {
+  text-decoration: none;
+  color:black;
+}
+
+.study-list-expand {
+  box-shadow: 0px -30px 90px 30px #FFF;
+  z-index:1;
+  position:relative;
+  text-align:center;
+  height:0px;
+  margin-bottom:20px;
+}
+
+.study-list-expand > div {
+  width:40px;
+  height:40px;
+  background-color:#4d7fd1;
+  border-radius:40px;
+  display:inline-block;
+  position:relative;
+  box-shadow: 1px 3px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+.study-list-expand > div > i {
+  font-size:40px;
+  line-height:40px;
+  color:white;
+}
+
+/*
+  DESKTOP STYLING
+*/
+@media screen and (min-width: 700px) {
+  .study-menu {
+    width:calc(100%*(1/3));
+    float:left;
+    height:auto;
+  }
+
+  .study-menu-item {
+    width:initial;
+    display:block;
+    float:none;
+    line-height:normal;
+    text-align:left;
+    font-size:2em;
+    box-sizing:border-box;
+    border-right:1px solid lightgray;
+    padding:20px;
+  }
+
+  .study-list > .hor-scroll {
+    overflow:visible;
+  }
+
+  .study-list {
+    width:calc(100%*(2/3));
+    float:left;
+    clear:none;
+  }
+
+  .study-list-item {
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100% !important;
+  }
+
+
+  .study-list-expand {
+    clear:both;
+  }
+}
