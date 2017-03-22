@@ -10,7 +10,7 @@ class Program
 	private $numCourses;
 	private $numGrads;
 	private $contactLink;
-	private $links;
+	private $links; // Array of instances of the Link model
 	
 	function __construct($id, $name, $type, $numStudents, $numCourses, $numGrads, $contactLink, $links)
 	{
