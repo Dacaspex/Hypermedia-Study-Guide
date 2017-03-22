@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS `programs` (
   id            INT UNSIGNED AUTO_INCREMENT,
   name          VARCHAR(255) NOT NULL,
   slug          VARCHAR(255) UNIQUE NOT NULL,
-  type          ENUM('Bachelor', 'Pre Master', 'Master') NOT NULL,
+  type          ENUM('bachelor', 'pre-master', 'master') NOT NULL,
   num_students  INT UNSIGNED,
   num_courses   INT UNSIGNED,
   num_grads     INT UNSIGNED,
@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `pages` (
   parent_id     INT UNSIGNED,
   name          VARCHAR(255) NOT NULL,
   slug          VARCHAR(255) UNIQUE NOT NULL,
-  type          ENUM('Bachelor', 'Pre Master', 'Master') NOT NULL,
+  type          ENUM('bachelor', 'pre-master', 'master') NOT NULL,
 
   PRIMARY KEY(id),
 
