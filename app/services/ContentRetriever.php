@@ -15,8 +15,8 @@ class ContentRetriever
     /**
      * Get the full content associated with a page.
      *
-     * @param $programSlug
-     * @param $pageSlug
+     * @param string $programSlug
+     * @param string $pageSlug
      * @return Content
      * @throws RuntimeException If the page was not found.
      */
@@ -40,7 +40,7 @@ class ContentRetriever
         $statement = $this->pdo->prepare("SELECT * FROM programs WHERE slug = ?");
         $statement->bindParam(1, $slug);
 
-        $result = $this->getFirst($statement);
+        $result = $this->getFirst($statement, "program");
 
         return new Program(
             $result['id'],
@@ -48,7 +48,7 @@ class ContentRetriever
             $result['type'],
             $result['num_students'],
             $result['num_courses'],
-            $result['num_graduates'],
+            $result['num_grads'],
             $result['contact'],
             [] // TODO: fetch the links as well
         );
@@ -66,7 +66,7 @@ class ContentRetriever
         $statement = $this->pdo->prepare("SELECT * FROM pages WHERE slug = ?");
         $statement->bindParam(1, $slug);
 
-        $result = $this->getFirst($statement);
+        $result = $this->getFirst($statement, "page");
 
         return new Page(
             $result['id'],
@@ -90,7 +90,7 @@ class ContentRetriever
         $statement->bindParam(1, $program->getId());
         $statement->bindParam(2, $page->getId());
 
-        $result = $this->getFirst($statement);
+        $result = $this->getFirst($statement, "content");
 
         return new Content(
             $result['id'],
@@ -104,16 +104,17 @@ class ContentRetriever
      * Get the first result from the st
      *
      * @param PDOStatement $statement
+     * @param string $type
      * @return array
      * @throws RuntimeException If no results were found.
      */
-    private function getFirst(PDOStatement $statement)
+    private function getFirst(PDOStatement $statement, $type)
     {
         $statement->execute();
 
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
         if (count($results) !== 1) {
-            throw new RuntimeException("Found no results");
+            throw new RuntimeException("Found no results for " . $type);
         }
 
         return $results[0];

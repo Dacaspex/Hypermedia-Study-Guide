@@ -30,6 +30,6 @@ switch ($routeInfo[0]) {
         $handler = $routeInfo[1];
         $vars = $routeInfo[2];
 
-        echo $handler(...array_keys($vars));
+        echo $handler(...array_values($vars));
         break;
 }
