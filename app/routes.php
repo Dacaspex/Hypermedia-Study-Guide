@@ -6,8 +6,6 @@
 //include_once(__DIR__ . '/controllers/HomeController.php');
 //include(__DIR__ . '/services/ContentRetriever.php');
 
-$templates = new \League\Plates\Engine(__DIR__ . '/views');
-
 $routes->addRoute('GET', '/', function() use ($templates, $connection) {
     $ctrl = new HomeController($templates, $connection);
     return $ctrl->index();
