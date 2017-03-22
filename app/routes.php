@@ -2,12 +2,17 @@
 
 /** @var $routes \FastRoute\RouteCollector */
 
-$routes->addRoute('GET', '/', function() {
-    $ctrl = new HomeController();
+$routes->addRoute('GET', '/', function() use ($templates, $connection) {
+    $ctrl = new HomeController($templates, $connection);
     return $ctrl->index();
 });
 
-$routes->addRoute('GET', '/{programSlug}/{pageSlug}', function($programSlug, $pageSlug) {
-    $ctrl = new ContentController();
-    return $ctrl->index($programSlug, $pageSlug);
+$routes->addRoute('GET', '/{type:^bachelor$|^pre-master$|^master$}/{programSlug}/{pageSlug}', function($type, $programSlug, $pageSlug) use ($templates, $connection) {
+    $ctrl = new ContentController($templates, new ContentRetriever($connection));
+    return $ctrl->index($type, $programSlug, $pageSlug);
+});
+
+$routes->addRoute('GET', '/{programSlug}/curriculum', function ($programSlug) use ($templates, $connection) {
+   $ctrl = new CurriculumController($templates, $connection);
+   return $ctrl->index($programSlug);
 });
