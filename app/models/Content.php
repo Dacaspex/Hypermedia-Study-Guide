@@ -6,22 +6,16 @@
 class Content
 {
 	private $id;
-	private $programName;
-	private $pageName;
+	private $program;
+	private $page;
 	private $body;
-	private $imageLink;
-	private $createdAt;
-	private $updatedAt;
 	
-	function __construct($id, $programName, $pageName, $body, $imageLink, $createdAt, $updatedAt)
+	function __construct($id, $program, $page, $body)
 	{
 		$this->id = $id;
-		$this->programName = $programName;
-		$this->pageName = $pageName;
+		$this->program = $program;
+		$this->page = $page;
 		$this->body = $body;
-		$this->imageLink = $imageLink;
-		$this->createdAt = $createdAt;
-		$this->updatedAt = $updatedAt;
 	}
 
 	public function getId()
@@ -29,34 +23,19 @@ class Content
 		return $this->id;
 	}
 
-	public function getProgramName()
-	{
-		return $this->programName;
-	}
-
-	public function getPageName()
-	{
-		return $this->pageName;
-	}
-
-	public function getBody()
-	{
-		return $this->body;
-	}
-
-	public function getImageLink()
+	public function getProgram()
     {
-        return $this->imageLink;
+        return $this->program;
     }
 
-	public function getCreatedAt()
-	{
-		return $this->createdAt;
-	}
+    public function getPage()
+    {
+        return $this->page;
+    }
 
-	public function getUpdatedAt()
-	{
-		return $this->updatedAt;
-	}
+    public function getBody()
+    {
+        return $this->body;
+    }
 
 }
