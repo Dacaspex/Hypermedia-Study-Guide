@@ -113,7 +113,7 @@ class ContentRetriever
 
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
         if (count($results) !== 1) {
-            throw new RuntimeException("Found no results for the program '{$slug}'.");
+            throw new RuntimeException("Found no results");
         }
 
         return $results[0];
