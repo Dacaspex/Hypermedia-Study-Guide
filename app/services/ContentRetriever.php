@@ -25,7 +25,7 @@ class ContentRetriever
         $program = $this->getProgram($programSlug);
         $page = $this->getPage($pageSlug);
 
-        return $this->getContent($page->getId(), $program->getId());
+        return $this->getContent($page, $program);
     }
 
     /**
