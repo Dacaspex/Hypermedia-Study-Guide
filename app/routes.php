@@ -2,8 +2,9 @@
 
 /** @var $routes \FastRoute\RouteCollector */
 
-include_once(__DIR__ . '/controllers/ContentController.php');
-include_once (__DIR__ . '/controllers/HomeController.php');
+//include_once(__DIR__ . '/controllers/ContentController.php');
+//include_once(__DIR__ . '/controllers/HomeController.php');
+//include(__DIR__ . '/services/ContentRetriever.php');
 
 $templates = new \League\Plates\Engine(__DIR__ . '/views');
 

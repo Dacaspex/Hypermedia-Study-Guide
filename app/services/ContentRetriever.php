@@ -38,7 +38,7 @@ class ContentRetriever
     private function getProgram($slug)
     {
         $statement = $this->pdo->prepare("SELECT * FROM programs WHERE slug = ?");
-        $statement->bindParam(0, $slug);
+        $statement->bindParam(1, $slug);
 
         $result = $this->getFirst($statement);
 
@@ -64,7 +64,7 @@ class ContentRetriever
     private function getPage($slug)
     {
         $statement = $this->pdo->prepare("SELECT * FROM pages WHERE slug = ?");
-        $statement->bindParam(0, $slug);
+        $statement->bindParam(1, $slug);
 
         $result = $this->getFirst($statement);
 
@@ -87,8 +87,8 @@ class ContentRetriever
     private function getContent(Page $page, Program $program)
     {
         $statement = $this->pdo->prepare("SELECT * FROM content WHERE program_id = ? AND page_id = ?");
-        $statement->bindParam(0, $program->getId());
-        $statement->bindParam(1, $page->getId());
+        $statement->bindParam(1, $program->getId());
+        $statement->bindParam(2, $page->getId());
 
         $result = $this->getFirst($statement);
 
