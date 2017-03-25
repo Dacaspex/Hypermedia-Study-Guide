@@ -1,3 +1,8 @@
+.study-selector {
+  position:relative;
+  overflow:hidden;
+}
+
 .study-menu {
   height:65px;
 }
@@ -7,6 +12,7 @@
 }
 
 .study-menu-item {
+  cursor:pointer;
   display:inline;
   width: calc(100%*(1/3));
   float:left;
@@ -28,11 +34,11 @@
   clear:both;
   margin-top:2px;
   overflow:hidden;
-  padding:20px 0px;
 }
 
 .study-list-item {
-  padding:20px;
+  padding:20px !important;
+  padding-top:0px !important;
 }
 
 .study-list-item > ul {
@@ -43,10 +49,7 @@
 }
 
 .study-list-item > ul > li {
-  margin:5px 20px;
-  padding:10px;
-  height:40px;
-  line-height:40px;
+  margin:5px 0px;
   border:1px solid lightgray;
   box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
 }
@@ -54,6 +57,10 @@
 .study-list-item > ul > li > a {
   text-decoration: none;
   color:black;
+  padding:10px;
+  height:40px;
+  line-height:40px;
+  display:block;
 }
 
 .study-list-expand {
@@ -62,10 +69,11 @@
   position:relative;
   text-align:center;
   height:0px;
-  margin-bottom:20px;
+  margin-bottom:40px;
 }
 
 .study-list-expand > div {
+  cursor:pointer;
   width:40px;
   height:40px;
   background-color:#4d7fd1;
@@ -85,14 +93,32 @@
   DESKTOP STYLING
 */
 @media screen and (min-width: 700px) {
+.study-selector {
+  overflow:visible;
+  height:375px;
+}
+
   .study-menu {
     width:calc(100%*(1/3));
     float:left;
     height:auto;
   }
 
+  .study-menu > div:not(:last-child) {
+    //border-right: none;
+    border-bottom:1px solid lightgray !important;
+  }
+
+  .study-menu > .active {
+    border-right:none !important;
+  }
+
+  .study-menu > .active {
+  }
+
   .study-menu-item {
     width:initial;
+    height:125px;
     display:block;
     float:none;
     line-height:normal;
@@ -100,28 +126,87 @@
     font-size:2em;
     box-sizing:border-box;
     border-right:1px solid lightgray;
+    border-bottom:none;
     padding:20px;
-  }
-
-  .study-list > .hor-scroll {
-    overflow:visible;
   }
 
   .study-list {
     width:calc(100%*(2/3));
-    float:left;
-    clear:none;
+    height:375px !important;
+    min-height:375px;
+    position:absolute;
+    background-color:white;
+    right:0px;
+    z-index:1;
+    box-shadow:0px 2px 3px 0px rgba(0,0,0,0.1);
+    box-sizing:border-box;
+    border:1px solid lightgray;
+    margin-top:0px;
+    transition:height 0.1s ease-in-out;
+  }
+
+  .study-list-open {
+    height:auto !important;
   }
 
   .study-list-item {
-    position:absolute;
-    top:0px;
-    left:0px;
     width:100% !important;
+    display:none;
   }
 
+  .study-list-item.focus-content {
+    display:block;
+  }
+
+  .study-list-item > ul {
+    list-style-type:none;
+    overflow:hidden;
+    margin:0px;
+    padding:0px;
+  }
+
+  .study-list-item > ul > li {
+    margin:0px;
+    border:none;
+    border-top:1px solid lightgray;
+    box-shadow:none;
+  }
+
+  .study-list-item > ul > li:nth-child(even) {
+    background-color:#f9f9f9;
+  }
+
+  .study-list-item > ul > li:last-child {
+    border-bottom:1px solid lightgray;
+  }
+
+  .study-list-item > ul > li > a {
+    text-decoration: none;
+    color:#666;
+    padding:5px;
+    padding-left:20px;
+    height:30px;
+    line-height:30px;
+  }
+
+  .study-list-item > ul > li > a:hover {
+    padding-left:25px;
+  }
+
+  .study-list-item > ul > li > a:before {
+    content: "\f105";
+    font: normal normal normal 14px/1 FontAwesome;
+    margin-right: 10px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
   .study-list-expand {
-    clear:both;
+    width:calc(100%*(2/3));
+    margin-bottom:0px;
+    position:absolute;
+    bottom:40px;
+    box-shadow:none;
   }
 }

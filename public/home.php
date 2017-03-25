@@ -23,7 +23,7 @@
 
 	</div>
 	<div class="navbar js-navbar">
-		<div class="navbar-inner">
+		<div class="navbar-inner width-limit">
 			<div class="product js-product">Studyguide</div>
 			<div class="brand js-brand">TU<span class="accent">/</span>e</div>
 			<div class="preferences">
@@ -35,15 +35,15 @@
 	</div>
 	<div class="navbar-spacing"></div>
 
-		<header class="top-header js-header">
+		<header class="top-header width-limit js-header">
 			<div class="header-image js-header-image">
 				<img src="https://virtualvisit.tue.nl/media/hotspot-data/science-park-1.jpg">
 			</div>
 			<div class="product js-product"><div>Studyguide</div></div>
 		</header>
 
-		<div class="card card-full">
-			<nav class="js-carousel" clickable-menu="true">
+		<div class="card card-full visible width-limit">
+			<nav class="study-selector js-carousel" clickable-menu="true">
 				<div class="study-menu js-carousel-menu">
 					<div class="study-menu-item active">Bachelor</div>
 					<div class="study-menu-item">Pre-Master</div>
@@ -59,6 +59,13 @@
 								<ul>
 									<li><a href="#">Computer Science and Engineering</a></li>
 									<li><a href="#">Psychology and Technology</a></li>
+									<li><a href="#">Data Science</a></li>
+									<li><a href="#">Data Science</a></li>
+									<li><a href="#">Data Science</a></li>
+									<li><a href="#">Data Science</a></li>
+									<li><a href="#">Data Science</a></li>
+									<li><a href="#">Data Science</a></li>
+									<li><a href="#">Data Science</a></li>
 									<li><a href="#">Data Science</a></li>
 								</ul>
 							</div>
@@ -80,6 +87,18 @@
 									<li><a href="#">Computer Science and Engineering</a></li>
 									<li><a href="#">Psychology and Technology</a></li>
 									<li><a href="#">Data Science</a></li>
+									<li><a href="#">Data Science</a></li>
+									<li><a href="#">Data Science</a></li>
+									<li><a href="#">Data Science</a></li>
+									<li><a href="#">Data Science</a></li>
+									<li><a href="#">Data Science</a></li>
+									<li><a href="#">Data Science</a></li>
+									<li><a href="#">Data Science</a></li>
+									<li><a href="#">Data Science</a></li>
+									<li><a href="#">Data Science</a></li>
+									<li><a href="#">Data Science</a></li>
+									<li><a href="#">Data Science</a></li>
+									<li><a href="#">Data Science</a></li>
 								</ul>
 							</div>
 						</div>
@@ -92,7 +111,7 @@
 		</div>
 
 		<div class="card card-blue card-full js-carousel" menu-animation="true">
-			<div class="js-carousel-slide hor-scroll">
+			<div class="width-limit js-carousel-slide hor-scroll">
 				<div class="js-carousel-inner col-3-parent">
 					<div class="col-3">
 						<header>
@@ -133,7 +152,7 @@
 			</div>
 		</div>
 
-		<div class="card-cols">
+		<div class="card-cols width-limit">
 		<main class="col-3-double">
 			<div class="card">
 				<header>
@@ -195,7 +214,7 @@
 		</div>
 
 		<div class="card card-blue">
-			<footer>
+			<footer class="width-limit">
 				<div class="col-4">
 					<div class="bold">About</div>
 					<p>

@@ -28,6 +28,7 @@ $( document ).ready(function() {
 
     function updateList(){
       if(expanded){
+        $this.addClass("study-list-open");
         $bar.css("box-shadow", "none");
         var newHeight = $this.find(".focus-content").height();
         $this.animate({
@@ -35,6 +36,7 @@ $( document ).ready(function() {
         }, animationSpeed);
         $icon.css("transform", "rotate(180deg)");
       } else{
+        $this.removeClass("study-list-open");
         $bar.css("box-shadow", "");
         $this.animate({
           height: closedHeight

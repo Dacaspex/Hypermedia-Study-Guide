@@ -1,3 +1,13 @@
+.width-limit {
+  max-width:1000px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.visible {
+  overflow:visible;
+}
+
 .card-cols {
   box-sizing: border-box;
 	background-color: white;
@@ -28,6 +38,21 @@ aside.card {
 
 .col-3-parent {
   width:100%;
+}
+
+/*
+  HEADER
+*/
+.top-header {
+  margin:20px auto;
+  height:113px;
+  border:1px solid lightgray;
+}
+
+.top-header > .header-image > img {
+  object-fit: cover;
+  margin-top:-50%;
+  height:auto;
 }
 
 .carousel-menu {
