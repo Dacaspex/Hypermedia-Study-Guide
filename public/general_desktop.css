@@ -41,6 +41,27 @@ aside.card {
 }
 
 /*
+  PREFERENCES-WIZARD
+*/
+
+.wizard-progress {
+  float:none;
+  text-align:center;
+}
+
+.wizard-progress > div {
+  display:inline-block;
+}
+
+.wizard-progress > div:not(:last-child) {
+  margin-right:30px;
+}
+
+.option-cards > .option-card:not(:last-child) {
+  margin-right:30px;
+}
+
+/*
   HEADER
 */
 .top-header {

@@ -5,6 +5,7 @@ html, body {
 	margin: 0;
 	font-family: 'Roboto';
 	background-color: #fcfcfc;
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 h1, h2 {
 	font-family: 'Open Sans', sans-serif;
@@ -44,7 +45,7 @@ time {
 	COLUMNS
 */
 
-.col-3-parent {
+.col-3-parent, .col-3-a-parent {
 	width:300%;
 }
 
@@ -53,14 +54,14 @@ time {
 	overflow:hidden;
 }
 
-.col-3-parent > .col-3 {
+.col-3-parent > .col-3, .col-3-a-parent > .col-3 {
 	width:calc(100%*(1/3));
 	float:left;
 	box-sizing:border-box;
 	padding:20px;
 }
 
-.col-3-parent > .col-3-double {
+.col-3-parent > .col-3-double, .col-3-a-parent > .col-3-double {
 	width:calc(100%*(2/3));
 	float:left;
 	box-sizing:border-box;
@@ -80,12 +81,11 @@ time {
 	width: 100%;
 	height: 65px;
 	position: fixed;
-	z-index: 10;
 	top: 0;
 	background-color: #4d7fd1;
 	color: white;
 	box-shadow: 0 4px 10px rgba(43, 63, 94,0.7);
-	z-index:2;
+	z-index:5;
 }
 .navbar-spacing {
 	height:65px;
@@ -104,13 +104,186 @@ time {
 	transform: translateX(-50%);
 }
 .preferences {
-	padding-right: 20px;
+	padding-right: 10px;
 	float: right;
-	font-size: 0.8em;
 }
-.preferences > i {
-	padding: 0 5px;
-	position: relative;
+.preferences > div {
+	display:inline-block;
+	padding:0px 5px;
+}
+.preferences > div > i {
+
+}
+
+/*
+	PREFERENCES-WIZARD
+*/
+
+.preferences-wizard {
+	margin-top:65px;
+	top:-100vh;
+  width:90%;
+	left:0;
+	right:0px;
+	margin-left:auto;
+	margin-right:auto;
+  height:70%;
+  position:fixed;
+  z-index:3;
+}
+
+.preferences-wizard > .wizard-top {
+	overflow:hidden;
+	color:gray;
+}
+
+.wizard-top > .wizard-close {
+	cursor:pointer;
+	font-size:1.5em;
+	height:40px;
+	line-height:40px;
+	display:inline-block;
+	padding:0px 5px;
+	float:left;
+}
+
+.wizard-progress {
+	counter-reset:wizard-progress-counter;
+	float:right;
+}
+
+.wizard-progress > div {
+
+}
+
+.wizard-progress > div:before {
+	content:counter(wizard-progress-counter) '. ';
+	counter-increment:wizard-progress-counter;
+}
+
+
+.wizard-progress > :after {
+	content: "\f00c";
+	font: normal normal normal 14px/1 FontAwesome;
+	margin-left: 10px;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.wizard-progress > .active:after, .wizard-progress > .active ~ *:after {
+	content: '';
+}
+
+.wizard-progress > .active {
+	color:black;
+}
+
+.preferences-wizard > .wizard-main {
+	overflow:hidden;
+}
+
+.wizard-main > .wizard-option {
+	display:none;
+}
+
+.wizard-main > .wizard-option.active {
+	display:block;
+}
+
+.wizard-option > .option-cards {
+	overflow:hidden;
+	margin-left:auto;
+	margin-right:auto;
+	padding:5px;
+	text-align:center;
+}
+
+.option-cards > .option-card {
+	cursor:pointer;
+	width:40%;
+	max-width:200px;
+	display:inline-block;
+	border:1px solid lightgray;
+	box-sizing:border-box;
+	box-shadow:0px 2px 3px 0px rgba(0,0,0,0.1);
+}
+
+.option-cards > .option-card.active {
+	background-color:#4d7fd1;
+	color:white;
+}
+
+.option-card > .option-icon > * {
+	width:100%;
+	font-size:5em;
+	display:block;
+}
+
+.option-card > .option-name {
+	text-align:center;
+	font-size:2em;
+	padding:10px 0px;
+}
+
+.wizard-option > .option-list {
+	list-style-type:none;
+	overflow:hidden;
+	margin:0px;
+	padding:0px;
+}
+
+.wizard-option > .option-list > li {
+	cursor:pointer;
+	margin:0px;
+	border:none;
+	border-top:1px solid lightgray;
+	box-shadow:none;
+	color:#666;
+	padding:10px;
+}
+
+.wizard-option > .option-list > li.active {
+	background-color:#4d7fd1 !important;
+	color:white !important;
+}
+
+.wizard-option > .option-list > li:nth-child(even) {
+	background-color:#f9f9f9;
+}
+
+.wizard-option > .option-list > li:last-child {
+	border-bottom:1px solid lightgray;
+}
+
+.preferences-wizard > .wizard-bottom {
+	overflow:hidden;
+	position:absolute;
+	bottom:20px;
+	right:20px;
+}
+
+.wizard-bottom > .wizard-skip {
+	cursor:pointer;
+	height: 40px;
+  line-height: 40px;
+  background-color: #4d7fd1;
+  color: white;
+  display: inline-block;
+  padding: 0px 25px;
+  box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);
+  float: right;
+}
+
+.navigation-drawer-bg {
+  position:fixed;
+  top:0px;
+  left:0px;
+  z-index:-1;
+  opacity:0;
+  background-color: #000;
+  width:100vw;
+  height:100vh;
 }
 
 /*
@@ -133,7 +306,7 @@ time {
 }
 
 .top-header > .product > div {
-	z-index:4;
+	z-index:6;
 	color:white;
 	position:relative;
 }
@@ -178,7 +351,7 @@ time {
 	box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
 	border: 1px solid lightgray;
 	padding: 20px;
-	transition: all 1s;
+	/*transition: all 1s;*/
 	overflow-x: hidden;
 }
 
