@@ -18,23 +18,49 @@
 </head>
 <body>
     <!-- Wizard -->
-    <div class="preferences-wizard">
-
+    <div class="card preferences-wizard width-limit"id="preferences-wizard" align-property="top" align-value="-100%">
+        <div class="wizard-top">
+            <div class="wizard-close js-navigation-drawer-button" drawer-id="preferences-wizard">
+                <i class="fa fa-times"></i>
+            </div>
+        </div>
+        <div class="wizard-main">
+            <div class="wizard-option">
+                <h1>Language selection</h1>
+                <p>Choose your desired language</p>
+                <div class="option-cards" pref-type="lang">
+                    <div class="option-card js-option" pref-val="nl">
+                        <div class="option-icon">
+                            <img src="flags/dutch-flag.svg">
+                        </div>
+                        <div class="option-name">Dutch</div>
+                    </div>
+                    <div class="option-card js-option" pref-val="en">
+                        <div class="option-icon">
+                            <img src="flags/uk-flag.svg">
+                        </div>
+                        <div class="option-name">English</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wizard-save">
+            <div>Save</div>
+        </div>
     </div>
+    <div class="navigation-drawer-bg"></div>
 
     <!-- Nabar -->
-    <div class="navbar">
-        <div class="navbar-inner">
-            <div class="study-menu-selector"><i class="fa fa-bars" aria-hidden="true"></i></div>
-            <div class="product none">Studyguide</div>
-            <div class="brand">TU/e</div>
+    <div class="navbar js-navbar">
+        <div class="navbar-inner width-limit">
+            <div class="product js-product">Studyguide</div>
+            <div class="brand js-brand">TU<span class="accent">/</span>e</div>
             <div class="preferences">
-                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                <i class="fa fa-flag-o" aria-hidden="true"></i>
-                <i class="fa fa-user-o" aria-hidden="true"></i>
+                <div class="js-navigation-drawer-button" drawer-id="preferences-wizard"><i class="fa fa-flag-o" aria-hidden="true"></i></div>
             </div>
         </div>
     </div>
+    <div class="navbar-spacing"></div>
 
     <main class="page-content">
         <?= $this->section('content') ?>
