@@ -61,6 +61,10 @@ aside.card {
   margin-right:30px;
 }
 
+.option-card > .option-name {
+  font-size:2em;
+}
+
 /*
   HEADER
 */
@@ -70,10 +74,31 @@ aside.card {
   border:1px solid lightgray;
 }
 
+.top-header > .product {
+  padding:10px 20px;
+  background-color:rgba(0,0,0,0.5);
+  border:1px solid lightgray;
+  bottom:20px;
+  left:20px;
+  font-size:40px;
+}
+
+.top-header > .product > div {
+  z-index:auto;
+}
+
 .top-header > .header-image > img {
   object-fit: cover;
   margin-top:-50%;
   height:auto;
+}
+
+/*
+  PAGE STYLING
+*/
+
+.card-blue h1 {
+  font-size:2em;
 }
 
 .carousel-menu {

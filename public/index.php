@@ -35,7 +35,7 @@ switch ($routeInfo[0]) {
         $vars = $routeInfo[2];
 
 //        try {
-            echo $handler(...array_keys($vars));
+            echo $handler(...array_values($vars));
 //        } catch (Exception $e) {
 //            echo $templates->render('404');
 //        }

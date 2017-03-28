@@ -4,9 +4,10 @@ $( document ).ready(function() {
   var $skipButton = $wizard.children(".wizard-bottom").children(".wizard-skip");
   var $wizardOptionParent = $wizard.find(".wizard-option").parent();
   var preferences = [];
+  var $saveButton = $wizard.find(".wizard-save").children("div");
 
   $wizardOptionParent.on("click", ".js-option", function(){checkOption($(this))});
-  $wizardOptionParent.on("click", "li", function(){checkOption($(this))});
+  $saveButton.on("click", function(){postData(preferences)});
 
   function checkOption($option) {
     $option.parent().children(".active").removeClass("active");
@@ -21,27 +22,16 @@ $( document ).ready(function() {
       return;
     }
     preferences[type] = value;
-    nextOption();
   }
-
-  function nextOption() {
-    if($wizardOptionParent.children(".focus-content").next().position() == undefined){
-      postData(preferences);
-    }
-    $wizard.trigger('swipeleft');
-  }
-
-  $skipButton.click(function(){
-    nextOption();
-  });
 
   function postData(data){
+    console.log("saved");
     var formData = new FormData();
     for(var key in data){
       formData.append(key, data[key]);
     }
     var request = new XMLHttpRequest();
-    request.open("GET", "?");
+    request.open("POST", "/lang");
     request.send(formData);
   }
 

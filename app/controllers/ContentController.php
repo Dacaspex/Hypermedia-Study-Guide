@@ -26,7 +26,7 @@ class ContentController
 
 	function index($type, $programSlug, $pageSlug)
 	{
-        $content = $this->retriever->getPageContent($type, $programSlug, $pageSlug);
+        $content = $this->retriever->getPageContent($type, $programSlug, $pageSlug, Language::getLocale());
 
         return $this->templates->render('program', compact('content'));
 	}

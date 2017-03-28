@@ -113,6 +113,7 @@ time {
 	float: right;
 }
 .preferences > div {
+	cursor:pointer;
 	display:inline-block;
 	padding:0px 5px;
 }
@@ -132,7 +133,7 @@ time {
 	right:0px;
 	margin-left:auto;
 	margin-right:auto;
-  height:70%;
+  max-height:calc(100vh - 65px);
   position:fixed;
   z-index:3;
 }
@@ -149,51 +150,11 @@ time {
 	line-height:40px;
 	display:inline-block;
 	padding:0px 5px;
-	float:left;
-}
-
-.wizard-progress {
-	counter-reset:wizard-progress-counter;
 	float:right;
-}
-
-.wizard-progress > div {
-
-}
-
-.wizard-progress > div:before {
-	content:counter(wizard-progress-counter) '. ';
-	counter-increment:wizard-progress-counter;
-}
-
-
-.wizard-progress > :after {
-	content: "\f00c";
-	font: normal normal normal 14px/1 FontAwesome;
-	margin-left: 10px;
-	text-rendering: auto;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-.wizard-progress > .active:after, .wizard-progress > .active ~ *:after {
-	content: '';
-}
-
-.wizard-progress > .active {
-	color:black;
 }
 
 .preferences-wizard > .wizard-main {
 	overflow:hidden;
-}
-
-.wizard-main > .wizard-option {
-	display:none;
-}
-
-.wizard-main > .wizard-option.active {
-	display:block;
 }
 
 .wizard-option > .option-cards {
@@ -208,6 +169,7 @@ time {
 	cursor:pointer;
 	width:40%;
 	max-width:200px;
+	min-width:80px;
 	display:inline-block;
 	border:1px solid lightgray;
 	box-sizing:border-box;
@@ -227,57 +189,23 @@ time {
 
 .option-card > .option-name {
 	text-align:center;
-	font-size:2em;
 	padding:10px 0px;
-}
-
-.wizard-option > .option-list {
-	list-style-type:none;
+	white-space:nowrap;
+	text-overflow:ellipsis;
 	overflow:hidden;
-	margin:0px;
-	padding:0px;
 }
 
-.wizard-option > .option-list > li {
-	cursor:pointer;
-	margin:0px;
-	border:none;
-	border-top:1px solid lightgray;
-	box-shadow:none;
-	color:#666;
-	padding:10px;
-}
-
-.wizard-option > .option-list > li.active {
-	background-color:#4d7fd1 !important;
-	color:white !important;
-}
-
-.wizard-option > .option-list > li:nth-child(even) {
-	background-color:#f9f9f9;
-}
-
-.wizard-option > .option-list > li:last-child {
-	border-bottom:1px solid lightgray;
-}
-
-.preferences-wizard > .wizard-bottom {
+.preferences-wizard > .wizard-save {
 	overflow:hidden;
-	position:absolute;
-	bottom:20px;
-	right:20px;
 }
 
-.wizard-bottom > .wizard-skip {
+.wizard-save > div {
 	cursor:pointer;
-	height: 40px;
-  line-height: 40px;
-  background-color: #4d7fd1;
-  color: white;
-  display: inline-block;
-  padding: 0px 25px;
-  box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);
-  float: right;
+	float:right;
+	display:inline-block;
+	background-color:#4d7fd1;
+	padding:10px 20px;
+	color:white;
 }
 
 .navigation-drawer-bg {
@@ -306,6 +234,7 @@ time {
 	background-color: rgba(0, 0, 0, 0.7);
 	position: absolute;
 	left: 10px;
+	bottom:10px;
 	font-size: 1.5em;
 	color: white;
 }
@@ -383,6 +312,7 @@ time {
 	padding:5px 10px;
 	text-decoration:none;
 	transition:all 0.1s ease-in-out;
+	display:inline-block;
 }
 
 .card-blue section > a:hover {
