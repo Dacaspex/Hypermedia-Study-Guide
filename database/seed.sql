@@ -1,3 +1,5 @@
+use educationguide;
+
 INSERT INTO `programs`
   (name, slug, type, contact) VALUES('Software Science', 'software-science', 'Bachelor', 'some@email.com');
 
