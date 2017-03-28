@@ -36,7 +36,9 @@
         </div>
     </div>
 
-    <?= $this->section('content') ?>
+    <main class="page-content">
+        <?= $this->section('content') ?>
+    </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
