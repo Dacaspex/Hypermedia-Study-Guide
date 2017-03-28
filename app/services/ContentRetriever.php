@@ -15,30 +15,34 @@ class ContentRetriever
     /**
      * Get the full content associated with a page.
      *
+     * @param string $type The type of program: bachelor, pre-master, master
      * @param string $programSlug
      * @param string $pageSlug
+     * @param string $locale
      * @return Content
      * @throws RuntimeException If the page was not found.
      */
-    public function getPageContent($programSlug, $pageSlug)
+    public function getPageContent($type, $programSlug, $pageSlug, $locale)
     {
-        $program = $this->getProgram($programSlug);
+        $program = $this->getProgram($type, $programSlug);
         $page = $this->getPage($pageSlug);
 
-        return $this->getContent($page, $program);
+        return $this->getContent($page, $program, $locale);
     }
 
     /**
      * Get the program associated with a certain slug.
      *
-     * @param $slug
+     * @param string $type type of program: bachelor, pre-master, master
+     * @param string $slug
      * @return Program
      * @throws RuntimeException If no program was found for this slug.
      */
-    private function getProgram($slug)
+    private function getProgram($type, $slug)
     {
-        $statement = $this->pdo->prepare("SELECT * FROM programs WHERE slug = ?");
+        $statement = $this->pdo->prepare("SELECT * FROM programs WHERE slug = ? AND type = ?");
         $statement->bindParam(1, $slug);
+        $statement->bindParam(2, $type);
 
         $result = $this->getFirst($statement, "program");
 
@@ -81,14 +85,16 @@ class ContentRetriever
      *
      * @param Page $page
      * @param Program $program
+     * @param string $locale
      * @return Content
      * @throws RuntimeException If no content was found for this page.
      */
-    private function getContent(Page $page, Program $program)
+    private function getContent(Page $page, Program $program, $locale)
     {
-        $statement = $this->pdo->prepare("SELECT * FROM content WHERE program_id = ? AND page_id = ?");
+        $statement = $this->pdo->prepare("SELECT * FROM content WHERE program_id = ? AND page_id = ? AND lang = ?");
         $statement->bindParam(1, $program->getId());
         $statement->bindParam(2, $page->getId());
+        $statement->bindParam(3, $locale);
 
         $result = $this->getFirst($statement, "content");
 

@@ -41,6 +41,11 @@ time {
 	display: none;
 }
 
+.page-content {
+	margin-top: 65px;
+	overflow: auto;
+}
+
 /*
 	COLUMNS
 */
