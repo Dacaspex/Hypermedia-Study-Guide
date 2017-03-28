@@ -3,37 +3,40 @@ $( document ).ready(function() {
   $(".js-navigation-drawer-button").each( function() {
 
     var $this = $(this);
-    var expanded = false;
     var animationSpeed = 200;
     var $drawer = $("#"+$this.attr("drawer-id"));
-    $drawerArray.push($drawer);
+    $drawer.data('expanded', false);
     var $background = $(".navigation-drawer-bg");
     var alignProperty = $drawer.attr("align-property");
     var closedValue = $drawer.attr("align-value");
+    var animationTimeout = null;
 
     var $brand = $(".js-header").children(".js-product").children("div");
 
     $this.click( function() {
       if($drawer.hasClass("js-drawer-open")){
-        expanded = false;
+        $drawer.data('expanded', false);
       } else{
-        expanded = true;
+        $drawer.data('expanded', true);
       }
       updateDrawer();
     });
 
     $drawer.on(("swipe" + alignProperty), function(){
-      expanded = false;
+      $drawer.data('expanded', false);
       updateDrawer();
     });
 
     $background.click( function() {
-      expanded = false;
+      $drawer.data('expanded', false);
       updateDrawer();
     });
 
     function updateDrawer(){
-      if(expanded){
+      if($drawer.data('expanded')){
+        if (animationTimeout !== null) {
+          clearInterval(animationTimeout);
+        }
         $brand.css("z-index", "1");
         $drawer.addClass("js-drawer-open");
         var anim = {};
@@ -53,9 +56,11 @@ $( document ).ready(function() {
         $("html,body").css("overflow", "");
         $background.animate({
           opacity: 0
-        }, animationSpeed, function() {
+        }, animationSpeed);
+        animationTimeout = setTimeout(function() {
           $background.css("z-index", "-1");
-        });
+          clearTimeout(animationTimeout);
+        }, animationSpeed);
       }
     }
 
