@@ -31,6 +31,11 @@ p {
 	display: none;
 }
 
+.page-content {
+	margin-top: 65px;
+	overflow: auto;
+}
+
 /*
 	NAVBAR STYLING
 */

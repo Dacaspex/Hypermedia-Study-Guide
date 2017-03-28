@@ -8,7 +8,7 @@ $dotenv->load();
 $method = $_SERVER['REQUEST_METHOD'];
 $uri = $_SERVER['REQUEST_URI'];
 
-$templates = new \League\Plates\Engine(__DIR__ . '/views');
+$templates = new \League\Plates\Engine(__DIR__ . '/../app/views');
 $connection = new PDO('mysql:host=' . getenv('DB_HOST') . ';dbname=' . getenv('DB_NAME'), getenv('DB_USERNAME'), getenv('DB_PASSWORD'));
 
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $routes) use ($connection, $templates) {
