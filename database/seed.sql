@@ -1,26 +1,47 @@
-use educationguide;
+TRUNCATE `programs`;
+TRUNCATE `pages`;
+TRUNCATE `content`;
+TRUNCATE `links`;
+TRUNCATE `curriculi`;
 
 INSERT INTO `programs`
-  (name, slug, type, contact) VALUES('Software Science', 'software-science', 'Bachelor', 'some@email.com');
-
+  (name, slug, type, contact) VALUES('Software Science', 'software-science', 'bachelor', 'some@email.com');
 SET @ss_id = LAST_INSERT_ID();
 
 INSERT INTO `programs`
-  (name, slug, type, contact) VALUES ('Psychology & Technology', 'psychology-technology', 'Bachelor', 'some@email.com');
-
+  (name, slug, type, contact) VALUES ('Psychology & Technology', 'psychology-technology', 'bachelor', 'some@email.com');
 SET @pt_id = LAST_INSERT_ID();
 
 INSERT INTO `pages` (name, slug, type) VALUES
-  ('Overview', 'overview', 'Bachelor'),
-  ('Curriculum', 'curriculum', 'Bachelor'),
-  ('Program Learning Objectives', 'learning-objectives', 'Bachelor'),
-  ('Professional Skills', 'professional-skills', 'Bachelor'),
-  ('Final Project', 'final-project', 'Bachelor'),
-  ('Examination Schedules', 'examination-schedules', 'Bachelor'),
-  ('Graduation Dates', 'graduation-dates', 'Bachelor'),
-  ('Coaching', 'coaching', 'Bachelor'),
-  ('Regulations', 'regulations', 'Bachelor'),
-  ('Subsequent Masters', 'subsequent-masters', 'Bachelor');
+  ('Overview', 'overview', 'bachelor'),
+  ('Curriculum', 'curriculum', 'bachelor'),
+  ('Program Learning Objectives', 'learning-objectives', 'bachelor'),
+  ('Professional Skills', 'professional-skills', 'bachelor'),
+  ('Final Project', 'final-project', 'bachelor'),
+  ('Examination Schedules', 'examination-schedules', 'bachelor'),
+  ('Graduation Dates', 'graduation-dates', 'bachelor'),
+  ('Coaching', 'coaching', 'bachelor'),
+  ('Regulations', 'regulations', 'bachelor'),
+  ('Subsequent Masters', 'subsequent-masters', 'bachelor'),
+
+  ('Overview', 'overview', 'pre-master'),
+  ('Curriculum', 'curriculum', 'pre-master'),
+  ('Binding Study Recommendation', 'study-recommendation', 'pre-master'),
+  ('Bachelor before Master', 'bachelor-before-master', 'pre-master'),
+  ('15 Credits Regulation', '15-credits-regulation', 'pre-master'),
+  ('Regulations', 'regulations', 'pre-master'),
+
+  ('Overview', 'overview', 'master'),
+  ('Admission', 'admission', 'master'),
+  ('Curriculum', 'curriculum', 'master'),
+  ('Professional Skills', 'professional-skills', 'master'),
+  ('Honors Program', 'honors-program', 'master'),
+  ('Exchange Program / Internship', 'exchange-program-internship', 'master'),
+  ('Examination Schedules', 'examination-schedules', 'master'),
+  ('Graduation', 'graduation', 'master'),
+  ('Prior Bachelors', 'prior-bachelors', 'master'),
+  ('Regulations', 'regulations', 'master'),
+  ('Coaching', 'coaching', 'master');
 
 INSERT INTO `content` (program_id, page_id, body) VALUES
   (@ss_id, (SELECT id FROM pages WHERE slug = 'overview'), 'the overview page'),
