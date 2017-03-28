@@ -20,7 +20,7 @@ class HomeController
 
     public static function getPrograms(PDO $pdo)
     {
-        $stmt = $pdo->prepare("SELECT `name`, `type` FROM `programs`");
+        $stmt = $pdo->prepare("SELECT `name`, `type`, `slug` FROM `programs`");
         $stmt->execute();
 
         $bachelors = array();
@@ -31,16 +31,16 @@ class HomeController
 
             switch ($row['type']) {
 
-                case 'Bachelor':
-                    array_push($bachelors, $row['name']);
+                case 'bachelor':
+                    array_push($bachelors, $row);
                     break;
 
-                case 'Pre Master':
-                    array_push($preMasters, $row['name']);
+                case 'pre-master':
+                    array_push($preMasters, $row);
                     break;
 
-                case 'Master':
-                    array_push($masters, $row['name']);
+                case 'master':
+                    array_push($masters, $row);
                     break;
 
             }

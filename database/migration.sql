@@ -28,7 +28,8 @@ CREATE TABLE IF NOT EXISTS `links` (
 CREATE TABLE IF NOT EXISTS `pages` (
   id            INT UNSIGNED AUTO_INCREMENT,
   parent_id     INT UNSIGNED,
-  name          VARCHAR(255) NOT NULL,
+  name_en       VARCHAR(255) NOT NULL,
+  name_nl       VARCHAR(255) NOT NULL,
   slug          VARCHAR(255) UNIQUE NOT NULL,
   type          ENUM('bachelor', 'pre-master', 'master') NOT NULL,
 
@@ -43,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `content` (
   id            INT UNSIGNED AUTO_INCREMENT,
   program_id    INT UNSIGNED,
   page_id       INT UNSIGNED,
-  body          TEXT DEFAULT '',
+  body          TEXT,
   lang          ENUM('en', 'nl') DEFAULT 'en',
   updated_at    DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   created_at    DATETIME DEFAULT CURRENT_TIMESTAMP,

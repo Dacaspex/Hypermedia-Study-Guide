@@ -22,7 +22,7 @@
 	<script src="js/preferencesWizard.js"></script>
 </head>
 <body>
-	<div class="card preferences-wizard width-limit"id="preferences-wizard" align-property="top" align-value="-100%">
+	<div class="card preferences-wizard width-limit" id="preferences-wizard" align-property="top" align-value="-100%">
 		<div class="wizard-top">
 			<div class="wizard-close js-navigation-drawer-button" drawer-id="preferences-wizard">
 				<i class="fa fa-times"></i>
@@ -139,51 +139,24 @@
 			</nav>
 		</div>
 
-		<div class="card card-blue card-full js-carousel" menu-animation="true">
-			<div class="width-limit js-carousel-slide hor-scroll">
-				<div class="js-carousel-inner col-3-parent">
-					<div class="col-3">
-						<header>
-							<h1><i class="fa fa-book" aria-hidden="true"></i>De studyguide</h1>
-						</header>
-						<section>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur cursus sem sed faucibus malesuada. Nullam gravida interdum aliquet. Nam dignissim gravida leo, vitae bibendum erat bibendum in. Pellentesque eget mauris urna. Proin dictum tortor
-								ut ex posuere, et laoreet urna eleifend. Vivamus aliquam tempus turpis sit amet lobortis. Quisque bibendum velit id dui scelerisque, quis lobortis mi sollicitudin.</p>
-							<a href="#">Lees meer</a>
-						</section>
-					</div>
-					<div class="col-3">
-						<header>
-							<h1><i class="fa fa-user" aria-hidden="true"></i>Profielen</h1>
-						</header>
-						<section>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur cursus sem sed faucibus malesuada. Nullam gravida interdum aliquet. Nam dignissim gravida leo, vitae bibendum erat bibendum in. Pellentesque eget mauris urna. Proin dictum tortor
-								ut ex posuere, et laoreet urna eleifend. Vivamus aliquam tempus turpis sit amet lobortis. Quisque bibendum velit id dui scelerisque, quis lobortis mi sollicitudin.</p>
-							<a href="#">Lees meer</a>
-						</section>
-					</div>
-					<div class="col-3">
-						<header>
-							<h1><i class="fa fa-graduation-cap" aria-hidden="true"></i>TU/e</h1>
-						</header>
-						<section>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur cursus sem sed faucibus malesuada. Nullam gravida interdum aliquet. Nam dignissim gravida leo, vitae bibendum erat bibendum in. Pellentesque eget mauris urna. Proin dictum tortor
-								ut ex posuere, et laoreet urna eleifend. Vivamus aliquam tempus turpis sit amet lobortis. Quisque bibendum velit id dui scelerisque, quis lobortis mi sollicitudin.</p>
-							<a href="#">Lees meer</a>
-						</section>
-					</div>
+		<div class="card card-blue">
+			<div class="width-limit">
+				<div class="blue-bar">
+					<header>
+						<h1><i class="fa fa-book" aria-hidden="true"></i>De studyguide</h1>
+					</header>
+					<section>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur cursus sem sed faucibus malesuada. Nullam gravida interdum aliquet. Nam dignissim gravida leo, vitae bibendum erat bibendum in. Pellentesque eget mauris urna. Proin dictum tortor
+							ut ex posuere, et laoreet urna eleifend. Vivamus aliquam tempus turpis sit amet lobortis. Quisque bibendum velit id dui scelerisque, quis lobortis mi sollicitudin.</p>
+						<a href="#">Lees meer</a>
+					</section>
 				</div>
-			</div>
-			<div class="card-blue carousel-menu js-carousel-menu">
-				<div class="carousel-circle active"><div></div></div>
-				<div class="carousel-circle"><div></div></div>
-				<div class="carousel-circle"><div></div></div>
 			</div>
 		</div>
 
 		<div class="card-cols width-limit">
 		<main class="col-3-double">
-			<div class="card">
+			<div class="card card-news">
 				<header>
 					<h1>Studyguide</h1>
 				</header>
@@ -194,7 +167,7 @@
 				</section>
 			</div>
 
-			<div class="card">
+			<div class="card card-news">
 				<header>
 					<h1>TU/e news</h1>
 				</header>
@@ -242,37 +215,36 @@
 		</aside>
 		</div>
 
-		<div class="card card-blue">
-			<footer class="width-limit">
-				<div class="col-4">
-					<div class="bold">About</div>
-					<p>
-						This website is designed by students for students in order to structure the information in a better way.
-					</p>
-				</div>
-				<div class="col-4 footer-social">
-					<div class="bold">Social media</div>
-					<a href="#"><i class="fa fa-facebook-square"></i></a>
-					<a href="#"><i class="fa fa-twitter-square"></i></a>
-					<a href="#"><i class="fa fa-youtube-square"></i></a>
-				</div>
-				<div class="col-4">
-					<div class="bold">Address</div>
-					<div>Straatnaam 12</div>
-					<div>1234 AB</div>
-					<div>Eindhoven</div>
-				</div>
-				<div class="col-4">
-					<div class="bold">Contact</div>
-					<div>emailaddress@tue.nl</div>
-					<div>040 123456</div>
-				</div>
-				<div class="footer-bottom">
-					<div>Copyright 2017</div>
-					<div class="language">Language: <span>English</span></div>
-				</div>
-			</footer>
-		</div>
+	<div class="card card-blue">
+		<footer class="width-limit">
+			<div class="col-4">
+				<div class="bold">About</div>
+				<p>
+					This website is designed by students for students in order to structure the information in a better way.
+				</p>
+			</div>
+			<div class="col-4 footer-social">
+				<div class="bold">Social media</div>
+				<a href="#"><i class="fa fa-facebook-square"></i></a>
+				<a href="#"><i class="fa fa-twitter-square"></i></a>
+				<a href="#"><i class="fa fa-youtube-square"></i></a>
+			</div>
+			<div class="col-4">
+				<div class="bold">Address</div>
+				<div>Straatnaam 12</div>
+				<div>1234 AB</div>
+				<div>Eindhoven</div>
+			</div>
+			<div class="col-4">
+				<div class="bold">Contact</div>
+				<div>emailaddress@tue.nl</div>
+				<div>040 123456</div>
+			</div>
+			<div class="footer-bottom">
+				<div>Copyright 2017</div>
+				<div class="language navigation-drawer-button js-navigation-drawer-button" drawer-id="preferences-wizard">Language: <span>English</span></div>
+			</div>
+		</footer>
 	</div>
 </body>
 </html>

@@ -1,7 +1,5 @@
 <?php
 
-include_once __DIR__ . '\..\models\Content.php';
-
 /**
 * Content controller to handle the content table in the data base.
 * Contains all content for the bachelors, pre-masters and masters.

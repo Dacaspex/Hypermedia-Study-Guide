@@ -25,7 +25,6 @@ $( document ).ready(function() {
   }
 
   function postData(data){
-    console.log("saved");
     var formData = new FormData();
     for(var key in data){
       formData.append(key, data[key]);

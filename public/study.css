@@ -1,74 +1,25 @@
-.nav-drawer {
-	position: fixed;
-	left: 0;
-	display: block;
-	top: 0;
-	height: 100%;
-	width: 300px;
-	border: 1px solid lightgray;
-	box-shadow: 0 4px 10px rgba(43, 63, 94,0.7);
-	background-color: white;
-	padding: 65px 20px 20px 20px;
-	box-sizing: border-box;
-	transition: all 0.3s ease-in-out;
+.navbar {
+	box-shadow:none;
 }
-.nav-drawer > a {
-	display: block;
-	padding: 5px 0;
+
+@media screen and (min-width: 900px) {
+	.navigation-drawer-button {
+		display:none;
+	}
+
 }
-.nav-drawer-hidden {
-	left: -300px;
-	display: none;
+
+@media screen and (min-width: 700px) {
+	.study-info > .card {
+		box-shadow:none;
+		border:none;
+	}
 }
-.nav-drawer-selector-hide {
-	display: none !important;
-}
-.main-content {
-	float: left;
-	width: calc(100% - 30px);	
-}
-.card-group {
-	width: 100%;
-	float: right;	
-	margin-right: calc(-100% + 10px);
-}
-.js-card-holder {
-	padding-bottom: 20px;
-	position: relative;
-	height: 126px;
-}
-.js-card-holder > .card {
-	min-height: 126px;
-	position: absolute;
-	top: 0;
-	left: 0;
-	min-width: 280px;
-	overflow: hidden;
-}
-.js-card-holder h1 {
-	transform: rotate(-90deg) translateX(-35%);
-	transform-origin: top left;
-	font-size: 0.8em;
-	border-left: 0;
-	padding-left: 0;
-	position: absolute;
-	left: 10px;
-	top: 50%;
-	transition: all 1s ease-in-out;
-}
-.card-show {
-	margin-left: -100%;
-	width: calc(100% - 10px);
-}
-.header-show {
-	transform: rotate(0) translateX(0) !important;
-	font-size: 2em !important;
-	border-left: 4px solid #4d7fd1 !important;
-	padding-left: 10px !important;
-	position: relative !important;
-	left: auto !important;
-	top: auto !important;
-}
-.card-content  {
-	transition: 1s all;
+
+@media screen and (min-width:700px) and (max-width:900px) {
+	.card-cols > .col-5 {
+	  width:40%;
+		float:left;
+		box-sizing:border-box;
+	}
 }
