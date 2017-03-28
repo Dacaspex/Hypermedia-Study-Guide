@@ -15,7 +15,7 @@ class ContentRetriever
     /**
      * Get the full content associated with a page.
      *
-     * @param string $type The type of program: bachelor, pre-master, master
+     * @param string $type The type of program: program, pre-master, master
      * @param string $programSlug
      * @param string $pageSlug
      * @param string $locale
@@ -33,7 +33,7 @@ class ContentRetriever
     /**
      * Get the program associated with a certain slug.
      *
-     * @param string $type type of program: bachelor, pre-master, master
+     * @param string $type type of program: program, pre-master, master
      * @param string $slug
      * @return Program
      * @throws RuntimeException If no program was found for this slug.
