@@ -7,7 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TU/e Study Guide</title>
 
+    <link rel="stylesheet" type="text/css" href="/index.css">
     <link rel="stylesheet" type="text/css" href="/general.css">
+    <link rel="stylesheet" media="screen and (min-width: 700px)" href="/general_desktop.css">
     <link rel="stylesheet" type="text/css" href="/study.css">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -66,8 +68,15 @@
         <?= $this->section('content') ?>
     </main>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
     <script src="https://use.fontawesome.com/6d6b522626.js"></script>
+    <!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />-->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!--<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
+    <script src="/js/jquery.mobile.custom.min.js"></script>
+    <script src="/js/carousel.js"></script>
+    <script src="/js/fadeHeader.js"></script>
+    <script src="/js/listHandler.js"></script>
+    <script src="/js/navigationDrawer.js"></script>
+    <script src="/js/preferencesWizard.js"></script>
 </body>
 </html>
