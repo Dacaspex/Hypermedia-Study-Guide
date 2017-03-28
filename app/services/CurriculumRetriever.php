@@ -13,20 +13,39 @@ class CurriculumRetriever
         $this->PDO = $PDO;
     }
 
-    public function getCurriculum($programSlug)
+    public function getCurriculum($type, $programSlug)
     {
-        $programId = $this->getProgramId($programSlug);
-        $statement = $this->PDO->prepare("SELECT * FROM curriculi WHERE ");
+        $programId = $this->getProgramId($type, $programSlug);
+        $statement = $this->PDO->prepare("SELECT * FROM curriculi WHERE program_id = ? ORDER BY year ASC, quarter ASC");
+        $statement->bindParam(1, $programId);
+        $statement->execute();
 
-        return null;
+        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $subjects = array();
+
+        foreach ($results as $subject) {
+
+            $subject = new Curriculum(
+                $subject['id'],
+                $subject['quarter'],
+                $subject['year'],
+                $subject['name']
+            );
+            array_push($subjects, $subject);
+
+        }
+
+        return $subjects;
+
     }
 
-    public function getProgramId($programSlug)
+    public function getProgramId($type, $programSlug)
     {
-        $statement = $this->PDO->prepare("SELECT id FROM programs WHERE slug = ?");
-        $statement->bindParam(1, $programSlug);
+        $statement = $this->PDO->prepare("SELECT id FROM programs WHERE type = ? AND slug = ?");
+        $statement->bindParam(1, $type);
+        $statement->bindParam(2, $programSlug);
 
-        return $this->getFirst($statement, 'Program');
+        return $this->getFirst($statement, 'program')['id'];
     }
 
     private function getFirst(PDOStatement $statement, $type)

@@ -9,6 +9,7 @@ class Language
     {
         if (!isset($_COOKIE['locale'])) {
             self::setLocale(Language::EN);
+            return Language::EN;
         }
 
         return $_COOKIE['locale'];

@@ -7,7 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TU/e Study Guide</title>
 
+    <link rel="stylesheet" type="text/css" href="/index.css">
     <link rel="stylesheet" type="text/css" href="/general.css">
+    <link rel="stylesheet" media="screen and (min-width: 700px)" href="/general_desktop.css">
     <link rel="stylesheet" type="text/css" href="/study.css">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -18,20 +20,45 @@
 </head>
 <body>
     <!-- Wizard -->
-    <div class="preferences-wizard">
-
+    <div class="card preferences-wizard width-limit"id="preferences-wizard" align-property="top" align-value="-100%">
+        <div class="wizard-top">
+            <div class="wizard-close js-navigation-drawer-button" drawer-id="preferences-wizard">
+                <i class="fa fa-times"></i>
+            </div>
+        </div>
+        <div class="wizard-main">
+            <div class="wizard-option">
+                <h1>Language selection</h1>
+                <p>Choose your desired language / Kies je taal</p>
+                <div class="option-cards" pref-type="lang">
+                    <div class="option-card js-option" pref-val="nl">
+                        <div class="option-icon">
+                            <img src="flags/dutch-flag.svg">
+                        </div>
+                        <div class="option-name">Nederlands</div>
+                    </div>
+                    <div class="option-card js-option" pref-val="en">
+                        <div class="option-icon">
+                            <img src="flags/uk-flag.svg">
+                        </div>
+                        <div class="option-name">English</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wizard-save">
+            <div>Save</div>
+        </div>
     </div>
+    <div class="navigation-drawer-bg"></div>
 
     <!-- Nabar -->
-    <div class="navbar">
-        <div class="navbar-inner">
-            <div class="study-menu-selector"><i class="fa fa-bars" aria-hidden="true"></i></div>
-            <div class="product none">Studyguide</div>
-            <div class="brand">TU/e</div>
+    <div class="navbar js-navbar">
+        <div class="navbar-inner width-limit">
+            <div class="product js-product">Studyguide</div>
+            <div class="brand js-brand">TU<span class="accent">/</span>e</div>
             <div class="preferences">
-                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                <i class="fa fa-flag-o" aria-hidden="true"></i>
-                <i class="fa fa-user-o" aria-hidden="true"></i>
+                <div class="js-navigation-drawer-button" drawer-id="preferences-wizard"><i class="fa fa-flag-o" aria-hidden="true"></i></div>
             </div>
         </div>
     </div>
@@ -40,8 +67,15 @@
         <?= $this->section('content') ?>
     </main>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
     <script src="https://use.fontawesome.com/6d6b522626.js"></script>
+    <!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />-->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!--<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
+    <script src="/js/jquery.mobile.custom.min.js"></script>
+    <script src="/js/carousel.js"></script>
+    <script src="/js/fadeHeader.js"></script>
+    <script src="/js/listHandler.js"></script>
+    <script src="/js/navigationDrawer.js"></script>
+    <script src="/js/preferencesWizard.js"></script>
 </body>
 </html>
