@@ -29,13 +29,13 @@
         <div class="wizard-main">
             <div class="wizard-option">
                 <h1>Language selection</h1>
-                <p>Choose your desired language</p>
+                <p>Choose your desired language / Kies je taal</p>
                 <div class="option-cards" pref-type="lang">
                     <div class="option-card js-option" pref-val="nl">
                         <div class="option-icon">
                             <img src="flags/dutch-flag.svg">
                         </div>
-                        <div class="option-name">Dutch</div>
+                        <div class="option-name">Nederlands</div>
                     </div>
                     <div class="option-card js-option" pref-val="en">
                         <div class="option-icon">

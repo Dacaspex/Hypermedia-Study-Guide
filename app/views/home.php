@@ -19,7 +19,6 @@
                 <div class="js-carousel-inner col-3-parent">
                     <div class="study-list-item col-3">
                         <h2>Bachelor</h2>
-                        <p>Some information about bachelor studies...</p>
                         <!--Hier komt de lijst voor de bachelor studies-->
                         <ul>
                             <?php foreach ($programs['bachelors'] as $program): ?>
@@ -29,7 +28,6 @@
                     </div>
                     <div class="study-list-item col-3">
                         <h2>Pre-Master</h2>
-                        <p>Some information about pre-master studies...</p>
                         <!--Hier komt de lijst voor de Pre-Master studies-->
                         <ul>
                             <?php foreach ($programs['preMaster'] as $program): ?>
@@ -39,7 +37,6 @@
                     </div>
                     <div class="study-list-item col-3">
                         <h2>Master</h2>
-                        <p>Some information about master studies...</p>
                         <!--Hier komt de lijst voor de Master studies-->
                         <ul>
                             <?php foreach ($programs['masters'] as $program): ?>
