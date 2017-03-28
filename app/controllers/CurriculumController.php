@@ -17,18 +17,17 @@ class CurriculumController
      */
     private $contentRetriever;
 
-    function __construct($templates, $curriculumRetriever, $programRetriever)
+    function __construct($templates, $curriculumRetriever, $contentRetriever)
     {
+        $this->templates = $templates;
         $this->curriculumRetriever = $curriculumRetriever;
-        $this->contentRetriever = $programRetriever;
+        $this->contentRetriever = $contentRetriever;
     }
 
-    public function index($programSlug)
+    public function index($type, $programSlug, $pageSlug)
     {
-
-        $content = $this->contentRetriever->getPageContent($programSlug, 'curriculum');
-        $curriculum = $this->curriculumRetriever->getCurriculum($programSlug);
-
-        $this->templates->render('curriculum', compact('content', 'curriculum'));
+        $content = $this->contentRetriever->getPageContent($type, $programSlug, $pageSlug);
+        $curriculum = $this->curriculumRetriever->getCurriculum($type, $programSlug);
+        return $this->templates->render('curriculum', compact('content', 'curriculum'));
     }
 }

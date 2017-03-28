@@ -24,20 +24,21 @@ $uri = rawurldecode($uri);
 $routeInfo = $dispatcher->dispatch($method, $uri);  
 switch ($routeInfo[0]) {
     case FastRoute\Dispatcher::NOT_FOUND:
-        echo $templates->render('404');
+        echo "test";
+//        echo $templates->render('404');
         break;
     case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
-        echo $templates->render('404');
+//        echo $templates->render('404');
         break;
     case FastRoute\Dispatcher::FOUND:
         $handler = $routeInfo[1];
         $vars = $routeInfo[2];
 
-        try {
+//        try {
             echo $handler(...array_keys($vars));
-        } catch (Exception $e) {
-            echo $templates->render('404');
-        }
+//        } catch (Exception $e) {
+//            echo $templates->render('404');
+//        }
 
         break;
 }
