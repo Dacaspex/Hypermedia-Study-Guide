@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `content` (
   id            INT UNSIGNED AUTO_INCREMENT,
   program_id    INT UNSIGNED,
   page_id       INT UNSIGNED,
-  body          TEXT DEFAULT '',
+  body          TEXT,
   lang          ENUM('en', 'nl') DEFAULT 'en',
   updated_at    DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   created_at    DATETIME DEFAULT CURRENT_TIMESTAMP,
