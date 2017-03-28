@@ -8,7 +8,7 @@ class Language
     public static function getLocale()
     {
         if (!isset($_COOKIE['locale'])) {
-            setcookie('locale', self::EN, self::getExpiry());
+            self::setLocale(Language::EN);
         }
 
         return $_COOKIE['locale'];
@@ -16,7 +16,7 @@ class Language
 
     public static function setLocale($locale)
     {
-        setcookie('locale', $locale, self::getExpiry());
+        setcookie('locale', $locale, self::getExpiry(), null, null, true, true);
     }
 
     private static function getExpiry()
