@@ -15,14 +15,27 @@ class CurriculumRetriever
 
     public function getCurriculum($type, $programSlug)
     {
-        echo "test";
         $programId = $this->getProgramId($type, $programSlug);
         $statement = $this->PDO->prepare("SELECT * FROM curriculi WHERE program_id = ? ORDER BY year ASC, quarter ASC");
         $statement->bindParam(1, $programId);
         $statement->execute();
 
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-        var_dump($results);
+        $subjects = array();
+
+        foreach ($results as $subject) {
+
+            $subject = new Curriculum(
+                $subject['id'],
+                $subject['quarter'],
+                $subject['year'],
+                $subject['name']
+            );
+            array_push($subjects, $subject);
+
+        }
+
+        return $subjects;
 
     }
 
