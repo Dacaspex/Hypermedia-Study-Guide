@@ -62,7 +62,6 @@
             </div>
         </div>
     </div>
-    <div class="navbar-spacing"></div>
 
     <main class="page-content">
         <?= $this->section('content') ?>

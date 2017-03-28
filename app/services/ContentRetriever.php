@@ -75,7 +75,7 @@ class ContentRetriever
         return new Page(
             $result['id'],
             $result['parent_id'],
-            $result['name'],
+            Language::getLocale() === Language::EN ? $result['name_en'] : $result['name_nl'],
             $result['type']
         );
     }
@@ -92,8 +92,10 @@ class ContentRetriever
     private function getContent(Page $page, Program $program, $locale)
     {
         $statement = $this->pdo->prepare("SELECT * FROM content WHERE program_id = ? AND page_id = ? AND lang = ?");
-        $statement->bindParam(1, $program->getId());
-        $statement->bindParam(2, $page->getId());
+        $programId = $program->getId(); // Fix for the 'pass variables by reference' error
+        $pageId = $page->getId();
+        $statement->bindParam(1, $programId, PDO::PARAM_INT);
+        $statement->bindParam(2, $pageId, PDO::PARAM_INT);
         $statement->bindParam(3, $locale);
 
         $result = $this->getFirst($statement, "content");
