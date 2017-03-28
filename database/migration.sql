@@ -13,7 +13,8 @@ CREATE TABLE IF NOT EXISTS `programs` (
 
 CREATE TABLE IF NOT EXISTS `links` (
   id            INT UNSIGNED AUTO_INCREMENT,
-  name          VARCHAR(255) NOT NULL,
+  name_en       VARCHAR(255) NOT NULL,
+  name_nl       VARCHAR(255) NOT NULL,
   destination   VARCHAR(255) NOT NULL,
   program_id    INT UNSIGNED,
 

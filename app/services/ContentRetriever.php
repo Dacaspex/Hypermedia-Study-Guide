@@ -15,14 +15,15 @@ class ContentRetriever
     /**
      * Get the full content associated with a page.
      *
+     * @param string $type The type of program: bachelor, pre-master, master
      * @param string $programSlug
      * @param string $pageSlug
      * @return Content
      * @throws RuntimeException If the page was not found.
      */
-    public function getPageContent($programSlug, $pageSlug)
+    public function getPageContent($type, $programSlug, $pageSlug)
     {
-        $program = $this->getProgram($programSlug);
+        $program = $this->getProgram($type, $programSlug);
         $page = $this->getPage($pageSlug);
 
         return $this->getContent($page, $program);
@@ -31,14 +32,16 @@ class ContentRetriever
     /**
      * Get the program associated with a certain slug.
      *
+     * @param $type The type of program: bachelor, pre-master, master
      * @param $slug
      * @return Program
      * @throws RuntimeException If no program was found for this slug.
      */
-    private function getProgram($slug)
+    private function getProgram($type, $slug)
     {
-        $statement = $this->pdo->prepare("SELECT * FROM programs WHERE slug = ?");
+        $statement = $this->pdo->prepare("SELECT * FROM programs WHERE slug = ? AND type = ?");
         $statement->bindParam(1, $slug);
+        $statement->bindParam(2, $type);
 
         $result = $this->getFirst($statement, "program");
 
