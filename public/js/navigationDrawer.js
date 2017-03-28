@@ -1,6 +1,6 @@
 $( document ).ready(function() {
 
-  $("div.navigation-drawer-button").each( function() {
+  $("div.js-navigation-drawer-button").each( function() {
 
     var $this = $(this);
     var expanded = false;
@@ -11,7 +11,12 @@ $( document ).ready(function() {
     var closedValue = $drawer.attr("align-value");
 
     $this.click( function() {
-      expanded = !expanded;
+      if($drawer.hasClass("js-drawer-open")){
+        expanded = false;
+      } else{
+        expanded = true;
+      }
+      //expanded = !expanded;
       updateDrawer();
     });
 
@@ -27,15 +32,17 @@ $( document ).ready(function() {
 
     function updateDrawer(){
       if(expanded){
+        $drawer.addClass("js-drawer-open");
         var anim = {};
         anim[alignProperty] = "0px";
         $drawer.animate(anim, animationSpeed);
         $("html,body").css("overflow", "hidden");
-        $background.css("z-index", "1");
+        $background.css("z-index", "2");
         $background.animate({
           opacity: 0.3
         }, animationSpeed);
       } else{
+        $drawer.removeClass("js-drawer-open");
         var anim = {};
         anim[alignProperty] = closedValue;
         $drawer.animate(anim, animationSpeed);
