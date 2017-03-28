@@ -12,36 +12,36 @@ INSERT INTO `programs`
   (name, slug, type, contact) VALUES ('Psychology & Technology', 'psychology-technology', 'bachelor', 'some@email.com');
 SET @pt_id = LAST_INSERT_ID();
 
-INSERT INTO `pages` (name, slug, type) VALUES
-  ('Overview', 'overview', 'bachelor'),
-  ('Curriculum', 'curriculum', 'bachelor'),
-  ('Program Learning Objectives', 'learning-objectives', 'bachelor'),
-  ('Professional Skills', 'professional-skills', 'bachelor'),
-  ('Final Project', 'final-project', 'bachelor'),
-  ('Examination Schedules', 'examination-schedules', 'bachelor'),
-  ('Graduation Dates', 'graduation-dates', 'bachelor'),
-  ('Coaching', 'coaching', 'bachelor'),
-  ('Regulations', 'regulations', 'bachelor'),
-  ('Subsequent Masters', 'subsequent-masters', 'bachelor'),
+INSERT INTO `pages` (name_en, name_nl, slug, type) VALUES
+  ('Overview', 'Overzicht', 'overview', 'bachelor'),
+  ('Curriculum', 'Rooster', 'curriculum', 'bachelor'),
+  ('Program Learning Objectives', 'Leerdoelen', 'learning-objectives', 'bachelor'),
+  ('Professional Skills', 'Professionele Vaardigheden', 'professional-skills', 'bachelor'),
+  ('Final Project', 'Afsluitend Project', 'final-project', 'bachelor'),
+  ('Examination Schedules', 'Tentamenrooster', 'examination-schedules', 'bachelor'),
+  ('Graduation Dates', 'Slagings data', 'graduation-dates', 'bachelor'),
+  ('Coaching', 'Begeleiding', 'coaching', 'bachelor'),
+  ('Regulations', 'Regelementen', 'regulations', 'bachelor'),
+  ('Subsequent Masters', 'Aansluitende Masters', 'subsequent-masters', 'bachelor'),
 
-  ('Overview', 'overview', 'pre-master'),
-  ('Curriculum', 'curriculum', 'pre-master'),
-  ('Binding Study Recommendation', 'study-recommendation', 'pre-master'),
-  ('Bachelor before Master', 'bachelor-before-master', 'pre-master'),
-  ('15 Credits Regulation', '15-credits-regulation', 'pre-master'),
-  ('Regulations', 'regulations', 'pre-master'),
+  ('Overview', 'Overzicht', 'overview', 'pre-master'),
+  ('Curriculum', 'Rooster', 'curriculum', 'pre-master'),
+  ('Binding Study Recommendation', 'Bindend Studie Advies', 'study-recommendation', 'pre-master'),
+  ('Bachelor before Master', 'Bachelor voor Master', 'bachelor-before-master', 'pre-master'),
+  ('15 Credits Regulation', '15 Punten Regelement','15-credits-regulation', 'pre-master'),
+  ('Regulations', 'Regelementen', 'regulations', 'pre-master'),
 
-  ('Overview', 'overview', 'master'),
-  ('Admission', 'admission', 'master'),
-  ('Curriculum', 'curriculum', 'master'),
-  ('Professional Skills', 'professional-skills', 'master'),
-  ('Honors Program', 'honors-program', 'master'),
-  ('Exchange Program / Internship', 'exchange-program-internship', 'master'),
-  ('Examination Schedules', 'examination-schedules', 'master'),
-  ('Graduation', 'graduation', 'master'),
-  ('Prior Bachelors', 'prior-bachelors', 'master'),
-  ('Regulations', 'regulations', 'master'),
-  ('Coaching', 'coaching', 'master');
+  ('Overview', 'Overzicht', 'overview', 'master'),
+  ('Admission', 'Toelating', 'admission', 'master'),
+  ('Curriculum', 'Rooster', 'curriculum', 'master'),
+  ('Professional Skills', 'Professionele Vaardigheden', 'professional-skills', 'master'),
+  ('Honors Program', 'Honors Program', 'honors-program', 'master'),
+  ('Exchange Program / Internship', 'Uitwisseling / Stage', 'exchange-program-internship', 'master'),
+  ('Examination Schedules', 'examination-schedules', 'Tentamen data', 'master'),
+  ('Graduation', 'Slaging', 'graduation', 'master'),
+  ('Prior Bachelors', 'Voorafgaande Bachelors', 'prior-bachelors', 'master'),
+  ('Regulations', 'Regelementen', 'regulations', 'master'),
+  ('Coaching', 'Begeleiding', 'coaching', 'master');
 
 INSERT INTO `content` (program_id, page_id, body) VALUES
   (@ss_id, (SELECT id FROM pages WHERE slug = 'overview'), 'the overview page'),
@@ -54,3 +54,4 @@ INSERT INTO `content` (program_id, page_id, body) VALUES
   (@ss_id, (SELECT id FROM pages WHERE slug = 'coaching'), 'coaching page'),
   (@ss_id, (SELECT id FROM pages WHERE slug = 'regulations'), 'regulations page'),
   (@ss_id, (SELECT id FROM pages WHERE slug = 'subsequent-masters'), 'subsequent masters page');
+

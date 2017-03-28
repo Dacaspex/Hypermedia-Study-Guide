@@ -28,7 +28,8 @@ CREATE TABLE IF NOT EXISTS `links` (
 CREATE TABLE IF NOT EXISTS `pages` (
   id            INT UNSIGNED AUTO_INCREMENT,
   parent_id     INT UNSIGNED,
-  name          VARCHAR(255) NOT NULL,
+  name_en       VARCHAR(255) NOT NULL,
+  name_nl       VARCHAR(255) NOT NULL,
   slug          VARCHAR(255) UNIQUE NOT NULL,
   type          ENUM('bachelor', 'pre-master', 'master') NOT NULL,
 
