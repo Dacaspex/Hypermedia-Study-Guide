@@ -13,8 +13,14 @@ class HomeController
 
     public function index()
     {
+        $programs = self::getPrograms($this->PDO);
 
-        $stmt = $this->PDO->prepare("SELECT `name`, `type` FROM `programs`");
+        return $this->templates->render('home', compact('programs'));
+    }
+
+    public static function getPrograms(PDO $pdo)
+    {
+        $stmt = $pdo->prepare("SELECT `name`, `type` FROM `programs`");
         $stmt->execute();
 
         $bachelors = array();
@@ -40,6 +46,10 @@ class HomeController
             }
         }
 
-        return $this->templates->render('home', compact('bachelors', 'preMasters', 'masters'));
+        return $programs = array(
+            'bachelors' => $bachelors,
+            'preMaster' => $preMasters,
+            'masters' => $masters
+        );
     }
 }

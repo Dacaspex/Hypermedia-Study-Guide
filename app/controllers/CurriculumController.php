@@ -17,7 +17,7 @@ class CurriculumController
      */
     private $contentRetriever;
 
-    function __construct($templates, $curriculumRetriever, $contentRetriever)
+    function __construct($templates, $contentRetriever, $curriculumRetriever)
     {
         $this->templates = $templates;
         $this->curriculumRetriever = $curriculumRetriever;
@@ -26,8 +26,8 @@ class CurriculumController
 
     public function index($type, $programSlug, $pageSlug)
     {
-        $content = $this->contentRetriever->getPageContent($type, $programSlug, $pageSlug);
-        $curriculum = $this->curriculumRetriever->getCurriculum($type, $programSlug);
-        return $this->templates->render('curriculum', compact('content', 'curriculum'));
+        $content = $this->contentRetriever->getPageContent($type, $programSlug, $pageSlug, Language::getLocale());
+        $subjects = $this->curriculumRetriever->getCurriculum($type, $programSlug);
+        return $this->templates->render('curriculum', compact('content', 'subjects'));
     }
 }
