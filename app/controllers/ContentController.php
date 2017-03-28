@@ -24,10 +24,11 @@ class ContentController
 		$this->retriever = $retriever;
 	}
 
-	function index($type, $programSlug, $pageSlug)
+	function index($type, $programSlug, $pageSlug, PDO $pdo)
 	{
         $content = $this->retriever->getPageContent($type, $programSlug, $pageSlug, Language::getLocale());
+        $programs = HomeController::getPrograms($pdo);
 
-        return $this->templates->render('program', compact('content'));
+        return $this->templates->render('program', compact('content', 'programs'));
 	}
 }
