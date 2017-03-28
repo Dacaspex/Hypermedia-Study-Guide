@@ -10,6 +10,8 @@ $( document ).ready(function() {
     var alignProperty = $drawer.attr("align-property");
     var closedValue = $drawer.attr("align-value");
 
+    var $brand = $(".js-header").children(".js-product").children("div");
+
     $this.click( function() {
       if($drawer.hasClass("js-drawer-open")){
         expanded = false;
@@ -32,6 +34,7 @@ $( document ).ready(function() {
 
     function updateDrawer(){
       if(expanded){
+        $brand.css("z-index", "1");
         $drawer.addClass("js-drawer-open");
         var anim = {};
         anim[alignProperty] = "0px";
@@ -42,6 +45,7 @@ $( document ).ready(function() {
           opacity: 0.3
         }, animationSpeed);
       } else{
+        $brand.css("z-index", "");
         $drawer.removeClass("js-drawer-open");
         var anim = {};
         anim[alignProperty] = closedValue;
