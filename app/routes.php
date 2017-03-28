@@ -22,10 +22,10 @@ $routes->addRoute('POST', '/lang', function() {
 
 $routes->addRoute('GET', '/{type}/{programSlug}/curriculum', function ($type, $programSlug) use ($templates, $connection) {
     $ctrl = new CurriculumController($templates, new ContentRetriever($connection), new CurriculumRetriever($connection));
-    return $ctrl->index($type, $programSlug, 'curriculum');
+    return $ctrl->index($type, $programSlug, 'curriculum', $connection);
 });
 
 $routes->addRoute('GET', '/{type}/{programSlug}/{pageSlug}', function($type, $programSlug, $pageSlug) use ($templates, $connection) {
     $ctrl = new ContentController($templates, new ContentRetriever($connection));
-    return $ctrl->index($type, $programSlug, $pageSlug);
+    return $ctrl->index($type, $programSlug, $pageSlug, $connection);
 });
