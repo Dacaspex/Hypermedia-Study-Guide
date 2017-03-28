@@ -28,6 +28,24 @@
 	box-sizing:border-box;
 }
 
+.card-cols > .col-5 {
+  width:20%;
+	float:left;
+	box-sizing:border-box;
+}
+
+.card-cols > .col-5-double {
+  width:40%;
+	float:left;
+	box-sizing:border-box;
+}
+
+.card-cols > .col-5-triple {
+  width:60%;
+	float:left;
+	box-sizing:border-box;
+}
+
 aside.card {
   margin-top:0px !important;
   box-shadow:none;
@@ -63,6 +81,29 @@ aside.card {
 
 .option-card > .option-name {
   font-size:2em;
+}
+
+/*
+	NAVIGATION-DRAWER STYLING
+*/
+@media screen and (min-width: 900px) {
+  .card-cols .navigation-drawer {
+    height:auto;
+    left:auto;
+    position:static;
+    max-width:none;
+    margin-right:20px;
+    border:1px solid lightgray;
+    width:calc(20% - 20px);
+    box-shadow:0px 2px 3px 0px rgba(0,0,0,0.1);
+    overflow:visible;
+  }
+
+  .card-cols .navigation-drawer a {
+    line-height:normal;
+    display:inline-block;
+    height:auto;
+  }
 }
 
 /*

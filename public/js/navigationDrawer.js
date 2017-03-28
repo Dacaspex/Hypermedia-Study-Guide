@@ -1,11 +1,12 @@
 $( document ).ready(function() {
 
-  $("div.js-navigation-drawer-button").each( function() {
+  $(".js-navigation-drawer-button").each( function() {
 
     var $this = $(this);
     var expanded = false;
     var animationSpeed = 200;
     var $drawer = $("#"+$this.attr("drawer-id"));
+    $drawerArray.push($drawer);
     var $background = $(".navigation-drawer-bg");
     var alignProperty = $drawer.attr("align-property");
     var closedValue = $drawer.attr("align-value");
@@ -18,7 +19,6 @@ $( document ).ready(function() {
       } else{
         expanded = true;
       }
-      //expanded = !expanded;
       updateDrawer();
     });
 
