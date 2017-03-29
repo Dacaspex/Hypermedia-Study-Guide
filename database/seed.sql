@@ -1,3 +1,7 @@
+-- noinspection SqlDialectInspectionForFile
+
+-- noinspection SqlNoDataSourceInspectionForFile
+
 INSERT INTO `programs`
   (name, slug, type, contact) VALUES('Software Science', 'software-science', 'bachelor', 'some@email.com');
 SET @ss_id = LAST_INSERT_ID();

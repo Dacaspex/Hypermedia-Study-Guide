@@ -1,3 +1,7 @@
+-- noinspection SqlDialectInspectionForFile
+
+-- noinspection SqlNoDataSourceInspectionForFile
+
 CREATE TABLE IF NOT EXISTS `programs` (
   id            INT UNSIGNED AUTO_INCREMENT,
   name          VARCHAR(255) NOT NULL,
@@ -30,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `pages` (
   parent_id     INT UNSIGNED,
   name_en       VARCHAR(255) NOT NULL,
   name_nl       VARCHAR(255) NOT NULL,
-  slug          VARCHAR(255) UNIQUE NOT NULL,
+  slug          VARCHAR(255) NOT NULL,
   type          ENUM('bachelor', 'pre-master', 'master') NOT NULL,
 
   PRIMARY KEY(id),
