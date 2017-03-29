@@ -41,6 +41,13 @@ time {
 	display: none;
 }
 
+.clear {
+	content: '';
+  display: block;
+  height: 0px;
+  clear: both;
+}
+
 .page-content {
 	margin-top: 65px;
 	overflow: auto;
@@ -60,7 +67,14 @@ time {
 
 .card-cols {
 	width:100%;
-	overflow:hidden;
+	/*overflow:hidden;*/
+}
+
+.card-cols:after {
+	content:'';
+	display:block;
+	height:0px;
+	clear:both;
 }
 
 .col-3-parent > .col-3, .col-3-a-parent > .col-3 {
@@ -209,27 +223,23 @@ time {
 }
 
 .subnavbar span {
+	cursor:pointer;
+	width:calc(100% * (1/3) - 12px);
   border-left: 1px solid lightgray;
   color: black;
   text-decoration: none;
   padding: 0 20px;
   display:inline-block;
   margin:6px 6px;
-  width:calc(50% - 12px);
   box-sizing:border-box;
   float:left;
   text-align:center;
-}
-
-.subnavbar span:nth-child(even) {
-  border-right: 1px solid lightgray;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
 }
 
 @media screen and (min-width:600px) {
-
-  .subnavbar span {
-    width:calc(25% - 12px);
-  }
 
   .subnavbar span:nth-child(even) {
     border-right: none;
@@ -326,6 +336,58 @@ time {
 	background-color:#4d7fd1;
 	padding:10px 20px;
 	color:white;
+}
+
+.breadcrumb {
+	display:inline-block;
+	background-color:#fcfcfc !important;
+	margin-bottom:20px;
+	position:relative;
+}
+
+.breadcrumb a {
+	color:gray;
+	text-decoration:none;
+}
+
+.breadcrumb a:hover {
+	text-decoration:underline;
+}
+
+.breadcrumb a:last-child {
+	color:black;
+}
+
+.breadcrumb span {
+	color:gray;
+	margin:0px 5px;
+}
+
+.search-bar {
+	display:inline-block;
+	margin-bottom:20px;
+	box-sizing:border-box;
+	width:100%;
+	padding:0px 20px;
+}
+
+.search-bar input {
+	display:inline-block;
+	box-sizing:border-box;
+	padding:10px 20px;
+	border:1px solid lightgray;
+	width: calc(100% - 60px);
+}
+
+.search-bar button {
+	background-color:#4d7fd1;
+	color:white;
+	padding:10px 20px;
+	border:none;
+	box-shadow:0px 2px 3px 0px rgba(0,0,0,0.1);
+	cursor:pointer;
+	float:right;
+	width:50px;
 }
 
 /*
@@ -425,7 +487,7 @@ time {
 	border: 1px solid lightgray;
 	padding: 20px;
 	/*transition: all 1s;*/
-	overflow-x: hidden;
+	/*overflow-x: hidden;*/
 }
 
 .card:not(:first-child), .card-cols {
