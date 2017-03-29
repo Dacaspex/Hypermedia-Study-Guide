@@ -5,6 +5,7 @@ class Program
 {
 	private $id;
 	private $name;
+	private $slug;
 	private $type;
 	private $numStudents;
 	private $numCourses;
@@ -12,10 +13,11 @@ class Program
 	private $contactLink;
 	private $links; // Array of instances of the Link model
 	
-	function __construct($id, $name, $type, $numStudents, $numCourses, $numGrads, $contactLink, $links)
+	function __construct($id, $name, $slug, $type, $numStudents, $numCourses, $numGrads, $contactLink, $links)
 	{
         $this->id = $id;
         $this->name = $name;
+        $this->slug = $slug;
         $this->type = $type;
         $this->numStudents = $numStudents;
         $this->numCourses = $numCourses;
@@ -33,6 +35,11 @@ class Program
     public function getName()
     {
         return $this->name;
+    }
+
+    public function getSlug()
+    {
+        return $this->slug;
     }
 
     public function getType()

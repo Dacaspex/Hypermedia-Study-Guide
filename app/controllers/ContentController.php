@@ -15,18 +15,25 @@ class ContentController
      * @var ContentRetriever
      */
 	private $retriever;
+
+    /**
+     * @var LinkRetriever
+     */
+	private $links;
 	
-	function __construct(\League\Plates\Engine $templates, ContentRetriever $retriever)
+	function __construct(\League\Plates\Engine $templates, ContentRetriever $retriever, LinkRetriever $links)
 	{
         $this->templates = $templates;
 		$this->retriever = $retriever;
+		$this->links = $links;
 	}
 
 	function index($type, $programSlug, $pageSlug, PDO $pdo)
 	{
         $content = $this->retriever->getPageContent($type, $programSlug, $pageSlug, Language::getLocale());
         $programs = HomeController::getPrograms($pdo);
+        $links = $this->links->getMenuLinks($content->getProgram());
 
-        return $this->templates->render('program', compact('content', 'programs'));
+        return $this->templates->render('program', compact('content', 'programs', 'links'));
 	}
 }

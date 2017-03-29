@@ -26,6 +26,6 @@ $routes->addRoute('GET', '/{type}/{programSlug}/curriculum', function ($type, $p
 });
 
 $routes->addRoute('GET', '/{type}/{programSlug}/{pageSlug}', function($type, $programSlug, $pageSlug) use ($templates, $connection) {
-    $ctrl = new ContentController($templates, new ContentRetriever($connection));
+    $ctrl = new ContentController($templates, new ContentRetriever($connection), new LinkRetriever($connection));
     return $ctrl->index($type, $programSlug, $pageSlug, $connection);
 });
