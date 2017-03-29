@@ -2,6 +2,44 @@
 	box-shadow:none;
 }
 
+.study-drawer ul {
+	list-style:none;
+	padding:0px;
+	margin:0px;
+}
+
+.study-drawer ul > li {
+	background-color:white;
+}
+
+.study-drawer ul > li:nth-child(even) {
+	background-color:#f9f9f9;
+}
+
+.study-drawer ul > li:not(:last-child) {
+	border-bottom:1px solid lightgray;
+}
+
+.study-drawer ul > li > a {
+	padding:10px 20px;
+	text-decoration: none;
+	display:inline-block;
+	color:black;
+}
+
+.study-drawer ul > li > a:hover {
+	padding-left:25px;
+}
+
+.study-drawer ul > li > a:before {
+	content: "\f105";
+	font: normal normal normal 14px/1 FontAwesome;
+	margin-right: 10px;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
 @media screen and (min-width: 900px) {
 	.navigation-drawer-button {
 		display:none;

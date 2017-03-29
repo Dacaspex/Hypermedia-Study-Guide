@@ -103,13 +103,29 @@
         </ul>
     </div>
 
-    <div class="subnavbar">
-        <div class="width-limit">
-            <span class="js-navigation-drawer-button" drawer-id="bachelor-drawer">Bachelors</span>
-            <span class="js-navigation-drawer-button" drawer-id="pre-master-drawer">Pre-masters</span>
-            <span class="js-navigation-drawer-button" drawer-id="master-drawer">Masters</span>
-        </div>
-    </div>
+	<div class="study-drawer width-limit" id="pre-master-drawer" align-property="top" align-value="-100%">
+		<h1>Pre-Master studies</h1>
+		<ul>
+			<li><a href="#">Computer Science and Engineering</a></li>
+			<li><a href="#">Psychology and Technology</a></li>
+		</ul>
+	</div>
+
+	<div class="study-drawer width-limit" id="master-drawer" align-property="top" align-value="-100%">
+		<h1>Master studies</h1>
+		<ul>
+			<li><a href="#">Computer Science and Engineering</a></li>
+			<li><a href="#">Psychology and Technology</a></li>
+		</ul>
+	</div>
+
+	<div class="subnavbar">
+		<div class="width-limit">
+			<span class="js-navigation-drawer-button" drawer-id="bachelor-drawer">Bachelors</span>
+			<span class="js-navigation-drawer-button" drawer-id="pre-master-drawer">Pre-masters</span>
+			<span class="js-navigation-drawer-button" drawer-id="master-drawer">Masters</span>
+		</div>
+	</div>
 
     <header class="top-header width-limit js-header">
         <div class="header-image js-header-image">
@@ -117,56 +133,61 @@
         </div>
     </header>
 
-    <div class="card-cols width-limit">
-        <aside class="navigation-drawer col-5">
-            <div class="navigation-drawer-inner">
-                <header>
-                    <h2>Menu</h2>
-                </header>
-                <ul>
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Curriculum</a>
-                        <ul>
-                            <li><a href="#">Basic Courses</a></li>
-                            <li><a href="#">Elective Courses and Packages</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Program Learning Objectives</a></li>
-                    <li><a href="#">Proffesional skills</a></li>
-                    <li><a href="#">Etc...</a></li>
-                </ul>
-            </div>
-        </aside>
-        <main class="study-info col-5-triple">
-            <div class="card">
-                <header>
-                    <h1>Psychology and Technology</h1>
-                </header>
-                <section>
-                    <h2>The result</h2>
-                    <p>
-                        The Major Psychology and Technology is formally embedded in the Bachelor program Technical
-                        Innovation Sciences (in Dutch: Technische Innovatiewetenschappen). Consequently, after
-                        completing this Majors, you will receive the Bachelor's degree certificate in Technical
-                        Innovation Sciences.
-                    </p>
-                    <h2>Program Objectives</h2>
-                    <p>
-                        The overall objective of the Bachelor program is to train and educate young professionals who
-                        are able to progress into an appropriate Master's program and/or are prepared to embark upon a
-                        professional career in the field of Psychological Technologies.
-                    </p>
-                    <p style="font-weight: bold;">Students are therefore expected to:</p>
-                    <ul>
-                        <li>acquire cognitive skills relating to (social) psychology and technology</li>
-                        <li>acquire practical capabilities and skills relating to psychological research and
-                            development
-                        </li>
-                        <li>acquire professional and generic academic skills</li>
-                    </ul>
-                </section>
-            </div>
-        </main>
+	<div class="card-cols width-limit">
+		<div class="card breadcrumb">
+			<a href="#">Home</a><span>/</span>
+			<a href="#">Majors</a><span>/</span>
+			<a href="#">Psychology and Technology</a>
+		</div>
+		<div class="search-bar">
+			<form>
+				<input type="text" name="search" placeholder="search...">
+				<button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+			</form>
+		</div>
+		<div class="clear"></div>
+		<aside class="navigation-drawer col-5">
+				<div class="navigation-drawer-inner">
+			    <header>
+			      <h2>Menu</h2>
+			    </header>
+			    <ul>
+			      <li class="active"><a href="#">Home</a></li>
+			      <li><a href="#">Curriculum</a>
+			        <ul>
+			          <li><a href="#">Basic Courses</a></li>
+			          <li><a href="#">Elective Courses and Packages</a></li>
+			        </ul>
+			      </li>
+			      <li><a href="#">Program Learning Objectives</a></li>
+			      <li><a href="#">Proffesional skills</a></li>
+			      <li><a href="#">Etc...</a></li>
+			    </ul>
+				</div>
+		</aside>
+		<main class="study-info col-5-triple">
+			<div class="card">
+				<header>
+					<h1>Psychology and Technology</h1>
+				</header>
+				<section>
+					<h2>The result</h2>
+	        <p>
+						The Major Psychology and Technology is formally embedded in the Bachelor program Technical Innovation Sciences (in Dutch: Technische Innovatiewetenschappen). Consequently, after completing this Majors, you will receive the Bachelor's degree certificate in Technical Innovation Sciences.
+					</p>
+	        <h2>Program Objectives</h2>
+	        <p>
+						The overall objective of the Bachelor program is to train and educate young professionals who are able to progress into an appropriate Master's program and/or are prepared to embark upon a professional career in the field of Psychological Technologies.
+					</p>
+	        <p style="font-weight: bold;">Students are therefore expected to:</p>
+					<ul>
+						<li>acquire cognitive skills relating to (social) psychology and technology</li>
+						<li>acquire practical capabilities and skills relating to psychological research and development</li>
+						<li>acquire professional and generic academic skills</li>
+					</ul>
+				</section>
+			</div>
+		</main>
 
         <aside class="card col-5">
             <div class="card card-gray">
