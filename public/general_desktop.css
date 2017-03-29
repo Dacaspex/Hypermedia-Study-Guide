@@ -171,6 +171,11 @@ aside.card {
   PAGE STYLING
 */
 
+.search-card {
+  border:none;
+  box-shadow:none;
+}
+
 @media screen and (min-width: 1080px) {
 
   .card-gray {
@@ -194,6 +199,12 @@ aside.card {
 
 .card-blue h1 {
   font-size:2em;
+}
+
+.blue-bar {
+	width:70%;
+	margin-left:auto;
+	margin-right:auto;
 }
 
 .carousel-menu {

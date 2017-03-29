@@ -42,7 +42,7 @@ $( document ).ready(function() {
       if(val == 1){
         $brand.css("position", "fixed");
         $brand.css("top", (($(".navbar").height()-$brand.outerHeight(false))/2)+"px");
-        $brand.css("bottom", "");
+        $brand.css("bottom", "auto");
         $brand.css("z-index", "6");
         $brand.css("background-color", "rgba(0, 0, 0, 0)");
       } else{

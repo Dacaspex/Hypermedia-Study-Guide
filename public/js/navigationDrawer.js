@@ -43,10 +43,7 @@ $( document ).ready(function() {
         anim[alignProperty] = "0px";
         $drawer.animate(anim, animationSpeed);
         $("html,body").css("overflow", "hidden");
-        $background.css("z-index", "2");
-        $background.animate({
-          opacity: 0.3
-        }, animationSpeed);
+        $background.addClass("active");
       } else{
         $brand.css("z-index", "");
         $drawer.removeClass("js-drawer-open");
@@ -54,13 +51,7 @@ $( document ).ready(function() {
         anim[alignProperty] = closedValue;
         $drawer.animate(anim, animationSpeed);
         $("html,body").css("overflow", "");
-        $background.animate({
-          opacity: 0
-        }, animationSpeed);
-        animationTimeout = setTimeout(function() {
-          $background.css("z-index", "-1");
-          clearTimeout(animationTimeout);
-        }, animationSpeed);
+        $background.removeClass("active");
       }
     }
 

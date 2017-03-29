@@ -71,6 +71,16 @@
 			<div class="product js-product"><div>Studyguide</div></div>
 		</header>
 
+		<div class="width-limit">
+			<div class="search-bar no-margin">
+				<form>
+					<input type="text" name="search" placeholder="search...">
+					<button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+				</form>
+			</div>
+			<div class="clear"></div>
+		</div>
+
 		<div class="card card-full visible width-limit">
 			<nav class="study-selector js-carousel" clickable-menu="true">
 				<div class="study-menu js-carousel-menu">
