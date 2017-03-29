@@ -69,7 +69,7 @@
 <!--                <li><a href="#">Etc...</a></li>-->
 
                 <?php foreach ($links as $link): ?>
-                    <li><a href="/<?= $content->getProgram()->getType() ?>/<?= $content->getProgram()->getSlug() ?>/<?= $link->getDestination() ?>"><?= $link->getName() ?></a></li>
+                    <li <?= $this->activeLink($link->getDestination()) ?>><a href="/<?= $content->getProgram()->getType() ?>/<?= $content->getProgram()->getSlug() ?>/<?= $link->getDestination() ?>"><?= $link->getName() ?></a></li>
                 <?php endforeach; ?>
             </ul>
         </div>
