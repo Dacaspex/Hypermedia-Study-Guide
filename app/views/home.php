@@ -53,45 +53,18 @@
     </nav>
 </div>
 
-<div class="card card-blue card-full js-carousel" menu-animation="true">
-    <div class="width-limit js-carousel-slide hor-scroll">
-        <div class="js-carousel-inner col-3-parent">
-            <div class="col-3">
-                <header>
-                    <h1><i class="fa fa-book" aria-hidden="true"></i>De studyguide</h1>
-                </header>
-                <section>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur cursus sem sed faucibus malesuada. Nullam gravida interdum aliquet. Nam dignissim gravida leo, vitae bibendum erat bibendum in. Pellentesque eget mauris urna. Proin dictum tortor
-                        ut ex posuere, et laoreet urna eleifend. Vivamus aliquam tempus turpis sit amet lobortis. Quisque bibendum velit id dui scelerisque, quis lobortis mi sollicitudin.</p>
-                    <a href="#">Lees meer</a>
-                </section>
-            </div>
-            <div class="col-3">
-                <header>
-                    <h1><i class="fa fa-user" aria-hidden="true"></i>Profielen</h1>
-                </header>
-                <section>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur cursus sem sed faucibus malesuada. Nullam gravida interdum aliquet. Nam dignissim gravida leo, vitae bibendum erat bibendum in. Pellentesque eget mauris urna. Proin dictum tortor
-                        ut ex posuere, et laoreet urna eleifend. Vivamus aliquam tempus turpis sit amet lobortis. Quisque bibendum velit id dui scelerisque, quis lobortis mi sollicitudin.</p>
-                    <a href="#">Lees meer</a>
-                </section>
-            </div>
-            <div class="col-3">
-                <header>
-                    <h1><i class="fa fa-graduation-cap" aria-hidden="true"></i>TU/e</h1>
-                </header>
-                <section>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur cursus sem sed faucibus malesuada. Nullam gravida interdum aliquet. Nam dignissim gravida leo, vitae bibendum erat bibendum in. Pellentesque eget mauris urna. Proin dictum tortor
-                        ut ex posuere, et laoreet urna eleifend. Vivamus aliquam tempus turpis sit amet lobortis. Quisque bibendum velit id dui scelerisque, quis lobortis mi sollicitudin.</p>
-                    <a href="#">Lees meer</a>
-                </section>
-            </div>
+<div class="card card-blue">
+    <div class="width-limit">
+        <div class="blue-bar">
+            <header>
+                <h1><i class="fa fa-book" aria-hidden="true"></i>De studyguide</h1>
+            </header>
+            <section>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur cursus sem sed faucibus malesuada. Nullam gravida interdum aliquet. Nam dignissim gravida leo, vitae bibendum erat bibendum in. Pellentesque eget mauris urna. Proin dictum tortor
+                    ut ex posuere, et laoreet urna eleifend. Vivamus aliquam tempus turpis sit amet lobortis. Quisque bibendum velit id dui scelerisque, quis lobortis mi sollicitudin.</p>
+                <a href="#">Lees meer</a>
+            </section>
         </div>
-    </div>
-    <div class="card-blue carousel-menu js-carousel-menu">
-        <div class="carousel-circle active"><div></div></div>
-        <div class="carousel-circle"><div></div></div>
-        <div class="carousel-circle"><div></div></div>
     </div>
 </div>
 

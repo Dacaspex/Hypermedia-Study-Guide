@@ -49,6 +49,7 @@ class ContentRetriever
         return new Program(
             $result['id'],
             $result['name'],
+            $result['slug'],
             $result['type'],
             $result['num_students'],
             $result['num_courses'],
