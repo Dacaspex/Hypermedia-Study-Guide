@@ -51,6 +51,18 @@
 </header>
 
 <div class="card-cols width-limit">
+    <div class="card breadcrumb">
+        <a href="#">Home</a><span>/</span>
+        <a href="#">Majors</a><span>/</span>
+        <a href="#">Psychology and Technology</a>
+    </div>
+    <div class="search-bar">
+        <form>
+            <input type="text" name="search" placeholder="search...">
+            <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </form>
+    </div>
+    <div class="clear"></div>
     <aside class="navigation-drawer col-5">
         <div class="navigation-drawer-inner">
             <header>

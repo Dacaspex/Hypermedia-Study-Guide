@@ -66,6 +66,40 @@
         <?= $this->section('content') ?>
     </main>
 
+    <div class="card card-blue">
+        <footer class="width-limit">
+            <div class="col-4">
+                <div class="bold">About</div>
+                <p>
+                    This website is designed by students for students in order to structure the information in a better
+                    way.
+                </p>
+            </div>
+            <div class="col-4 footer-social">
+                <div class="bold">Social media</div>
+                <a href="#"><i class="fa fa-facebook-square"></i></a>
+                <a href="#"><i class="fa fa-twitter-square"></i></a>
+                <a href="#"><i class="fa fa-youtube-square"></i></a>
+            </div>
+            <div class="col-4">
+                <div class="bold">Address</div>
+                <div>Straatnaam 12</div>
+                <div>1234 AB</div>
+                <div>Eindhoven</div>
+            </div>
+            <div class="col-4">
+                <div class="bold">Contact</div>
+                <div>emailaddress@tue.nl</div>
+                <div>040 123456</div>
+            </div>
+            <div class="footer-bottom">
+                <div>Copyright 2017</div>
+                <div class="language navigation-drawer-button js-navigation-drawer-button"
+                     drawer-id="preferences-wizard">Language: <span>English</span></div>
+            </div>
+        </footer>
+    </div>
+
     <script src="https://use.fontawesome.com/6d6b522626.js"></script>
     <!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />-->
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>

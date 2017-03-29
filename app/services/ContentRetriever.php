@@ -25,7 +25,7 @@ class ContentRetriever
     public function getPageContent($type, $programSlug, $pageSlug, $locale)
     {
         $program = $this->getProgram($type, $programSlug);
-        $page = $this->getPage($pageSlug);
+        $page = $this->getPage($pageSlug, $program->getType());
 
         return $this->getContent($page, $program, $locale);
     }
@@ -66,10 +66,11 @@ class ContentRetriever
      * @return Page
      * @throws RuntimeException If no page was found for this slug.
      */
-    private function getPage($slug)
+    private function getPage($slug, $type)
     {
-        $statement = $this->pdo->prepare("SELECT * FROM pages WHERE slug = ?");
+        $statement = $this->pdo->prepare("SELECT * FROM pages WHERE slug = ? AND type = ?");
         $statement->bindParam(1, $slug);
+        $statement->bindParam(2, $type);
 
         $result = $this->getFirst($statement, "page");
 
