@@ -89,6 +89,9 @@
 
     <div class="study-drawer width-limit" id="bachelor-drawer" align-property="top" align-value="-100%">
         <h1>Bachelor studies</h1>
+        <div class="study-drawer-close js-navigation-drawer-button" drawer-id="bachelor-drawer">
+  				<i class="fa fa-times"></i>
+  			</div>
         <ul>
             <li><a href="#">Computer Science and Engineering</a></li>
             <li><a href="#">Psychology and Technology</a></li>
@@ -105,6 +108,9 @@
 
 	<div class="study-drawer width-limit" id="pre-master-drawer" align-property="top" align-value="-100%">
 		<h1>Pre-Master studies</h1>
+    <div class="study-drawer-close js-navigation-drawer-button" drawer-id="pre-master-drawer">
+      <i class="fa fa-times"></i>
+    </div>
 		<ul>
 			<li><a href="#">Computer Science and Engineering</a></li>
 			<li><a href="#">Psychology and Technology</a></li>
@@ -113,6 +119,9 @@
 
 	<div class="study-drawer width-limit" id="master-drawer" align-property="top" align-value="-100%">
 		<h1>Master studies</h1>
+    <div class="study-drawer-close js-navigation-drawer-button" drawer-id="master-drawer">
+      <i class="fa fa-times"></i>
+    </div>
 		<ul>
 			<li><a href="#">Computer Science and Engineering</a></li>
 			<li><a href="#">Psychology and Technology</a></li>
