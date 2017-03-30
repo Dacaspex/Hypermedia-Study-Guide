@@ -55,6 +55,8 @@ CREATE TABLE IF NOT EXISTS `content` (
 
   PRIMARY KEY(id),
 
+  FULLTEXT (body),
+
   FOREIGN KEY fk_program_content(program_id)
     REFERENCES programs(id)
     ON DELETE CASCADE,

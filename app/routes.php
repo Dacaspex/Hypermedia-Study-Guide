@@ -29,3 +29,8 @@ $routes->addRoute('GET', '/{type}/{programSlug}/{pageSlug}', function($type, $pr
     $ctrl = new ContentController($templates, new ContentRetriever($connection), new LinkRetriever($connection));
     return $ctrl->index($type, $programSlug, $pageSlug, $connection);
 });
+
+$routes->addRoute('GET', '/search', function() use ($connection) {
+    $ctrl = new SearchController($connection);
+    return $ctrl->runSearch();
+});
