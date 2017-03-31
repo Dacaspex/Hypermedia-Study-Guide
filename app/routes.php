@@ -30,7 +30,7 @@ $routes->addRoute('GET', '/{type}/{programSlug}/{pageSlug}', function($type, $pr
     return $ctrl->index($type, $programSlug, $pageSlug, $connection);
 });
 
-$routes->addRoute('GET', '/search', function() use ($connection) {
-    $ctrl = new SearchController($connection);
+$routes->addRoute('GET', '/search', function() use ($templates, $connection) {
+    $ctrl = new SearchController($templates, $connection);
     return $ctrl->runSearch();
 });

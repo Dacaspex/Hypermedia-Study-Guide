@@ -7,15 +7,21 @@ class SearchController
      */
     private $pdo;
 
-    public function __construct(PDO $pdo)
+    /**
+     * @var \League\Plates\Engine
+     */
+    private $templates;
+
+    public function __construct(\League\Plates\Engine $templates, PDO $pdo)
     {
         $this->pdo = $pdo;
+        $this->templates = $templates;
     }
 
     public function runSearch()
     {
         if (!isset($_GET['query'])) {
-            return 'no search results';
+            $this->templates->render('search', ['pages' => []]);
         }
 
         $query = $_GET['query'];
@@ -28,8 +34,8 @@ class SearchController
 
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
         $pages = $this->mapResults($results);
-        var_dump($pages);
-        die();
+
+        return $this->templates->render('search', compact('pages', 'query'));
     }
 
     private function prepParameters($parameter)

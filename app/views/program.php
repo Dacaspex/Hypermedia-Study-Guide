@@ -57,8 +57,8 @@
         <a href="#">Psychology and Technology</a>
     </div>
     <div class="search-bar">
-        <form>
-            <input type="text" name="search" placeholder="search...">
+        <form method="get" action="/search">
+            <input type="text" name="query" placeholder="Search...">
             <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
         </form>
     </div>
@@ -69,17 +69,6 @@
                 <h2>Menu</h2>
             </header>
             <ul>
-<!--                <li class="active"><a href="#">Home</a></li>-->
-<!--                <li><a href="#">Curriculum</a>-->
-<!--                    <ul>-->
-<!--                        <li><a href="#">Basic Courses</a></li>-->
-<!--                        <li><a href="#">Elective Courses and Packages</a></li>-->
-<!--                    </ul>-->
-<!--                </li>-->
-<!--                <li><a href="#">Program Learning Objectives</a></li>-->
-<!--                <li><a href="#">Proffesional skills</a></li>-->
-<!--                <li><a href="#">Etc...</a></li>-->
-
                 <?php foreach ($links as $link): ?>
                     <li <?= $this->activeLink($link->getDestination()) ?>><a href="/<?= $content->getProgram()->getType() ?>/<?= $content->getProgram()->getSlug() ?>/<?= $link->getDestination() ?>"><?= $link->getName() ?></a></li>
                 <?php endforeach; ?>
