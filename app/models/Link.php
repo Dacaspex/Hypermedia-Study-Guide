@@ -2,20 +2,13 @@
 
 class Link
 {
-    private $id;
     private $name;
     private $destination;
 
-    function __construct($id, $name, $destination)
+    function __construct($name, $destination)
     {
-        $this->id = $id;
         $this->name = $name;
         $this->destination = $destination;
-    }
-
-    public function getId()
-    {
-        return $this->id;
     }
 
     public function getName()

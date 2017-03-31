@@ -65,7 +65,6 @@ class SearchController
             $destination = "/{$result['program_type']}/{$result['program_slug']}/{$result['page_slug']}";
 
             $link = new Link(
-                null,
                 $linkName,
                 $destination
             );

@@ -24,7 +24,8 @@ class LinkRetriever
 
         $links = [];
         foreach ($results as $result) {
-            $links[] = new Link(
+            $links[] = new MenuLink(
+                $this->pdo,
                 $result['id'],
                 Language::getLocale() === Language::EN ? $result['name_en'] : $result['name_nl'],
                 $result['slug']
