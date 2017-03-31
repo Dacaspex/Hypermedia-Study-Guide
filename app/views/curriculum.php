@@ -68,7 +68,10 @@
                 <!--                <li><a href="#">Proffesional skills</a></li>-->
                 <!--                <li><a href="#">Etc...</a></li>-->
 
-                <?php foreach ($links as $link): ?>
+                <?php
+                // debug
+                $links = array();
+                foreach ($links as $link): ?>
                     <li <?= $this->activeLink($link->getDestination()) ?>><a href="/<?= $content->getProgram()->getType() ?>/<?= $content->getProgram()->getSlug() ?>/<?= $link->getDestination() ?>"><?= $link->getName() ?></a></li>
                 <?php endforeach; ?>
             </ul>
@@ -81,7 +84,42 @@
             </header>
             <section>
                 <?= $content->getBody() ?>
-                <?=  ?>
+                <div class="curr-outer">
+                    <table class="curr-table">
+                        <tbody>
+                        <?php
+
+                        $numYears = 3;
+                        $numQuartiles = 4;
+                        $index = 0;
+
+                        for ($year = 1; $year <= $numYears; $year++):
+                        ?>
+
+                            <tr>
+                                <td colspan="4" class="curr-year">Year <?= $year ?></td>
+                            </tr>
+
+                        <?php
+                            for ($i = 1; $i <= 3; $i++):
+                        ?>
+                                <tr>
+                                    <?php
+                                for ($quartile = 1; $quartile <= $numQuartiles; $quartile++):
+                                    ?>
+                                        <td><?php echo $curriculum[$year - 1][$quartile - 1]->getSubjectName() ?></td>
+                                    <?php
+                                endfor;
+                                ?>
+                                </tr>
+                                    <?php
+                            endfor;
+                        endfor;
+
+                        ?>
+                        </tbody>
+                    </table>
+                </div>
             </section>
         </div>
     </main>
