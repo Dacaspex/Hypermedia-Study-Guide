@@ -35,7 +35,31 @@ class CurriculumRetriever
 
         }
 
-        return $subjects;
+        return $this->buildCurriculum($subjects);
+
+    }
+
+    public function buildCurriculum($subjects)
+    {
+        $curriculum = array();
+        $numYears = 3;
+        $numQuartiles = 4;
+        $counter = 0;
+
+        for ($year = 1; $year <= $numYears; $year++) {
+
+            $quartileSubjects = array();
+            for ($quartile = 1; $quartile <= $numQuartiles; $quartile++) {
+
+                array_push($quartileSubjects, $subjects[$counter++]);
+
+            }
+
+            array_push($curriculum, $quartileSubjects);
+
+        }
+
+        return $curriculum;
 
     }
 

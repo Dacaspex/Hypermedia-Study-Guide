@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="/general.css">
     <link rel="stylesheet" media="screen and (min-width: 700px)" href="/general_desktop.css">
     <link rel="stylesheet" type="text/css" href="/study.css">
+    <link rel="stylesheet" type="text/css" href="/curriculum.css">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open Sans:300" rel="stylesheet">

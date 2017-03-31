@@ -27,9 +27,9 @@ class CurriculumController
     public function index($type, $programSlug, $pageSlug, PDO $pdo)
     {
         $content = $this->contentRetriever->getPageContent($type, $programSlug, $pageSlug, Language::getLocale());
-        $subjects = $this->curriculumRetriever->getCurriculum($type, $programSlug);
+        $curriculum = $this->curriculumRetriever->getCurriculum($type, $programSlug);
         $programs = HomeController::getPrograms($pdo);
 
-        return $this->templates->render('curriculum', compact('content', 'subjects'));
+        return $this->templates->render('curriculum', compact('content', 'curriculum'));
     }
 }
