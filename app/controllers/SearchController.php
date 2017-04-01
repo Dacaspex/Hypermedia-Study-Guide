@@ -55,10 +55,10 @@ class SearchController
 
             switch (Language::getLocale()) {
                 case Language::EN:
-                    $linkName = $result['page_name_en'] . ' | ' . $linkName;
+                    $linkName = $result['page_name_en'] . ' - ' . $linkName;
                     break;
                 case Language::NL:
-                    $linkName = $result['page_name_nl'] . ' | ' . $linkName;
+                    $linkName = $result['page_name_nl'] . ' - ' . $linkName;
                     break;
             }
 

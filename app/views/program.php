@@ -52,9 +52,9 @@
 
 <div class="card-cols width-limit">
     <div class="card breadcrumb">
-        <a href="#">Home</a><span>/</span>
-        <a href="#">Majors</a><span>/</span>
-        <a href="#">Psychology and Technology</a>
+        <a href="/">Home</a><span>/</span>
+        <a href="#"><?= ucfirst($content->getProgram()->getType()) ?></a><span>/</span>
+        <a href="#"><?= $content->getProgram()->getName() ?></a>
     </div>
     <div class="search-bar">
         <form method="get" action="/search">

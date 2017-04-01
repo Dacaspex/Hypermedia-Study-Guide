@@ -2,7 +2,7 @@
 
 <div class="card-cols width-limit">
     <div class="card breadcrumb">
-        <a href="#">Home</a><span>/</span>
+        <a href="/">Home</a><span>/</span>
         <a href="#">Search</a>
     </div>
     <div class="search-bar">
@@ -20,7 +20,7 @@
                     <?php foreach ($pages as $result): ?>
                         <li>
                             <a href="<?= $result->getLink()->getDestination() ?>">
-                                <h2><?= $result->getLink()->getName() ?></h2>
+                                <h1><?= $result->getLink()->getName() ?></h1>
                                 <p><?= substr($result->getBody(), 0, 80) ?>...</p>
                             </a>
                         </li>
