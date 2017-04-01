@@ -2,37 +2,46 @@
 
 class Curriculum
 {
-    private $id;
-    private $quarter;
-    private $year;
-    private $subjectName;
+    private $subjects;
 
-    function __construct($id, $quarter, $year, $subjectName)
+    function __construct($subjects)
     {
-        $this->id = $id;
-        $this->quarter = $quarter;
-        $this->year = $year;
-        $this->subjectName = $subjectName;
+        $this->subjects = $subjects;
     }
 
-    public function getId()
+    public function getSubjectsRow($year, $offset)
     {
-        return $this->id;
-    }
+        $yearSubjects = array();
+        $quartileSubjects = array(
+            0 => array(),
+            1 => array(),
+            2 => array(),
+            3 => array()
+        );
 
-    public function getQuarter()
-    {
-        return $this->quarter;
-    }
+        foreach ($this->subjects as $subject) {
 
-    public function getYear()
-    {
-        return $this->year;
-    }
+            if ($subject->getYear() == $year) {
+                array_push($yearSubjects, $subject);
+            }
 
-    public function getSubjectName()
-    {
-        return $this->subjectName;
-    }
+        }
 
+        foreach ($yearSubjects as $subject) {
+
+            array_push($quartileSubjects[$subject->getQuarter() - 1], $subject);
+
+        }
+
+        $returnSubjects = array();
+
+        foreach ($quartileSubjects as $quartile) {
+
+            array_push($returnSubjects, $quartile[$offset]);
+
+        }
+
+        return $returnSubjects;
+
+    }
 }
