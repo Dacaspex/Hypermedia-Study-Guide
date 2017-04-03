@@ -58,7 +58,7 @@
     </div>
     <div class="search-bar">
         <form method="get" action="/search">
-            <input type="text" name="query" placeholder="Search...">
+            <input type="text" name="query" placeholder="<?= $this->trans('search') ?>">
             <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
         </form>
     </div>
