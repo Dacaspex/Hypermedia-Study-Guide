@@ -56,7 +56,7 @@
     <!-- Nabar -->
     <div class="navbar js-navbar">
         <div class="navbar-inner width-limit">
-            <div class="product js-product">Studyguide</div>
+            <div class="product js-product"><?= $this->trans('studyguide') ?></div>
             <div class="brand js-brand">TU<span class="accent">/</span>e</div>
             <div class="preferences">
                 <div class="js-navigation-drawer-button" drawer-id="preferences-wizard"><i class="fa fa-flag-o" aria-hidden="true"></i></div>
@@ -71,20 +71,19 @@
     <div class="card card-blue">
         <footer class="width-limit">
             <div class="col-4">
-                <div class="bold">About</div>
+                <div class="bold"><?= $this->trans('about') ?></div>
                 <p>
-                    This website is designed by students for students in order to structure the information in a better
-                    way.
+                    <?= $this->trans('about_content') ?>
                 </p>
             </div>
             <div class="col-4 footer-social">
-                <div class="bold">Social media</div>
+                <div class="bold"><?= $this->trans('social-media') ?></div>
                 <a href="#"><i class="fa fa-facebook-square"></i></a>
                 <a href="#"><i class="fa fa-twitter-square"></i></a>
                 <a href="#"><i class="fa fa-youtube-square"></i></a>
             </div>
             <div class="col-4">
-                <div class="bold">Address</div>
+                <div class="bold"><?= $this->trans('address') ?></div>
                 <div>Straatnaam 12</div>
                 <div>1234 AB</div>
                 <div>Eindhoven</div>
@@ -95,7 +94,7 @@
                 <div>040 123456</div>
             </div>
             <div class="footer-bottom">
-                <div>Copyright 2017</div>
+                <div>&copy; Copyright 2017</div>
                 <div class="language navigation-drawer-button js-navigation-drawer-button"
                      drawer-id="preferences-wizard">Language: <span>English</span></div>
             </div>
