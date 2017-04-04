@@ -55,8 +55,28 @@ class ContentRetriever
             $result['num_courses'],
             $result['num_grads'],
             $result['contact'],
-            [] // TODO: fetch the links as well
+            $this->getProgramLinks($result['id'])
         );
+    }
+
+    /**
+     * Get all links for a certain progarm id.
+     *
+     * @param $id
+     * @return array
+     */
+    private function getProgramLinks($id)
+    {
+        $statement = $this->pdo->prepare("SELECT * FROM links WHERE program_id = ?");
+        $statement->bindParam(1, $id);
+        $statement->execute();
+
+        return array_map(function($result) {
+            return new Link(
+                Language::getLocale() === Language::EN ? $result['name_en'] : $result['name_nl'],
+                $result['destination']
+            );
+        }, $statement->fetchAll(PDO::FETCH_ASSOC));
     }
 
     /**
