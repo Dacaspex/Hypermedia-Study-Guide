@@ -10,16 +10,19 @@
             <h2>Menu</h2>
         </header>
         <ul>
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Curriculum</a>
-                <ul>
-                    <li><a href="#">Basic Courses</a></li>
-                    <li><a href="#">Elective Courses and Packages</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Program Learning Objectives</a></li>
-            <li><a href="#">Proffesional skills</a></li>
-            <li><a href="#">Etc...</a></li>
+            <?php foreach ($links as $link): ?>
+                <li <?= $this->activeLink($link->getDestination()) ?>>
+                    <a href="/<?= $content->getProgram()->getType() ?>/<?= $content->getProgram()->getSlug() ?>/<?= $link->getDestination() ?>"><?= $link->getName() ?></a>
+                    <?php $children = $link->getChildren(); ?>
+                    <?php if (count($children) > 0): ?>
+                        <ul>
+                            <?php foreach ($children as $child): ?>
+                                <li><a href="/<?= $content->getProgram()->getType() ?>/<?= $content->getProgram()->getSlug() ?>/<?= $child->getDestination() ?>"><?= $child->getName() ?></a></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
+                </li>
+            <?php endforeach; ?>
         </ul>
     </div>
 </div>
