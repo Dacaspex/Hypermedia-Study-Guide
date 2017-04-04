@@ -56,6 +56,9 @@
     <!-- Nabar -->
     <div class="navbar js-navbar">
         <div class="navbar-inner width-limit">
+            <div class="navigation-drawer-button js-navigation-drawer-button" drawer-id="menu-drawer">
+              <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
             <div class="product js-product"><?= $this->trans('studyguide') ?></div>
             <div class="brand js-brand">TU<span class="accent">/</span>e</div>
             <div class="preferences">
