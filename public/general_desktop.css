@@ -1,3 +1,8 @@
+h1 {
+  font-size: 2em;
+  border-left: 3px solid #4d7fd1;
+}
+
 .width-limit {
   max-width:1000px;
   margin-left:auto;
@@ -103,13 +108,21 @@ aside.card {
 
 }
 
+.breadcrumb {
+  margin: auto;
+  margin-bottom: 20px;
+  width: auto;
+}
+
 .search-bar {
+  padding-right: 0;
   float:right;
   width:auto;
 }
 
 .search-bar input {
   width:auto;
+  margin-right: 10px;
 }
 
 .search-bar button {

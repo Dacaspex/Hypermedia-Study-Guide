@@ -10,7 +10,6 @@
     <link rel="stylesheet" type="text/css" href="/index.css">
     <link rel="stylesheet" type="text/css" href="/general.css">
     <link rel="stylesheet" media="screen and (min-width: 700px)" href="/general_desktop.css">
-    <link rel="stylesheet" type="text/css" href="/study.css">
     <link rel="stylesheet" type="text/css" href="/curriculum.css">
     <link rel="stylesheet" type="text/css" href="/search.css">
 
@@ -18,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open Sans:300" rel="stylesheet">
 
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+    <?= $this->section('styles') ?>
 </head>
 <body>
     <!-- Wizard -->

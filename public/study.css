@@ -14,12 +14,19 @@
 		box-shadow:none;
 		border:none;
 	}
+	.col-5-triple .card {
+		padding: 0;
+	}
 }
 
 @media screen and (min-width:700px) and (max-width:900px) {
 	.card-cols > .col-5 {
-	  width:40%;
+	  width:30%;
 		float:left;
 		box-sizing:border-box;
 	}
+	.col-5-triple {
+		width: 70% !important;
+	}
+
 }
