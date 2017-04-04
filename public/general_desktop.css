@@ -143,6 +143,7 @@ aside.card {
     width:calc(20% - 20px);
     box-shadow:0px 2px 3px 0px rgba(0,0,0,0.1);
     overflow:visible;
+    top: auto;
   }
 
   .card-cols .navigation-drawer a {
@@ -150,7 +151,16 @@ aside.card {
     display:inline-block;
     height:auto;
   }
+  .navigation-drawer-fixed {
+    position: fixed !important;
+    top: 85px !important;
+  }
+  .navigation-drawer-fixed-bottom {
+    position: absolute !important;
+    bottom: 20px !important;
+  }
 }
+
 
 /*
   HEADER
