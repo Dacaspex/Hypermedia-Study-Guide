@@ -16,7 +16,7 @@ class LinkRetriever
     {
         $type = $program->getType();
 
-        $statement = $this->pdo->prepare("SELECT * FROM pages WHERE type = ?");
+        $statement = $this->pdo->prepare("SELECT * FROM pages WHERE type = ? AND parent_id = NULL");
         $statement->bindParam(1, $type);
 
         $statement->execute();
