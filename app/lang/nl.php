@@ -9,5 +9,7 @@ return [
     'search' => 'Zoeken',
     'guide_text_title' => 'De Studiegids',
     'guide_text_body' => 'Een uitleg over deze website hier',
-    'read_more' => 'Lees Meer'
+    'read_more' => 'Lees Meer',
+    'search_results' => 'Zoekresultaten voor',
+    'search_no_results' => 'Geen zoekresultaten gevonden.',
 ];

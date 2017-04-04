@@ -10,4 +10,6 @@ return [
     'guide_text_title' => 'The Studyguide',
     'guide_text_body' => 'An explanation for this website',
     'read_more' => 'Read More',
+    'search_results' => 'Search results for',
+    'search_no_results' => 'No results found.',
 ];
