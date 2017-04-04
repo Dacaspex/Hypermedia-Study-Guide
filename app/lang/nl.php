@@ -7,4 +7,7 @@ return [
     'social_media' => 'Sociale Media',
     'address' => 'Adres',
     'search' => 'Zoeken',
+    'guide_text_title' => 'De Studiegids',
+    'guide_text_body' => 'Een uitleg over deze website hier',
+    'read_more' => 'Lees Meer'
 ];
