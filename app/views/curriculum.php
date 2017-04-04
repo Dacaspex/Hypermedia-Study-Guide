@@ -89,7 +89,38 @@
                         <tbody>
                         <?php
 
+                        $numYears = 3;
 
+                        for ($year = 1; $year <= $numYears; $year++) {
+
+                            ?>
+                            <tr>
+                               <td colspan="4" class="curr-year">Year <?= $year ?></td>
+                            </tr>
+                            <?php
+
+                            for ($i = 0; $i <= 2; $i++) {
+
+                                $row = $curriculum->getSubjectsRow($year, $i);
+
+                                echo '<tr>';
+
+                                foreach ($row as $subject) {
+                                    echo '<td>' . $subject->getSubjectName() . '</td>';
+                                }
+
+                                echo '</tr>';
+
+                            }
+
+                            if ($year != 3) {
+                                ?>
+                                <tr>
+                                    <td colspan="4" class="curr-divider"></td>
+                                </tr>
+                                <?php
+                            }
+                        }
 
                         ?>
                         </tbody>
