@@ -120,7 +120,14 @@ class ContentRetriever
         $statement->bindParam(2, $pageId, PDO::PARAM_INT);
         $statement->bindParam(3, $locale);
 
-        $result = $this->getFirst($statement, "content");
+        try {
+            $result = $this->getFirst($statement, "content");
+        } catch (Exception $e) {
+            $result = [
+                'id' => null,
+                'body' => ''
+            ];
+        }
 
         return new Content(
             $result['id'],

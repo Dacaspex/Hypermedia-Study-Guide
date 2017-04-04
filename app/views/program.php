@@ -27,16 +27,27 @@
 <div class="study-drawer width-limit" id="bachelor-drawer" align-property="top" align-value="-100%">
     <h1>Bachelor studies</h1>
     <ul>
-        <li><a href="#">Computer Science and Engineering</a></li>
-        <li><a href="#">Psychology and Technology</a></li>
-        <li><a href="#">Data Science</a></li>
-        <li><a href="#">Data Science</a></li>
-        <li><a href="#">Data Science</a></li>
-        <li><a href="#">Data Science</a></li>
-        <li><a href="#">Data Science</a></li>
-        <li><a href="#">Data Science</a></li>
-        <li><a href="#">Data Science</a></li>
-        <li><a href="#">Data Science</a></li>
+        <?php foreach($programs['bachelors'] as $program): ?>
+            <li><a href="/bachelor/<?= $program['slug'] ?>/overview"><?= $program['name'] ?></a></li>
+        <?php endforeach; ?>
+    </ul>
+</div>
+
+<div class="study-drawer width-limit" id="pre-master-drawer" align-property="top" align-value="-100%">
+    <h1>Pre Master studies</h1>
+    <ul>
+        <?php foreach($programs['preMaster'] as $program): ?>
+            <li><a href="/pre-master/<?= $program['slug'] ?>/overview"><?= $program['name'] ?></a></li>
+        <?php endforeach; ?>
+    </ul>
+</div>
+
+<div class="study-drawer width-limit" id="master-drawer" align-property="top" align-value="-100%">
+    <h1>Master studies</h1>
+    <ul>
+        <?php foreach($programs['masters'] as $program): ?>
+            <li><a href="/pre-master/<?= $program['slug'] ?>/overview"><?= $program['name'] ?></a></li>
+        <?php endforeach; ?>
     </ul>
 </div>
 
