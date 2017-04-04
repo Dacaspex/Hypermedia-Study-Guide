@@ -632,6 +632,59 @@ time {
 	margin: 5px 0 0 5px;
 }
 
+/*
+	STRETCH-TEXT STYLING
+*/
+
+.stretch-text {
+
+}
+
+.stretch-text-item {
+
+}
+
+.stretch-text-item > .stretch-header {
+  font-size: 1.2em;
+  border-bottom: 1px solid lightgray;
+}
+
+.stretch-text-item > .stretch-header > h2 {
+	cursor:pointer;
+	margin:0px;
+	padding:20px;
+}
+
+.stretch-text-item > .stretch-header > h2:before {
+	content: "\f067";
+	font: normal normal normal 14px/1 FontAwesome;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	padding-right:20px;
+}
+
+.stretch-open > .stretch-header > h2:before {
+	content: "\f068";
+	font: normal normal normal 14px/1 FontAwesome;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	padding-right:20px;
+}
+
+.stretch-text-item > .stretch-content {
+	height:0px;
+	overflow:hidden;
+	transition:height 0.2s;
+}
+
+.stretch-open > .stretch-content {
+	height:auto;
+	border-bottom: 1px solid lightgray;
+	padding: 20px;
+}
+
 .carousel-menu {
 	height:30px;
 	text-align:center;

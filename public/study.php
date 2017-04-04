@@ -20,6 +20,7 @@
     <script src="js/listHandler.js"></script>
     <script src="js/navigationDrawer.js"></script>
     <script src="js/preferencesWizard.js"></script>
+    <script src="js/stretchText.js"></script>
 </head>
 <body>
     <div class="card preferences-wizard width-limit" id="preferences-wizard" align-property="top" align-value="-100%">
@@ -195,6 +196,32 @@
 						<li>acquire practical capabilities and skills relating to psychological research and development</li>
 						<li>acquire professional and generic academic skills</li>
 					</ul>
+
+          <!-- EXAMPLE OF STRETCH TEXT -->
+
+          <div class="card card-full stretch-text">
+
+            <div class="stretch-text-item stretch-open">
+              <div class="stretch-header">
+                <h2>Header</h2>
+              </div>
+              <div class="stretch-content">
+                <p>Content</p>
+              </div>
+            </div>
+
+            <div class="stretch-text-item">
+              <div class="stretch-header">
+                <h2>Header</h2>
+              </div>
+              <div class="stretch-content">
+                <p>Content</p>
+              </div>
+            </div>
+
+          </div>
+
+
 				</section>
 			</div>
 		</main>
