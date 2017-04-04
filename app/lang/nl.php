@@ -16,4 +16,8 @@ return [
     '404_desc' => 'Jammergenoeg bestaat deze pagina niet. Controleer of het web adres correct gespeld is.',
     '404_redirect_prefix' => 'Bekijkt u anders onze',
     '404_redirect_text' => 'Homepagina',
+    'program_stats_num_students' => 'Hoeveelheid Studenten',
+    'program_stats_num_courses' => 'Aantal Vakken',
+    'program_stats_num_grads' => 'Jaarlijkse Geslaagden',
+    'program_stats_title' => 'Statistieken',
 ];

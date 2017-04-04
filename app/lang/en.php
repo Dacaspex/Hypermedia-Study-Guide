@@ -16,4 +16,8 @@ return [
     '404_desc' => 'Unfortunately, this page doesn\'t exist. Check if the address is spelled correctly.',
     '404_redirect_prefix' => 'You can also go to our',
     '404_redirect_text' => 'Homepage',
+    'program_stats_num_students' => 'Amount of Students',
+    'program_stats_num_courses' => 'Number of Courses',
+    'program_stats_num_grads' => 'Yearly Graduates',
+    'program_stats_title' => 'Statistics',
 ];
