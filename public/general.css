@@ -276,6 +276,7 @@ time {
   max-height:calc(100vh - 65px);
   position:fixed;
   z-index:3;
+  overflow-y: auto;
 }
 
 .preferences-wizard > .wizard-top {
