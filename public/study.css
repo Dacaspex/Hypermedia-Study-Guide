@@ -2,11 +2,14 @@
 	box-shadow:none;
 }
 
-@media screen and (min-width: 900px) {
-	.navigation-drawer-button {
+@media screen and (max-width: 900px) {
+	.navbar-inner > .product {
 		display:none;
 	}
 
+	.navigation-drawer-button {
+		display:block;
+	}
 }
 
 @media screen and (min-width: 700px) {

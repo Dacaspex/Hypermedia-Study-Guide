@@ -3,11 +3,11 @@
 -- noinspection SqlNoDataSourceInspectionForFile
 
 INSERT INTO `programs`
-  (name, slug, type, contact) VALUES('Software Science', 'software-science', 'bachelor', 'some@email.com');
+  (name, slug, type, contact, num_courses, num_grads, num_students) VALUES('Software Science', 'software-science', 'bachelor', 'some@email.com', 36, 700, 250);
 SET @ss_id = LAST_INSERT_ID();
 
 INSERT INTO `programs`
-  (name, slug, type, contact) VALUES ('Psychology & Technology', 'psychology-technology', 'bachelor', 'some@email.com');
+  (name, slug, type, contact, num_courses, num_grads, num_students) VALUES ('Psychology & Technology', 'psychology-technology', 'bachelor', 'some@email.com', 36, 700, 260);
 SET @pt_id = LAST_INSERT_ID();
 
 INSERT INTO `pages` (name_en, name_nl, slug, type) VALUES

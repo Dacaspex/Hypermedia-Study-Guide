@@ -17,7 +17,7 @@ class Language
 
     public static function setLocale($locale)
     {
-        setcookie('locale', $locale, self::getExpiry(), null, null, true, true);
+        setcookie('locale', $locale, self::getExpiry(), "/", null, false, true);
     }
 
     private static function getExpiry()

@@ -20,6 +20,7 @@
     <script src="js/listHandler.js"></script>
     <script src="js/navigationDrawer.js"></script>
     <script src="js/preferencesWizard.js"></script>
+    <script src="js/stretchText.js"></script>
 </head>
 <body>
     <div class="card preferences-wizard width-limit" id="preferences-wizard" align-property="top" align-value="-100%">
@@ -58,10 +59,10 @@
             <div class="navigation-drawer-button js-navigation-drawer-button" drawer-id="menu-drawer">
                 <i class="fa fa-bars" aria-hidden="true"></i>
             </div>
-            <div class="brand">TU<span class="accent">/</span>e</div>
+            <div class="product js-product">Studyguide</div>
+            <div class="brand js-brand">TU<span class="accent">/</span>e</div>
             <div class="preferences">
-                <div class="js-navigation-drawer-button" drawer-id="preferences-wizard"><i class="fa fa-flag-o"
-                                                                                           aria-hidden="true"></i></div>
+                <div class="js-navigation-drawer-button" drawer-id="preferences-wizard"><i class="fa fa-flag-o" aria-hidden="true"></i></div>
             </div>
         </div>
     </div>
@@ -194,6 +195,32 @@
 						<li>acquire practical capabilities and skills relating to psychological research and development</li>
 						<li>acquire professional and generic academic skills</li>
 					</ul>
+
+          <!-- EXAMPLE OF STRETCH TEXT -->
+
+          <div class="card card-full stretch-text">
+
+            <div class="stretch-text-item stretch-open">
+              <div class="stretch-header">
+                <h2>Header</h2>
+              </div>
+              <div class="stretch-content">
+                <p>Content</p>
+              </div>
+            </div>
+
+            <div class="stretch-text-item">
+              <div class="stretch-header">
+                <h2>Header</h2>
+              </div>
+              <div class="stretch-content">
+                <p>Content</p>
+              </div>
+            </div>
+
+          </div>
+
+
 				</section>
 			</div>
 		</main>

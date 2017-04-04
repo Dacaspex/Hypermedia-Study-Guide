@@ -27,16 +27,27 @@
 <div class="study-drawer width-limit" id="bachelor-drawer" align-property="top" align-value="-100%">
     <h1>Bachelor studies</h1>
     <ul>
-        <li><a href="#">Computer Science and Engineering</a></li>
-        <li><a href="#">Psychology and Technology</a></li>
-        <li><a href="#">Data Science</a></li>
-        <li><a href="#">Data Science</a></li>
-        <li><a href="#">Data Science</a></li>
-        <li><a href="#">Data Science</a></li>
-        <li><a href="#">Data Science</a></li>
-        <li><a href="#">Data Science</a></li>
-        <li><a href="#">Data Science</a></li>
-        <li><a href="#">Data Science</a></li>
+        <?php foreach($programs['bachelors'] as $program): ?>
+            <li><a href="/bachelor/<?= $program['slug'] ?>/overview"><?= $program['name'] ?></a></li>
+        <?php endforeach; ?>
+    </ul>
+</div>
+
+<div class="study-drawer width-limit" id="pre-master-drawer" align-property="top" align-value="-100%">
+    <h1>Pre Master studies</h1>
+    <ul>
+        <?php foreach($programs['preMaster'] as $program): ?>
+            <li><a href="/pre-master/<?= $program['slug'] ?>/overview"><?= $program['name'] ?></a></li>
+        <?php endforeach; ?>
+    </ul>
+</div>
+
+<div class="study-drawer width-limit" id="master-drawer" align-property="top" align-value="-100%">
+    <h1>Master studies</h1>
+    <ul>
+        <?php foreach($programs['masters'] as $program): ?>
+            <li><a href="/pre-master/<?= $program['slug'] ?>/overview"><?= $program['name'] ?></a></li>
+        <?php endforeach; ?>
     </ul>
 </div>
 
@@ -101,12 +112,25 @@
     </main>
 
     <aside class="card col-5">
-        <div class="card card-gray">
+        <div class="card card-gray card-statistics">
             <header>
-                <h1>Contact</h1>
+                <h1><?= $this->trans('program_stats_title') ?></h1>
             </header>
             <section>
-                <p>contact info</p>
+                <table class="course-stats">
+                    <tr>
+                        <td><?= $this->trans('program_stats_num_students') ?></td>
+                        <td><?= $content->getProgram()->getNumStudents() ?></td>
+                    </tr>
+                    <tr>
+                        <td><?= $this->trans('program_stats_num_courses') ?></td>
+                        <td><?= $content->getProgram()->getNumCourses() ?></td>
+                    </tr>
+                    <tr>
+                        <td><?= $this->trans('program_stats_num_grads') ?></td>
+                        <td><?= $content->getProgram()->getNumGrads() ?></td>
+                    </tr>
+                </table>
             </section>
         </div>
         <div class="card card-gray">
@@ -114,24 +138,20 @@
                 <h1>Contact</h1>
             </header>
             <section>
-                <p>contact info</p>
+                <p><i class="fa fa-envelope-o" aria-hidden="true"></i> <?= $content->getProgram()->getContactLink() ?></p>
             </section>
         </div>
-        <div class="card card-gray">
-            <header>
-                <h1>Contact</h1>
-            </header>
-            <section>
-                <p>contact info</p>
-            </section>
-        </div>
-        <div class="card card-gray">
-            <header>
-                <h1>Contact</h1>
-            </header>
-            <section>
-                <p>contact info</p>
-            </section>
-        </div>
+        <?php if(count($content->getProgram()->getLinks())): ?>
+            <div class="card card-gray">
+                <header>
+                    <h1>Additional Links</h1>
+                </header>
+                <section>
+                    <?php foreach($content->getProgram()->getLink() as $link): ?>
+                        <a href="<?= $link->getDestination() ?>"><?= $link->getName() ?></a>
+                    <?php endforeach; ?>
+                </section>
+            </div>
+        <?php endif; ?>
     </aside>
 </div>

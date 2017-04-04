@@ -34,13 +34,13 @@
                 <div class="option-cards" pref-type="lang">
                     <div class="option-card js-option" pref-val="nl">
                         <div class="option-icon">
-                            <img src="flags/dutch-flag.svg">
+                            <img src="/flags/dutch-flag.svg">
                         </div>
                         <div class="option-name">Nederlands</div>
                     </div>
                     <div class="option-card js-option" pref-val="en">
                         <div class="option-icon">
-                            <img src="flags/uk-flag.svg">
+                            <img src="/flags/uk-flag.svg">
                         </div>
                         <div class="option-name">English</div>
                     </div>
@@ -56,6 +56,9 @@
     <!-- Nabar -->
     <div class="navbar js-navbar">
         <div class="navbar-inner width-limit">
+            <div class="navigation-drawer-button js-navigation-drawer-button" drawer-id="menu-drawer">
+              <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
             <div class="product js-product"><?= $this->trans('studyguide') ?></div>
             <div class="brand js-brand">TU<span class="accent">/</span>e</div>
             <div class="preferences">
@@ -96,7 +99,7 @@
             <div class="footer-bottom">
                 <div>&copy; Copyright 2017</div>
                 <div class="language navigation-drawer-button js-navigation-drawer-button"
-                     drawer-id="preferences-wizard">Language: <span>English</span></div>
+                     drawer-id="preferences-wizard">Language: <span><?= Language::getLocale() == Language::EN ? 'English' : 'Nederlands' ?></span></div>
             </div>
         </footer>
     </div>
