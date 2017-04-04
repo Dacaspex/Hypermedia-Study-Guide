@@ -58,6 +58,7 @@
             <div class="navigation-drawer-button js-navigation-drawer-button" drawer-id="menu-drawer">
                 <i class="fa fa-bars" aria-hidden="true"></i>
             </div>
+            <div class="product js-product">Studyguide</div>
             <div class="brand">TU<span class="accent">/</span>e</div>
             <div class="preferences">
                 <div class="js-navigation-drawer-button" drawer-id="preferences-wizard"><i class="fa fa-flag-o"
