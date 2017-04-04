@@ -96,7 +96,7 @@
             <div class="footer-bottom">
                 <div>&copy; Copyright 2017</div>
                 <div class="language navigation-drawer-button js-navigation-drawer-button"
-                     drawer-id="preferences-wizard">Language: <span>English</span></div>
+                     drawer-id="preferences-wizard">Language: <span><?= Language::getLocale() == Language::EN ? 'English' : 'Nederlands' ?></span></div>
             </div>
         </footer>
     </div>
