@@ -351,8 +351,11 @@ time {
 .breadcrumb {
 	display:inline-block;
 	background-color:#fcfcfc !important;
-	margin-bottom:20px;
+	margin: 0 20px 20px 20px;
+	width: calc(100% - 40px);
 	position:relative;
+	padding: 10px !important;
+	font-size: 0.9em;
 }
 
 .breadcrumb a {
@@ -382,11 +385,13 @@ time {
 }
 
 .search-bar input {
+	box-shadow:0px 2px 3px 0px rgba(0,0,0,0.1);
 	display:inline-block;
 	box-sizing:border-box;
 	padding:10px 20px;
 	border:1px solid lightgray;
 	width: calc(100% - 60px);
+	height: 40px;
 }
 
 .search-bar button {
@@ -398,6 +403,7 @@ time {
 	cursor:pointer;
 	float:right;
 	width:50px;
+	height: 40px;
 }
 
 /*
