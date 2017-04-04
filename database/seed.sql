@@ -42,8 +42,8 @@ INSERT INTO `pages` (name_en, name_nl, slug, type) VALUES
   ('Coaching', 'Begeleiding', 'coaching', 'master');
 
 INSERT INTO `pages` (name_en, name_nl, slug, type, parent_id) VALUES
-  ('Basic Courses', 'Basis Vakken', 'basic-courses', 'bachelor', (SELECT id FROM pages WHERE slug = 'curriculum' AND type = 'bachelor')),
-  ('Elective Courses', 'Keuze Vakken', 'elective-courses', 'bachelor', (SELECT id FROM pages WHERE slug = 'curriculum' AND type = 'bachelor'));
+  ('Basic Courses', 'Basis Vakken', 'basic-courses', 'bachelor', (SELECT id FROM (SELECT * FROM pages) AS pages_sub WHERE slug = 'curriculum' AND type = 'bachelor')),
+  ('Elective Courses', 'Keuze Vakken', 'elective-courses', 'bachelor', (SELECT id FROM (SELECT * FROM pages) AS pages_sub WHERE slug = 'curriculum' AND type = 'bachelor'));
 
 INSERT INTO `content` (program_id, page_id, body) VALUES
   (@ss_id, (SELECT id FROM pages WHERE slug = 'overview' AND type = 'bachelor' LIMIT 1), 'the overview page'),
