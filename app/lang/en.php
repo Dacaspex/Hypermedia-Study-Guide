@@ -12,4 +12,8 @@ return [
     'read_more' => 'Read More',
     'search_results' => 'Search results for',
     'search_no_results' => 'No results found.',
+    'page_not_found' => 'Page not found',
+    '404_desc' => 'Unfortunately, this page doesn\'t exist. Check if the address is spelled correctly.',
+    '404_redirect_prefix' => 'You can also go to our',
+    '404_redirect_text' => 'Homepage',
 ];
