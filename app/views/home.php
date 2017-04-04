@@ -57,12 +57,11 @@
     <div class="width-limit">
         <div class="blue-bar">
             <header>
-                <h1><i class="fa fa-book" aria-hidden="true"></i>De studyguide</h1>
+                <h1><i class="fa fa-book" aria-hidden="true"></i><?= $this->trans('guide_text_title') ?></h1>
             </header>
             <section>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur cursus sem sed faucibus malesuada. Nullam gravida interdum aliquet. Nam dignissim gravida leo, vitae bibendum erat bibendum in. Pellentesque eget mauris urna. Proin dictum tortor
-                    ut ex posuere, et laoreet urna eleifend. Vivamus aliquam tempus turpis sit amet lobortis. Quisque bibendum velit id dui scelerisque, quis lobortis mi sollicitudin.</p>
-                <a href="#">Lees meer</a>
+                <p><?= $this->trans('guide_text_body') ?></p>
+                <a href="#"><?= $this->trans('read_more') ?></a>
             </section>
         </div>
     </div>
@@ -72,7 +71,7 @@
     <main class="col-3-double">
         <div class="card">
             <header>
-                <h1>Studyguide</h1>
+                <h1><?= $this->trans('studyguide') ?></h1>
             </header>
             <time>21-2-2017 | 18:00</time>
             <section>
