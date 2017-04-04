@@ -1,5 +1,9 @@
 <?php $this->layout('base'); ?>
 
+<?php $this->start('styles'); ?>
+<link rel="stylesheet" type="text/css" href="/study.css">
+<?php $this->stop(); ?>
+
 <div class="navigation-drawer" id="menu-drawer" align-property="left" align-value="-100%">
     <div class="navigation-drawer-inner">
         <header>
