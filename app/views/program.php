@@ -46,7 +46,7 @@
     </div>
     <ul>
         <?php foreach($programs['preMaster'] as $program): ?>
-            <li><a href="/pre-master/<?= $program['slug'] ?>/overview"><?= $program['name'] ?></a></li>
+            <li><a href="/pre-master/<?= $program['slug'] ?>/curriculum"><?= $program['name'] ?></a></li>
         <?php endforeach; ?>
     </ul>
 </div>

@@ -20,9 +20,9 @@ $routes->addRoute('POST', '/lang', function() {
     Language::setLocale($lang);
 });
 
-$routes->addRoute('GET', '/{type}/{programSlug}/curriculum', function ($type, $programSlug) use ($templates, $connection) {
-    $ctrl = new CurriculumController($templates, new ContentRetriever($connection), new CurriculumRetriever($connection));
-    return $ctrl->index($type, $programSlug, 'curriculum', $connection);
+$routes->addRoute('GET', '/bachelor/{programSlug}/curriculum', function ($programSlug) use ($templates, $connection) {
+    $ctrl = new CurriculumController($templates, new ContentRetriever($connection), new CurriculumRetriever($connection), new LinkRetriever($connection));
+    return $ctrl->index('bachelor', $programSlug, 'curriculum', $connection);
 });
 
 $routes->addRoute('GET', '/{type}/{programSlug}/{pageSlug}', function($type, $programSlug, $pageSlug) use ($templates, $connection) {
