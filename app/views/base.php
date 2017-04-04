@@ -59,8 +59,8 @@
             <div class="navigation-drawer-button js-navigation-drawer-button" drawer-id="menu-drawer">
               <i class="fa fa-bars" aria-hidden="true"></i>
             </div>
-            <div class="product js-product"><?= $this->trans('studyguide') ?></div>
-            <div class="brand js-brand">TU<span class="accent">/</span>e</div>
+            <div class="product js-product"><a href="/"><?= $this->trans('studyguide') ?></a></div>
+            <div class="brand js-brand"><a href="https://tue.nl" target="_blank">TU<span class="accent">/</span>e</a></div>
             <div class="preferences">
                 <div class="js-navigation-drawer-button" drawer-id="preferences-wizard"><i class="fa fa-flag-o" aria-hidden="true"></i></div>
             </div>
