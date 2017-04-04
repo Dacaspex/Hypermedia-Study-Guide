@@ -149,6 +149,7 @@ time {
 
 .navigation-drawer-button {
 	cursor:pointer;
+	display:none;
 }
 
 .navigation-drawer {
