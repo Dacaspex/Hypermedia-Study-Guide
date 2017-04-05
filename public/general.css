@@ -427,6 +427,13 @@ time {
     height: 40px;
 }
 
+section > h1:first-child {
+	padding-left: 0;
+	border-left: 0;
+	font-size: 1.7em;
+	color: #565656;
+}
+
 /*
 	STUDY DRAWERS
 */

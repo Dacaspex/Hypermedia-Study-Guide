@@ -57,37 +57,50 @@ $( document ).ready(function() {
 
   });
 
-  var nav_drawer = $("aside.navigation-drawer");
-  var nav_drawer_width = nav_drawer.outerWidth() - 1;
-  var topScroll = $(".card-cols").position().top + 20;
-  var bottomScroll = $(".card-cols").position().top + $(".card-cols").height() - nav_drawer.outerHeight() - 40;
+  initValues();
+  $(window).resize(function() {
+    initValues();
+  }); 
 
   $(window).scroll(function() {
-    if (isDesktop()) {
-      
+    if (isDesktop() && enableFixed()) {  
       if ($(window).scrollTop() > topScroll && $(window).scrollTop() < bottomScroll) {
-          nav_drawer.addClass("navigation-drawer-fixed");
-          nav_drawer.removeClass("navigation-drawer-fixed-bottom");
-          nav_drawer.css("width",nav_drawer_width);
-          $(".col-5-triple").css("margin-left",nav_drawer_width + 20);
+        nav_drawer.addClass("navigation-drawer-fixed");
+        nav_drawer.removeClass("navigation-drawer-fixed-bottom");
+        nav_drawer.css("width",nav_drawer_width);
+        $(".col-5-triple").css("margin-left",nav_drawer_width + 20);
       } else if ($(window).scrollTop() > bottomScroll) {
-          nav_drawer.removeClass("navigation-drawer-fixed");
-          nav_drawer.addClass("navigation-drawer-fixed-bottom");
-          $(".col-5-triple").css("margin-left",nav_drawer_width + 20);
+        nav_drawer.removeClass("navigation-drawer-fixed");
+        nav_drawer.addClass("navigation-drawer-fixed-bottom");
+        $(".col-5-triple").css("margin-left",nav_drawer_width + 20);
         nav_drawer.parent().css("position","relative");
       } else {
-        nav_drawer.removeClass("navigation-drawer-fixed-bottom");
-        nav_drawer.removeClass ("navigation-drawer-fixed");
-        $(".col-5-triple").css("margin-left","0");
+        removeAll();
       }
-    } else {
-      nav_drawer.removeClass ("navigation-drawer-fixed");
-      $(".col-5-triple").css("margin-left","0");
+    } else { 
+      removeAll();
     }
   });
 
+  function initValues() {
+    nav_drawer = $("aside.navigation-drawer");
+    nav_drawer_width = nav_drawer.outerWidth() - 1;
+    topScroll = $(".card-cols").position().top + 20;
+    bottomScroll = $(".card-cols").position().top + $(".card-cols").height() - nav_drawer.outerHeight() - 20;
+  }
+
+  function removeAll() {
+    nav_drawer.removeClass("navigation-drawer-fixed-bottom");
+    nav_drawer.removeClass ("navigation-drawer-fixed");
+    $(".col-5-triple").css("margin-left","0");
+  }
+
   function isDesktop() {
     return $(".navigation-drawer-button").css("display") == "none";
+  }
+
+  function enableFixed() {
+    return nav_drawer.height() < $(".card-cols").height() - $(".breadcrumb").outerHeight() - 60;
   }
 });
 
