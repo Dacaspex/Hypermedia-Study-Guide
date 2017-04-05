@@ -103,36 +103,22 @@
     </main>
 
     <aside class="card col-3">
+      <div class="card card-gray">
+          <header>
+              <h1>Contact</h1>
+          </header>
+          <section>
+              <p><i class="fa fa-envelope-o" aria-hidden="true"></i> mail@tue.nl</p>
+          </section>
+      </div>
         <div class="card card-gray">
             <header>
-                <h1>Contact</h1>
+                <h1>Links</h1>
             </header>
             <section>
-                <p>contact info</p>
-            </section>
-        </div>
-        <div class="card card-gray">
-            <header>
-                <h1>Contact</h1>
-            </header>
-            <section>
-                <p>contact info</p>
-            </section>
-        </div>
-        <div class="card card-gray">
-            <header>
-                <h1>Contact</h1>
-            </header>
-            <section>
-                <p>contact info</p>
-            </section>
-        </div>
-        <div class="card card-gray">
-            <header>
-                <h1>Contact</h1>
-            </header>
-            <section>
-                <p>contact info</p>
+                <div><a href="http://mytue.tue.nl">MyTUe</a></div>
+                <div><a href="http://tue.nl">TU/e website</a></div>
+                <div><a href="http://osiris.tue.nl">Osiris</a></div>
             </section>
         </div>
     </aside>
