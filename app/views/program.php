@@ -17,7 +17,7 @@
                     <?php if (count($children) > 0): ?>
                         <ul>
                             <?php foreach ($children as $child): ?>
-                                <li><a href="/<?= $content->getProgram()->getType() ?>/<?= $content->getProgram()->getSlug() ?>/<?= $child->getDestination() ?>"><?= $child->getName() ?></a></li>
+                                <li <?= $this->activeLink($link->getDestination()) ?>><a href="/<?= $content->getProgram()->getType() ?>/<?= $content->getProgram()->getSlug() ?>/<?= $child->getDestination() ?>"><?= $child->getName() ?></a></li>
                             <?php endforeach; ?>
                         </ul>
                     <?php endif; ?>
@@ -103,7 +103,7 @@
                         <?php if (count($children) > 0): ?>
                             <ul>
                                 <?php foreach ($children as $child): ?>
-                                    <li><a href="/<?= $content->getProgram()->getType() ?>/<?= $content->getProgram()->getSlug() ?>/<?= $child->getDestination() ?>"><?= $child->getName() ?></a></li>
+                                    <li <?= $this->activeLink($child->getDestination()) ?>><a href="/<?= $content->getProgram()->getType() ?>/<?= $content->getProgram()->getSlug() ?>/<?= $child->getDestination() ?>"><?= $child->getName() ?></a></li>
                                 <?php endforeach; ?>
                             </ul>
                         <?php endif; ?>
