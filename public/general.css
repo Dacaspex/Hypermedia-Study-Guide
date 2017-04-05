@@ -78,7 +78,7 @@ time {
 
 .card-cols {
     width: 100%;
-    /*overflow:hidden;*/
+    overflow:hidden;
 }
 
 .card-cols:after {
