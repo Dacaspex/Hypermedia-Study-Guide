@@ -61,8 +61,18 @@ $( document ).ready(function() {
   $(window).resize(function() {
     initValues();
   }); 
+  $(".stretch-header").on("click", function() {
+    setTimeout(function() {
+      initValues();
+      performMenuUpdate();
+    },10);
+  });
 
   $(window).scroll(function() {
+    performMenuUpdate();
+  });
+
+  function performMenuUpdate() {
     if (isDesktop() && enableFixed()) {  
       if ($(window).scrollTop() > topScroll && $(window).scrollTop() < bottomScroll) {
         nav_drawer.addClass("navigation-drawer-fixed");
@@ -80,7 +90,7 @@ $( document ).ready(function() {
     } else { 
       removeAll();
     }
-  });
+  }
 
   function initValues() {
     nav_drawer = $("aside.navigation-drawer");
