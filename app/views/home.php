@@ -4,7 +4,7 @@
     <div class="header-image js-header-image">
         <img src="https://virtualvisit.tue.nl/media/hotspot-data/science-park-1.jpg">
     </div>
-    <div class="product js-product"><div>Studyguide</div></div>
+    <div class="product js-product"><div><?= $this->trans('studyguide') ?></div></div>
 </header>
 
 <div class="width-limit">
