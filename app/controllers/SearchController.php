@@ -69,7 +69,7 @@ class SearchController
                 $destination
             );
 
-            return new SearchResult($link, $result['body']);
+            return new SearchResult($link, strip_tags($result['body']));
         }, $results);
     }
 }
