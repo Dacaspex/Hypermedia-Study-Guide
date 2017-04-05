@@ -114,6 +114,6 @@
     <script src="/js/listHandler.js"></script>
     <script src="/js/navigationDrawer.js"></script>
     <script src="/js/preferencesWizard.js"></script>
-    <script src="js/stretchText.js"></script>
+    <script src="/js/stretchText.js"></script>
 </body>
 </html>
