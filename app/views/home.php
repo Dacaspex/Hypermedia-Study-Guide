@@ -9,9 +9,9 @@
 
 <div class="width-limit">
     <div class="search-bar no-margin">
-        <form>
-            <input type="text" name="search" placeholder="search...">
-            <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+        <form method="get" action="/search">
+          <input type="text" name="query" placeholder="<?= $this->trans('search') ?>">
+          <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
         </form>
     </div>
     <div class="clear"></div>
