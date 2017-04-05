@@ -9,9 +9,9 @@
 
 <div class="width-limit">
     <div class="search-bar no-margin">
-        <form>
-            <input type="text" name="search" placeholder="search...">
-            <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+        <form method="get" action="/search">
+          <input type="text" name="query" placeholder="<?= $this->trans('search') ?>">
+          <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
         </form>
     </div>
     <div class="clear"></div>
@@ -103,36 +103,22 @@
     </main>
 
     <aside class="card col-3">
+      <div class="card card-gray">
+          <header>
+              <h1>Contact</h1>
+          </header>
+          <section>
+              <p><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:mail@tue.nl">mail@tue.nl</a></p>
+          </section>
+      </div>
         <div class="card card-gray">
             <header>
-                <h1>Contact</h1>
+                <h1>Links</h1>
             </header>
             <section>
-                <p>contact info</p>
-            </section>
-        </div>
-        <div class="card card-gray">
-            <header>
-                <h1>Contact</h1>
-            </header>
-            <section>
-                <p>contact info</p>
-            </section>
-        </div>
-        <div class="card card-gray">
-            <header>
-                <h1>Contact</h1>
-            </header>
-            <section>
-                <p>contact info</p>
-            </section>
-        </div>
-        <div class="card card-gray">
-            <header>
-                <h1>Contact</h1>
-            </header>
-            <section>
-                <p>contact info</p>
+                <div><i class="fa fa-id-card-o" aria-hidden="true"></i> <a href="http://mytue.tue.nl">MyTUe</a></div>
+                <div><i class="fa fa-university" aria-hidden="true"></i> <a href="http://tue.nl">TU/e website</a></div>
+                <div><i class="fa fa-list-ul" aria-hidden="true"></i> <a href="http://osiris.tue.nl">Osiris</a></div>
             </section>
         </div>
     </aside>
