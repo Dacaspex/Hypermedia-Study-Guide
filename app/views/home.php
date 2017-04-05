@@ -108,7 +108,7 @@
               <h1>Contact</h1>
           </header>
           <section>
-              <p><i class="fa fa-envelope-o" aria-hidden="true"></i> mail@tue.nl</p>
+              <p><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:mail@tue.nl">mail@tue.nl</a></p>
           </section>
       </div>
         <div class="card card-gray">
@@ -116,9 +116,9 @@
                 <h1>Links</h1>
             </header>
             <section>
-                <div><a href="http://mytue.tue.nl">MyTUe</a></div>
-                <div><a href="http://tue.nl">TU/e website</a></div>
-                <div><a href="http://osiris.tue.nl">Osiris</a></div>
+                <div><i class="fa fa-id-card-o" aria-hidden="true"></i> <a href="http://mytue.tue.nl">MyTUe</a></div>
+                <div><i class="fa fa-university" aria-hidden="true"></i> <a href="http://tue.nl">TU/e website</a></div>
+                <div><i class="fa fa-list-ul" aria-hidden="true"></i> <a href="http://osiris.tue.nl">Osiris</a></div>
             </section>
         </div>
     </aside>

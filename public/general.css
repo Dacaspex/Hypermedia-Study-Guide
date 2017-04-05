@@ -623,6 +623,15 @@ section > h1:first-child {
     background-color: #fcfcfc;
 }
 
+.card-gray a, section a {
+  text-decoration: none;
+  color:#4d7fd1;
+}
+
+.card-gray a:hover, section a:hover {
+  text-decoration: underline;
+}
+
 .card-blue {
     background-color: #4d7fd1;
     color: white;
