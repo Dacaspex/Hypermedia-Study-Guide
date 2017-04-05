@@ -60,8 +60,7 @@ $( document ).ready(function() {
   initValues();
   $(window).resize(function() {
     initValues();
-  });
-
+  }); 
 
   $(window).scroll(function() {
     if (isDesktop() && enableFixed()) {  
@@ -87,7 +86,7 @@ $( document ).ready(function() {
     nav_drawer = $("aside.navigation-drawer");
     nav_drawer_width = nav_drawer.outerWidth() - 1;
     topScroll = $(".card-cols").position().top + 20;
-    bottomScroll = $(".card-cols").position().top + $(".card-cols").height() - nav_drawer.outerHeight() - 40;
+    bottomScroll = $(".card-cols").position().top + $(".card-cols").height() - nav_drawer.outerHeight() - 20;
   }
 
   function removeAll() {
