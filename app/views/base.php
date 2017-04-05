@@ -80,7 +80,7 @@
                 </p>
             </div>
             <div class="col-4 footer-social">
-                <div class="bold"><?= $this->trans('social-media') ?></div>
+                <div class="bold"><?= $this->trans('social_media') ?></div>
                 <a href="#"><i class="fa fa-facebook-square"></i></a>
                 <a href="#"><i class="fa fa-twitter-square"></i></a>
                 <a href="#"><i class="fa fa-youtube-square"></i></a>
