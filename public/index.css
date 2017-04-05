@@ -147,6 +147,7 @@
 
   .study-list-open {
     height:auto !important;
+    border: 1px solid lightgray;
   }
 
   .study-list-item {
