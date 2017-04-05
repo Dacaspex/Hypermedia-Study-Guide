@@ -29,6 +29,9 @@
 
 <div class="study-drawer width-limit" id="bachelor-drawer" align-property="top" align-value="-100%">
     <h1>Bachelor studies</h1>
+    <div class="study-drawer-close js-navigation-drawer-button" drawer-id="bachelor-drawer">
+      <i class="fa fa-times"></i>
+    </div>
     <ul>
         <?php foreach($programs['bachelors'] as $program): ?>
             <li><a href="/bachelor/<?= $program['slug'] ?>/overview"><?= $program['name'] ?></a></li>
@@ -38,18 +41,24 @@
 
 <div class="study-drawer width-limit" id="pre-master-drawer" align-property="top" align-value="-100%">
     <h1>Pre Master studies</h1>
+    <div class="study-drawer-close js-navigation-drawer-button" drawer-id="pre-master-drawer">
+      <i class="fa fa-times"></i>
+    </div>
     <ul>
         <?php foreach($programs['preMaster'] as $program): ?>
-            <li><a href="/pre-master/<?= $program['slug'] ?>/overview"><?= $program['name'] ?></a></li>
+            <li><a href="/pre-master/<?= $program['slug'] ?>/curriculum"><?= $program['name'] ?></a></li>
         <?php endforeach; ?>
     </ul>
 </div>
 
 <div class="study-drawer width-limit" id="master-drawer" align-property="top" align-value="-100%">
     <h1>Master studies</h1>
+    <div class="study-drawer-close js-navigation-drawer-button" drawer-id="master-drawer">
+      <i class="fa fa-times"></i>
+    </div>
     <ul>
         <?php foreach($programs['masters'] as $program): ?>
-            <li><a href="/pre-master/<?= $program['slug'] ?>/overview"><?= $program['name'] ?></a></li>
+            <li><a href="/master/<?= $program['slug'] ?>/overview"><?= $program['name'] ?></a></li>
         <?php endforeach; ?>
     </ul>
 </div>

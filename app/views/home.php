@@ -31,7 +31,7 @@
                         <!--Hier komt de lijst voor de Pre-Master studies-->
                         <ul>
                             <?php foreach ($programs['preMaster'] as $program): ?>
-                                <li><a href="/bachelor/<?= $program['slug'] ?>/overview"><?= $program['name'] ?></a></li>
+                                <li><a href="/pre-master/<?= $program['slug'] ?>/curriculum"><?= $program['name'] ?></a></li>
                             <?php endforeach; ?>
                         </ul>
                     </div>
@@ -40,7 +40,7 @@
                         <!--Hier komt de lijst voor de Master studies-->
                         <ul>
                             <?php foreach ($programs['masters'] as $program): ?>
-                                <li><a href="/bachelor/<?= $program['slug'] ?>/overview"><?= $program['name'] ?></a></li>
+                                <li><a href="/master/<?= $program['slug'] ?>/overview"><?= $program['name'] ?></a></li>
                             <?php endforeach; ?>
                         </ul>
                     </div>
