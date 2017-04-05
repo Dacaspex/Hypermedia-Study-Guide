@@ -441,6 +441,13 @@ section > h1:first-child {
 	color: #565656;
 }
 
+.search-list > li > a > h1:nth-of-type(2) {
+	padding-left: 0 !important;
+	border-left: 0 !important;
+	font-size: 1.7em !important;
+	color: #565656 !important;
+}
+
 /*
 	STUDY DRAWERS
 */
