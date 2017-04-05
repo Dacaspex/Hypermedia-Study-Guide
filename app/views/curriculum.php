@@ -80,7 +80,7 @@
 <div class="card-cols width-limit">
     <div class="card breadcrumb">
         <a href="/">Home</a><span>/</span>
-        <a href="#"><?= ucfirst($content->getProgram()->getType()) ?></a><span>/</span>
+        <a href="#" class="js-navigation-drawer-button" drawer-id="<?= strtolower($content->getProgram()->getType()) ?>-drawer"><?= ucfirst($content->getProgram()->getType()) ?></a><span>/</span>
         <a href="#"><?= $content->getProgram()->getName() ?></a>
     </div>
     <div class="search-bar">
