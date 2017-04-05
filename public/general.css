@@ -78,7 +78,6 @@ time {
 
 .card-cols {
     width: 100%;
-    /*overflow:hidden;*/
 }
 
 .card-cols:after {
@@ -200,26 +199,24 @@ time {
     border-top: 1px solid lightgray;
 }
 
-.navigation-drawer li.active {
+.navigation-drawer li.active > a {
     background-color: #4d7fd1;
+    color: white;
 }
 
 .navigation-drawer a {
     display: block;
+    width: 100%;
+    box-sizing: border-box;
     text-decoration: none;
     color: black;
     padding: 10px;
     padding-left: 20px;
     height: 40px;
-    line-height: 40px;
 }
 
 .navigation-drawer ul ul a {
     padding-left: 40px;
-}
-
-.navigation-drawer li.active a {
-    color: white;
 }
 
 .navigation-drawer-bg {
