@@ -129,6 +129,10 @@ aside.card {
 
 }
 
+section > h1:first-child {
+  font-size: 1.7em;
+}
+
 /*
 	NAVIGATION-DRAWER STYLING
 */
